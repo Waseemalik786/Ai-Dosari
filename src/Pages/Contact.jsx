@@ -21,7 +21,7 @@ const Contact = () => {
       <ContactHeroSwiper />
 
       {/* Page Content */}
-      <main className="flex-grow flex flex-col gap-12 md:gap-16 pb-16">
+      <main className="flex-grow flex flex-col ">
         {/* Fixed syntax error: added closing slash to ContactHeader */}
         <ContactHeader /> 
         <ContactInfoCards />

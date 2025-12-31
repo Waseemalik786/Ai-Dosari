@@ -34,16 +34,20 @@ const ContactVisitInfo = () => {
           {items.map((item, index) => {
             const Icon = item.icon;
             return (
-              <div
+              <motion.div
                 key={index}
-                className="rounded-xl border bg-white p-6 shadow-sm transition hover:shadow-md"
+                className="rounded-xl border bg-white p-6 shadow-sm transition-all duration-300"
+                whileHover={{
+                  y: -8,
+                  boxShadow: "0 15px 30px rgba(0, 0, 0, 0.2)",
+                }}
               >
-                <Icon className="mb-4 h-8 w-8 text-[#00627B]" />
+                <Icon className="mb-4 h-8 w-8 text-[#00627B] hover:scale-110 hover:text-[#004d5a] transition-all duration-300" />
                 <h3 className="mb-2 text-lg font-semibold text-[#00627B]">
                   {item.title}
                 </h3>
                 <p className="text-[#00627B]/80">{item.text}</p>
-              </div>
+              </motion.div>
             );
           })}
         </motion.div>

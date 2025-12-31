@@ -8,7 +8,7 @@ const ContactHeader = () => {
       className="
         relative w-full
         min-h-[45vh]
-        pt-20
+        pt-10
         flex items-center justify-center
         overflow-hidden
         bg-white

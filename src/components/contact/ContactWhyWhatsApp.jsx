@@ -53,7 +53,7 @@ const ContactWhyWhatsApp = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="rounded-xl bg-white p-6 text-center shadow-sm"
+                className="rounded-xl bg-white p-6 text-center shadow-sm hover:scale-105 hover:shadow-lg transition-all duration-300"
               >
                 <Icon className="mx-auto mb-4 h-10 w-10 text-[#00627B]" />
                 <h3 className="mb-2 font-semibold text-[#00627B]">
