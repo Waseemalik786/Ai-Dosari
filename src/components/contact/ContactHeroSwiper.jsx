@@ -40,7 +40,8 @@ const ContactHeroSwiper = () => {
         onSwiper={(swiper) => (swiperRef.current = swiper)}
         modules={[Autoplay, Navigation, EffectFade]}
         effect="fade"
-        speed={1000}
+        fadeEffect={{ crossFade: true }}
+        speed={1500}
         autoplay={{ delay: 6000, disableOnInteraction: false }}
         onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
         className="h-full w-full"
@@ -65,23 +66,26 @@ const ContactHeroSwiper = () => {
                         initial={{ opacity: 0, y: 15 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -15 }}
-                        transition={{ duration: 0.7 }}
+                        transition={{ duration: 1.2, ease: "easeInOut" }}
                         className="flex flex-col items-center"
                       >
-                        <h1 className="mb-4 text-5xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl drop-shadow-2xl">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
                           {slide.title}
                         </h1>
-                        <p className="mb-8 max-w-2xl text-lg font-medium text-white/90 sm:text-2xl drop-shadow-lg">
+                        <p className="text-xl md:text-2xl text-gray-300 mb-4">
                           {slide.subtitle}
                         </p>
                         <motion.a
                           href="#contact-form"
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
-                          className="inline-flex items-center gap-2 rounded-full bg-[#00627B] px-8 py-4 font-bold text-white transition-all hover:bg-white hover:text-[#00627B] shadow-xl"
+                          className="group relative px-6 py-3 font-semibold text-white rounded-lg bg-[#00627B] cursor-pointer shadow-lg transition-all duration-500 ease-in-out hover:shadow-2xl hover:bg-[#004f67] inline-flex items-center gap-2 overflow-hidden"
                         >
-                          {slide.cta}
-                          <ArrowRight className="h-5 w-5" />
+                          <span className="absolute inset-0 bg-[#00627B]/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></span>
+                          <span className="relative z-10 flex items-center gap-2">
+                            {slide.cta}
+                            <ArrowRight className="h-5 w-5" />
+                          </span>
                         </motion.a>
                       </motion.div>
                     )}
