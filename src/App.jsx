@@ -3,9 +3,12 @@ import './App.css'
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Navbar from './components/common/Navbar';
 import Footer from './components/common/Footer';
-import Home from './Pages/Home';
+
 import WhatSapp from './components/common/Whatsapp';
+
 import ActivitiesExperiences from './Pages/Activities&Experiences';
+import Contact from './Pages/Contact';
+import Home from './Pages/Home';
 
 
 
@@ -22,9 +25,13 @@ const router = createBrowserRouter([
   {
     element: <MainLayout />,
     children: [
+
       { path: "/", element: <Home /> },
       { path: "/activities", element: <ActivitiesExperiences /> },
      
+
+      { path: "/", element: <Home/> },
+      { path: "/contact", element: <Contact /> },
     ],
   },
   // { path: "*", element: <PageNotFound /> },
