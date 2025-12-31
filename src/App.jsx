@@ -5,11 +5,12 @@ import Navbar from './components/common/Navbar';
 import Footer from './components/common/Footer';
 import Home from './Pages/Home';
 import WhatSapp from './components/common/Whatsapp';
+import ActivitiesExperiences from './Pages/Activities&Experiences';
 
 
 
 const MainLayout = () => (
-  <div className="lg:mx-auto lg:max-w-[1536px]">
+  <div>
     <Navbar />
     <Outlet />
     <WhatSapp />
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
     element: <MainLayout />,
     children: [
       { path: "/", element: <Home /> },
+      { path: "/activities", element: <ActivitiesExperiences /> },
      
     ],
   },
