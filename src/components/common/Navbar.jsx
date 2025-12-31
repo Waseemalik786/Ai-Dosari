@@ -1,15 +1,23 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaWhatsapp, FaComments } from "react-icons/fa";
+import {  FaBars, FaTimes, FaChevronDown, FaChevronUp } from "react-icons/fa";
+import logo from '../../assets/logo.png';
 
 const Navbar = () => {
-  // State to toggle mobile menu
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  // State to toggle between English and Arabic
+  const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
+  const [isLanguageHovered, setIsLanguageHovered] = useState(false);
   const [language, setLanguage] = useState("English");
 
-  const toggleLanguage = () => {
-    setLanguage(language === "English" ? "عربي " : "English");
+  const languages = [
+    { code: "en", name: "English" },
+    { code: "ar", name: "عربي" },
+  ];
+
+  const handleLanguageChange = (langCode) => {
+    const selectedLanguage = languages.find((lang) => lang.code === langCode);
+    setLanguage(selectedLanguage.name);
+    setIsLanguageDropdownOpen(false);
   };
 
   const toggleMobileMenu = () => {
@@ -17,63 +25,88 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gradient-to-r from-green-600 to-teal-500 shadow-md fixed top-0 w-full z-20">
-      <div className="max-w-screen-xl mx-auto px-6 py-4 flex items-center justify-between">
+    <nav className="bg-black z-50 shadow-lg fixed top-0 w-full">
+      <div className="max-w-screen-xl mx-auto px-6 py-2 flex items-center justify-between">
         {/* Logo */}
-        <div className="text-white text-3xl font-extrabold cursor-pointer transition-all duration-300 hover:scale-105 transform">
-          <span className="text-green-300">Al</span> Dosari Reserve
+        <div className="text-white text-4xl font-extrabold cursor-pointer transition-transform duration-300 hover:scale-110">
+          <img src={logo} alt="Al Dosari Reserve Logo" className="h-10 w-18" />
         </div>
 
         {/* Desktop Navigation Links */}
         <ul className="hidden md:flex space-x-8">
           {["Home", "About", "Activities", "Gallery", "Contact"].map((item) => (
-            <li key={item} className="group">
+            <li key={item} className="group relative">
               <Link
                 to={`/${item.toLowerCase()}`}
-                className="relative text-white group-hover:text-yellow-400 transition-all duration-300 ease-in-out"
+                className="relative px-4 py-2 rounded-md text-sm font-medium text-white group overflow-hidden"
               >
-                {item}
-                <span className="absolute bottom-0 left-0 w-full h-1 bg-yellow-400 transform scale-x-0 group-hover:scale-x-100 transition-all duration-300"></span>
+                <div className="absolute inset-0 bg-yellow-400 rounded-md transform origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-300 ease-out"></div>
+                <span className="relative z-10 group-hover:text-green-900 transition-colors duration-300">{item}</span>
               </Link>
             </li>
           ))}
         </ul>
 
-        {/* Language Button and CTA Buttons (Hidden on Mobile) */}
-        <div className="hidden md:flex items-center space-x-6">
-          <button
-            onClick={toggleLanguage}
-            className="text-white bg-teal-700 hover:bg-teal-800 py-2 px-5 rounded-full shadow-lg transition duration-300 hover:scale-105 transform"
-          >
-            {language === "English" ? "عربي" : "English"}
+        {/* Language Dropdown Button */}
+        <div
+          className="relative"
+          onMouseEnter={() => {
+            setIsLanguageHovered(true);
+            setIsLanguageDropdownOpen(true);
+          }}
+          onMouseLeave={() => {
+            setIsLanguageHovered(false);
+            setIsLanguageDropdownOpen(false);
+          }}
+        >
+          <button className="flex items-center px-4 py-2 rounded-md text-sm font-medium text-white group relative">
+            <div className="absolute inset-0 bg-yellow-400 rounded-md transform origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-300 ease-out"></div>
+            <span className="relative text-[18px] z-10 group-hover:text-green-900 transition-colors duration-300 flex items-center">
+              {language}
+              {isLanguageHovered ? (
+                <FaChevronUp className="ml-2 text-sm" />
+              ) : (
+                <FaChevronDown className="ml-2 text-sm" />
+              )}
+            </span>
           </button>
-          <a
-            href="https://wa.me/yourwhatsappnumber"
-            className="text-white bg-yellow-500 hover:bg-yellow-600 py-2 px-5 rounded-full shadow-lg transition duration-300 hover:scale-105 transform"
-          >
-            Book a Visit
-          </a>
+
+          {/* Language Dropdown */}
+          {isLanguageDropdownOpen && (
+            <div className="absolute left-0 mt-1.5 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+              {languages.map((lang) => (
+                <button
+                  key={lang.code}
+                  onClick={() => handleLanguageChange(lang.code)}
+                  className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-green-100 hover:text-green-900 transition-colors duration-200"
+                >
+                  {lang.name}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
+
+        {/* Desktop "Book a Visit" Button */}
+        <a
+          href="https://wa.me/320303"
+          className="hidden md:block text-white bg-yellow-500 hover:bg-yellow-600 py-2 px-5 rounded-full shadow-lg transition duration-300 hover:scale-105 transform"
+          aria-label="Book a Visit on WhatsApp"
+        >
+          Book a Visit
+        </a>
 
         {/* Mobile Menu Button */}
         <button
           onClick={toggleMobileMenu}
           className="text-white md:hidden flex items-center"
+          aria-label={isMobileMenuOpen ? "Close Menu" : "Open Menu"}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            ></path>
-          </svg>
+          {isMobileMenuOpen ? (
+            <FaTimes className="h-6 w-6" />
+          ) : (
+            <FaBars className="h-6 w-6" />
+          )}
         </button>
       </div>
 
@@ -86,7 +119,7 @@ const Navbar = () => {
                 <Link
                   to={`/${item.toLowerCase()}`}
                   className="text-white hover:text-yellow-400 block text-lg py-2 transition duration-300"
-                  onClick={toggleMobileMenu}
+                  onClick={() => setIsMobileMenuOpen(false)} // Close the menu on click
                 >
                   {item}
                 </Link>
@@ -96,14 +129,16 @@ const Navbar = () => {
           {/* Mobile CTA */}
           <div className="flex space-x-4 mt-4">
             <button
-              onClick={toggleLanguage}
+              onClick={() => setLanguage(language === "English" ? "عربي" : "English")}
               className="text-white bg-teal-700 hover:bg-teal-800 py-2 px-5 rounded-full shadow-lg transition duration-300"
+              aria-label="Toggle Language"
             >
-              {language === "English" ? "عربي " : "English"}
+              {language === "English" ? "عربي" : "English"}
             </button>
             <a
-              href="https://wa.me/yourwhatsappnumber"
-              className="text-white bg-yellow-500 hover:bg-yellow-600 py-2 px-5 rounded-full shadow-lg transition duration-300"
+              href="https://wa.me/320303"
+              className="text-white bg-yellow-500 hover:bg-yellow-600 py-2 px-5 rounded-full shadow-lg transition duration-300 hover:scale-105 transform"
+              aria-label="Book a Visit on WhatsApp"
             >
               Book a Visit
             </a>
@@ -111,18 +146,9 @@ const Navbar = () => {
         </div>
       )}
 
-      {/* WhatsApp Floating Button */}
-      <a
-        href="https://wa.me/yourwhatsappnumber"
-        className="fixed bottom-8 right-8 bg-green-500 text-white p-5 rounded-full shadow-lg text-3xl transition duration-300 hover:bg-green-600 hover:scale-110 transform"
-      >
-        <FaWhatsapp />
-      </a>
+      
 
-      {/* AI Chatbot Floating Icon */}
-      <div className="fixed bottom-20 right-8 bg-teal-700 text-white p-5 rounded-full shadow-lg text-3xl transition duration-300 hover:bg-teal-800 hover:scale-110 transform">
-        <FaComments />
-      </div>
+      
     </nav>
   );
 };
