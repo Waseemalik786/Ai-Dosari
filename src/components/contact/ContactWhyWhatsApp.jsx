@@ -22,14 +22,14 @@ const features = [
 
 const ContactWhyWhatsApp = () => {
   return (
-    <section className="bg-green-50 px-4 py-12 md:px-8 md:py-16">
+    <section className="bg-white px-4 py-12 md:px-8 md:py-16">
       <div className="mx-auto max-w-7xl">
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-10 text-center text-3xl font-semibold text-green-900"
+          className="mb-10 text-center text-3xl font-semibold text-[#00627B]"
         >
           Why Contact Us via WhatsApp?
         </motion.h2>
@@ -46,11 +46,11 @@ const ContactWhyWhatsApp = () => {
                 transition={{ delay: index * 0.1 }}
                 className="rounded-xl bg-white p-6 text-center shadow-sm"
               >
-                <Icon className="mx-auto mb-4 h-10 w-10 text-green-600" />
-                <h3 className="mb-2 font-semibold text-green-900">
+                <Icon className="mx-auto mb-4 h-10 w-10 text-[#00627B]" />
+                <h3 className="mb-2 font-semibold text-[#00627B]">
                   {item.title}
                 </h3>
-                <p className="text-green-700/80">{item.text}</p>
+                <p className="text-[#00627B]/80">{item.text}</p>
               </motion.div>
             );
           })}

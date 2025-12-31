@@ -38,11 +38,11 @@ const ContactVisitInfo = () => {
                 key={index}
                 className="rounded-xl border bg-white p-6 shadow-sm transition hover:shadow-md"
               >
-                <Icon className="mb-4 h-8 w-8 text-green-600" />
-                <h3 className="mb-2 text-lg font-semibold text-green-900">
+                <Icon className="mb-4 h-8 w-8 text-[#00627B]" />
+                <h3 className="mb-2 text-lg font-semibold text-[#00627B]">
                   {item.title}
                 </h3>
-                <p className="text-green-700/80">{item.text}</p>
+                <p className="text-[#00627B]/80">{item.text}</p>
               </div>
             );
           })}

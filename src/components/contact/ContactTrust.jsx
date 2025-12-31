@@ -38,11 +38,11 @@ const ContactTrust = () => {
                 key={index}
                 className="rounded-xl border p-6 text-center shadow-sm"
               >
-                <Icon className="mx-auto mb-4 h-10 w-10 text-green-600" />
-                <p className="text-3xl font-bold text-green-900">
+                <Icon className="mx-auto mb-4 h-10 w-10 text-[#00627B]" />
+                <p className="text-3xl font-bold text-[#00627B]">
                   {item.value}
                 </p>
-                <p className="mt-1 text-green-700/80">{item.label}</p>
+                <p className="mt-1 text-[#00627B]/80">{item.label}</p>
               </div>
             );
           })}
