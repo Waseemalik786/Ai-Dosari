@@ -4,6 +4,7 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Navbar from './components/common/Navbar';
 import Footer from './components/common/Footer';
 import Home from './Pages/Home';
+import WhatSapp from './components/common/Whatsapp';
 
 
 
@@ -11,6 +12,7 @@ const MainLayout = () => (
   <div className="lg:mx-auto lg:max-w-[1536px]">
     <Navbar />
     <Outlet />
+    <WhatSapp />
     <Footer />
   </div>
 );
