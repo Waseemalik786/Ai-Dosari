@@ -14,7 +14,7 @@ import {
 
 const Contact = () => {
   return (
-    /* overflow-x-hidden prevents horizontal glitches during animations */
+    
     <div className="min-h-screen flex flex-col bg-white overflow-x-hidden">
 
       {/* Hero Swiper - This component should have h-screen inside it */}
