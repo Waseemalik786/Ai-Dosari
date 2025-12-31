@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Phone, MessageCircle, Mail } from 'lucide-react';
+import { Phone, MessageCircle, Mail, Star } from 'lucide-react';
 
 const ContactInfoCards = () => {
   const contactMethods = [

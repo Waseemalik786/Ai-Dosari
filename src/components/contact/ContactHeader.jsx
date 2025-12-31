@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Star } from "lucide-react";
 
 const ContactHeader = () => {
   return (
@@ -26,38 +27,25 @@ const ContactHeader = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="relative z-10 mx-auto max-w-4xl px-4 text-center"
       >
-        <motion.h1
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.6 }}
-          className="
-            text-4xl
-            font-semibold
-            tracking-tight
-            text-[#00627B]
-            sm:text-5xl
-            lg:text-6xl
-          "
-        >
-          Contact Us
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-          className="
-            mt-5
-            text-base
-            text-[#00627B]/80
-            sm:text-lg
-            lg:text-xl
-          "
-        >
-          We’re here to help you plan your visit and answer any questions.
-          <br className="hidden sm:block" />
-          Reach out to us anytime.
-        </motion.p>
+        <motion.div 
+          className="text-center mb-6" 
+          initial={{ opacity: 0, y: -10 }} 
+          animate={{ opacity: 1, y: 0 }} 
+          transition={{ duration: 0.5, delay: 0.2 }} 
+        > 
+          <p className="inline-flex items-center gap-1 bg-[#00627B]/10 text-[#00627B] uppercase tracking-wider text-xs font-medium px-3 py-1 rounded-full mb-3"> 
+            <Star className="w-3 h-3" /> 
+            Support
+          </p> 
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1e1e1e] mb-5 tracking-tight"> 
+            Contact <span className="text-[#00627B]">Us</span> 
+          </h1> 
+          <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed"> 
+            We’re here to help you plan your visit and answer any questions. 
+            <br className="hidden sm:block" />
+            Reach out to us anytime.
+          </p> 
+        </motion.div>
 
         {/* Decorative divider */}
         <motion.div

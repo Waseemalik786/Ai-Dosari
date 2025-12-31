@@ -4,7 +4,7 @@ import {
   ContactInfoCards,
   ContactVisitInfo,
   ContactWhyWhatsApp,
-  WhatsAppCTA,
+  
   ContactFAQ,
   MapEmbed,
   ContactTrust,
@@ -27,7 +27,7 @@ const Contact = () => {
         <ContactInfoCards />
         <ContactVisitInfo />
         <ContactWhyWhatsApp />
-        <WhatsAppCTA />
+       
         <ContactFAQ />
         <MapEmbed />
         <ContactTrust />
