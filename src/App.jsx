@@ -2,7 +2,6 @@ import React from "react";
 import "./App.css";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Contact from "./Pages/Contact";
-import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Navbar from './components/common/Navbar';
 import Footer from './components/common/Footer';
@@ -25,13 +24,10 @@ const router = createBrowserRouter([
   {
     element: <MainLayout />,
     children: [
-      { path: "/", element: <Home /> },
+      // { path: "/", element: <Home /> },
       { path: "/about", element: <About /> },
-
       { path: "/activities", element: <ActivitiesExperiences /> },
-     
 
-      // { path: "/", element: <Home/> },
       { path: "/contact", element: <Contact /> },
     ],
   },
