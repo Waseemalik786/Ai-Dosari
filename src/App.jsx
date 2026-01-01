@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import Contact from "./pages/Contact";
+import ContactPage from "./pages/ContactPage";
 import About from "./pages/About";
 import Navbar from './components/common/Navbar';
 import Footer from './components/common/Footer';
@@ -28,7 +28,7 @@ const router = createBrowserRouter([
       { path: "/about", element: <About /> },
       { path: "/activities", element: <ActivitiesExperiences /> },
 
-      { path: "/contact", element: <Contact /> },
+      { path: "/contact", element: <ContactPage /> },
     ],
   },
   // { path: "*", element: <PageNotFound /> },
