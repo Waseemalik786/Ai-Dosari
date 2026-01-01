@@ -7,7 +7,7 @@ import {
   
   
   MapEmbed,
-  ContactTrust,
+  // ContactTrust,
   ContactForm,
   ContactHeader,
 } from "../components/contact";
@@ -17,10 +17,10 @@ const Contact = () => {
     
     <div className="min-h-screen flex flex-col bg-white overflow-x-hidden">
 
-      {/* Hero Swiper - This component should have h-screen inside it */}
+     
       <ContactHeroSwiper />
 
-      {/* Page Content */}
+    
       <main className="flex-grow flex flex-col ">
        
         <ContactHeader /> 
@@ -30,7 +30,7 @@ const Contact = () => {
        
        
         <MapEmbed />
-        <ContactTrust />
+        {/* <ContactTrust /> */}
         <ContactForm />
       </main>
 
