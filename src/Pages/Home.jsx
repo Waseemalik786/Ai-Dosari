@@ -1,9 +1,11 @@
 import React from 'react'
+import HomeHeader from '../components/home/HomeHeader.jsx'
+import HomeActivity from '../Components/Home/Homeactivity.jsx'
+import HomeTrips from '../Components/Home/HomeTrips.jsx'
+import Services from '../Components/home/Services.jsx'
 
-import HomeActivity from '../Components/Home/HomeActivity'
-import HomeTrips from '../components/Home/HomeTrips'
-import HomeHeader from '../components/Home/HomeHeader'
-import Services from '../components/Home/ExploreOurFacilities'
+
+
 
 export default function Home() {
   return (
