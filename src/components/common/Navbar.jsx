@@ -24,6 +24,14 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const navLinks = [
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Activities", path: "/activities" },
+    { name: "Gallery", path: "/gallery" },
+    { name: "Contact", path: "/contact" },
+  ];
+
   return (
     <nav className="bg-white z-50 shadow-lg fixed top-0 w-full border-b border-gray-200">
       <div className="max-w-screen-xl mx-auto px-6 py-3 flex items-center justify-between">
@@ -33,21 +41,21 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Navigation Links */}
-        <ul className="hidden md:flex ">
-          {["Home", "About", "Activities", "Gallery", "Contact"].map((item) => (
-            <li key={item} className="group relative">
+        <ul className="hidden md:flex">
+          {navLinks.map((item) => (
+            <li key={item.name} className="group relative">
               <Link
-                to={`/${item.toLowerCase()}`}
+                to={item.path}
                 className="relative px-3 py-2 text-lg font-semibold text-[#00627B] transition-all duration-300 group"
               >
-                <span className="relative z-10 group-hover:text-[white]">{item}</span>
+                <span className="relative z-10 group-hover:text-white">{item.name}</span>
                 <div className="absolute inset-0 bg-[#004a5d] rounded-md scale-y-0 group-hover:scale-y-100 transition-transform duration-300 ease-out"></div>
               </Link>
             </li>
           ))}
         </ul>
 
-        {/* Language Dropdown Button */}
+        {/* Language Dropdown & Desktop CTA */}
         <div className="flex items-center space-x-6">
           <div
             className="relative"
@@ -104,39 +112,39 @@ const Navbar = () => {
           className="text-[#00627B] md:hidden flex items-center p-2 rounded-md hover:bg-[#A9D4E8]/20 transition-colors duration-300"
           aria-label={isMobileMenuOpen ? "Close Menu" : "Open Menu"}
         >
-          {isMobileMenuOpen ? (
-            <FaTimes className="h-6 w-6" />
-          ) : (
-            <FaBars className="h-6 w-6" />
-          )}
+          {isMobileMenuOpen ? <FaTimes className="h-6 w-6" /> : <FaBars className="h-6 w-6" />}
         </button>
       </div>
 
-      {/* Mobile Menu Links */}
+      {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="bg-white p-6 md:hidden transition-all duration-300 ease-in-out border-t border-gray-200">
           <ul className="space-y-6">
-            {["Home", "About", "Activities", "Gallery", "Contact"].map((item) => (
-              <li key={item}>
+            {navLinks.map((item) => (
+              <li key={item.name}>
                 <Link
-                  to={`/${item.toLowerCase()}`}
+                  to={item.path}
                   className="text-[#00627B] hover:text-[#004a5d] hover:bg-[#A9D4E8]/20 block text-lg py-3 px-4 rounded-md transition duration-300 font-medium"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  {item}
+                  {item.name}
                 </Link>
               </li>
             ))}
           </ul>
 
-          {/* Mobile CTA */}
+          {/* Mobile CTA & Language Buttons */}
           <div className="flex flex-col space-y-6 mt-8">
             <div className="flex space-x-4 justify-center">
               {languages.map((lang) => (
                 <button
                   key={lang.code}
                   onClick={() => handleLanguageChange(lang.code)}
-                  className={`text-lg py-3 px-6 rounded-full transition duration-300 ${language === lang.name ? 'bg-[#00627B] text-white' : 'bg-[#A9D4E8]/30 text-[#00627B] hover:bg-[#A9D4E8]/50'}`}
+                  className={`text-lg py-3 px-6 rounded-full transition duration-300 ${
+                    language === lang.name
+                      ? "bg-[#00627B] text-white"
+                      : "bg-[#A9D4E8]/30 text-[#00627B] hover:bg-[#A9D4E8]/50"
+                  }`}
                 >
                   {lang.name}
                 </button>

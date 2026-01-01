@@ -116,7 +116,7 @@ const Home = () => {
           </p>
 
           <Link to={currentSlide.link}>
-            <button className="relative px-6 py-3 font-semibold text-white rounded-lg bg-[#00627B] cursor-pointer shadow-lg transition-all duration-500 ease-in-out hover:shadow-2xl hover:bg-[#004f67]">
+            <button className="relative px-5 py-2 font-semibold text-white rounded-lg bg-[#00627B] cursor-pointer shadow-lg transition-all duration-500 ease-in-out hover:shadow-2xl hover:bg-[#004f67]">
               <span className="absolute inset-0 bg-[#00627B]/50 opacity-0 hover:opacity-100 transition-opacity duration-500 rounded-xl"></span>
               <span className="relative z-10">Explore Now</span>
             </button>
