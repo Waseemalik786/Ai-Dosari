@@ -7,7 +7,7 @@ import {
   FaChevronRight,
 } from "react-icons/fa";
 
-export default PartnershipSection = () => {
+const SectionPartnership = () => {
   const partners = [
     { name: "UNESCO", logo: "🌍", description: "Cultural Heritage Partner" },
     { name: "WWF", logo: "🐼", description: "Conservation Alliance" },
@@ -205,3 +205,4 @@ export default PartnershipSection = () => {
   );
 };
 
+export default SectionPartnership;

@@ -5,7 +5,7 @@ import Navbar from './components/common/Navbar';
 import Footer from './components/common/Footer';
 import WhatSapp from './components/common/Whatsapp';
 import Home from "./Pages/Home";
-import About from "./pages/About";
+import AboutPage from "./pages/AboutPage";
 import ActivitiesExperiences from "./Pages/ActivitiesExperiences";
 import ContactPage from "./pages/ContactPage";
 
@@ -27,9 +27,9 @@ const router = createBrowserRouter([
     children: [
 
       { path: '/', element: <Home /> },
-      { path: '/about', element: <About /> },
-      { path: '/activities', element: <ActivitiesExperiences /> },
-      { path: '/contact', element: <ContactPage /> },
+      { path: '/about', element:<AboutPage /> },
+      { path: '/activities', element: <ActivitiesExperiences/> },
+      { path: '/contact', element: <ContactPage/> },
 
 
 

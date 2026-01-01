@@ -1,7 +1,7 @@
 import React from "react";
 import { FaEye, FaBullseye, FaLeaf, FaGraduationCap } from "react-icons/fa";
 
-export default MissionVision = () => {
+const MissionVision = () => {
   return (
     <section className=" bg-white relative overflow-hidden">
       {/* Background Subtle Text */}
@@ -97,3 +97,4 @@ export default MissionVision = () => {
   );
 };
 
+export default MissionVision;

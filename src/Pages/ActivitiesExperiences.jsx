@@ -4,7 +4,7 @@ import ActivitiesList from '../components/activityandexperience/ActivitiesList'
 import Testimonials from '../components/activityandexperience/Testimonials'
 import AuthorityBrands from '../components/activityandexperience/AuthorityBrands'
 
-function ActivitiesExperiences() {
+const ActivitiesExperiences = () => {
   return (
     <div>
       <HeroSection/>
