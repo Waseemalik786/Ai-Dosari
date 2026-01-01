@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { MessageSquare, Users, HelpCircle } from 'lucide-react';
 
-const ContactInfoCards = () => {
+export default function ContactInfoCards() {
   const contactMethods = [
     {
       id: 'whatsapp-general',
@@ -77,4 +77,3 @@ const ContactInfoCards = () => {
   );
 };
 
-export default ContactInfoCards;

@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
 
-const MapEmbed = () => {
+export default function MapEmbed() {
   return (
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
@@ -27,4 +27,3 @@ const MapEmbed = () => {
   );
 };
 
-export default MapEmbed;

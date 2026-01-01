@@ -20,7 +20,7 @@ const features = [
   },
 ];
 
-const ContactWhyWhatsApp = () => {
+export default function ContactWhyWhatsApp() {
   return (
     <section className="bg-white px-4 py-8 md:px-8 md:py-10">
       <div className="mx-auto max-w-7xl">
@@ -69,4 +69,4 @@ const ContactWhyWhatsApp = () => {
   );
 };
 
-export default ContactWhyWhatsApp;
+

@@ -2,7 +2,7 @@ import React from "react";
 import { School, Users, Leaf } from "lucide-react";
 import { motion } from "framer-motion";
 
-const ContactTrust = () => {
+export default function ContactTrust() {
   const stats = [
     {
       id: "school",
@@ -136,4 +136,3 @@ const ContactTrust = () => {
   );
 };
 
-export default ContactTrust;

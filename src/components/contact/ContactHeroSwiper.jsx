@@ -30,7 +30,7 @@ const slides = [
   },
 ];
 
-const ContactHeroSwiper = () => {
+export default function ContactHeroSwiper() {
   const [activeIndex, setActiveIndex] = useState(0);
   const swiperRef = useRef(null);
 
@@ -139,4 +139,3 @@ const ContactHeroSwiper = () => {
   );
 };
 
-export default ContactHeroSwiper;
