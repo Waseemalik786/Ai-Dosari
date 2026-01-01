@@ -8,7 +8,7 @@ import WhatSapp from './components/common/Whatsapp';
 
 import ActivitiesExperiences from './Pages/Activities&Experiences';
 import Contact from './Pages/Contact';
-import Home from './Pages/Home';
+// import Home from './Pages/Home';
 
 
 
