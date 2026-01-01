@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import {  FaBars, FaTimes, FaChevronDown, FaChevronUp } from "react-icons/fa";
-import logo from '../../assets/logo.png';
+import { FaBars, FaTimes, FaChevronDown, FaChevronUp } from "react-icons/fa";
+import logo from "../../assets/logo.png";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -26,7 +26,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-black z-50 shadow-lg fixed top-0 w-full">
-      <div className="max-w-screen-xl mx-auto px-6 py-2 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
         {/* Logo */}
         <div className="text-white text-4xl font-extrabold cursor-pointer transition-transform duration-300 hover:scale-110">
           <img src={logo} alt="Al Dosari Reserve Logo" className="h-10 w-18" />
@@ -34,14 +34,22 @@ const Navbar = () => {
 
         {/* Desktop Navigation Links */}
         <ul className="hidden md:flex space-x-8">
-          {["Home", "About", "Activities", "Gallery", "Contact"].map((item) => (
-            <li key={item} className="group relative">
+          {[
+            { name: "Home", href: "/" },
+            { name: "About", href: "/about" },
+            { name: "Activities", href: "/activities" },
+            { name: "Gallery", href: "/gallery" },
+            { name: "Contact", href: "/contact" },
+          ].map((item, index) => (
+            <li key={index} className="group relative">
               <Link
-                to={`/${item.toLowerCase()}`}
+                to={`${item.href}`}
                 className="relative px-4 py-2 rounded-md text-sm font-medium text-white group overflow-hidden"
               >
                 <div className="absolute inset-0 bg-yellow-400 rounded-md transform origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-300 ease-out"></div>
-                <span className="relative z-10 group-hover:text-green-900 transition-colors duration-300">{item}</span>
+                <span className="relative z-10 group-hover:text-green-900 transition-colors duration-300">
+                  {item.name}
+                </span>
               </Link>
             </li>
           ))}
@@ -112,24 +120,28 @@ const Navbar = () => {
 
       {/* Mobile Menu Links (Visible when the menu is open) */}
       {isMobileMenuOpen && (
-        <div className="bg-gradient-to-r from-green-600 to-teal-500 p-4 md:hidden transition-all duration-300 ease-in-out">
+        <div className="bg-linear-to-r from-green-600 to-teal-500 p-4 md:hidden transition-all duration-300 ease-in-out">
           <ul className="space-y-4">
-            {["Home", "About", "Activities", "Gallery", "Contact"].map((item) => (
-              <li key={item}>
-                <Link
-                  to={`/${item.toLowerCase()}`}
-                  className="text-white hover:text-yellow-400 block text-lg py-2 transition duration-300"
-                  onClick={() => setIsMobileMenuOpen(false)} // Close the menu on click
-                >
-                  {item}
-                </Link>
-              </li>
-            ))}
+            {["Home", "About", "Activities", "Gallery", "Contact"].map(
+              (item) => (
+                <li key={item}>
+                  <Link
+                    to={`/${item.toLowerCase()}`}
+                    className="text-white hover:text-yellow-400 block text-lg py-2 transition duration-300"
+                    onClick={() => setIsMobileMenuOpen(false)} // Close the menu on click
+                  >
+                    {item}
+                  </Link>
+                </li>
+              )
+            )}
           </ul>
           {/* Mobile CTA */}
           <div className="flex space-x-4 mt-4">
             <button
-              onClick={() => setLanguage(language === "English" ? "عربي" : "English")}
+              onClick={() =>
+                setLanguage(language === "English" ? "عربي" : "English")
+              }
               className="text-white bg-teal-700 hover:bg-teal-800 py-2 px-5 rounded-full shadow-lg transition duration-300"
               aria-label="Toggle Language"
             >
@@ -145,10 +157,6 @@ const Navbar = () => {
           </div>
         </div>
       )}
-
-      
-
-      
     </nav>
   );
 };
