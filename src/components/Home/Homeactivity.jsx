@@ -47,7 +47,7 @@ const activities = [
   }
 ];
 
-export default function HomeActivities() {
+export default function Homeactivity() {
   const whatsappNumber = "966XXXXXXXXX"; // Replace with actual number
 
   const handleBookActivity = (activityTitle, message) => {
