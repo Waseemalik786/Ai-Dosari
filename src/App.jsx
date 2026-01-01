@@ -1,12 +1,12 @@
 import React from "react";
 import "./App.css";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import Navbar from './components/common/Navbar';
-import Footer from './components/common/Footer';
-import WhatSapp from './components/common/Whatsapp';
-import Home from "./Pages/Home";
+import Navbar from './Components/common/Navbar';
+import Footer from './Components/common/Footer';
+import WhatSapp from './Components/common/Whatsapp';
+import Home from "./pages/Home";
 import AboutPage from "./pages/AboutPage";
-import ActivitiesExperiences from "./Pages/ActivitiesExperiences";
+import ActivitiesExperiences from "./pages/ActivitiesExperiences";
 import ContactPage from "./pages/ContactPage";
 
 
@@ -27,9 +27,9 @@ const router = createBrowserRouter([
     children: [
 
       { path: '/', element: <Home /> },
-      { path: '/about', element:<AboutPage /> },
-      { path: '/activities', element: <ActivitiesExperiences/> },
-      { path: '/contact', element: <ContactPage/> },
+      { path: '/about', element: <AboutPage /> },
+      { path: '/activities', element: <ActivitiesExperiences /> },
+      { path: '/contact', element: <ContactPage /> },
 
 
 
