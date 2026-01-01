@@ -1,16 +1,19 @@
 import React from "react";
-import ContactHeroSwiper from "../components/contact/ContactHeroSwiper";
-import {
-  ContactInfoCards,
-  ContactVisitInfo,
-  ContactWhyWhatsApp,
-
-
-  MapEmbed,
-  ContactTrust,
-  ContactForm,
-  ContactHeader,
-} from "../components/contact";
+import ContactHeroSwiper from "../components/contact/ContactHeroSwiper.jsx";
+import ContactHeader from "../components/contact/ContactHeader.jsx";
+import ContactInfoCards from "../components/contact/ContactInfoCards.jsx";
+import ContactWhyWhatsApp from "../components/contact/ContactWhyWhatsApp.jsx";
+import MapEmbed from "../components/contact/MapEmbed.jsx";
+import ContactTrust from "../components/contact/ContactTrust.jsx";
+import ContactForm from "../components/contact/ContactForm.jsx";
+// import {
+//   ContactInfoCards,
+//   ContactWhyWhatsApp,
+//   MapEmbed,
+//   ContactTrust,
+//   ContactForm,
+//   ContactHeader,
+// } from "../components/contact";
 
 const ContactPage = () => {
   return (
@@ -22,7 +25,7 @@ const ContactPage = () => {
 
 
       <main className="flex-grow flex flex-col ">
-        <ContactHeader />
+        <ContactHeader/>
 
         <div className="max-w-7xl mx-auto px-4 py-2 w-full">
           <div className="flex flex-col lg:flex-row gap-8 items-stretch">
