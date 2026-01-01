@@ -1,14 +1,13 @@
 import React from "react";
 import "./App.css";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import ActivitiesExperiences from "./Pages/Activities&Experiences";
 import Contact from "./Pages/Contact";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Navbar from './components/common/Navbar';
 import Footer from './components/common/Footer';
 import WhatSapp from './components/common/Whatsapp';
-import ActivitiesExperiences from './Pages/Activities&Experiences';
+import ActivitiesExperiences from './Pages/ActivitiesExperiences';
 // import Home from './Pages/Home';
 
 
