@@ -1,11 +1,11 @@
 import React from "react";
-import AboutHero from "../components/aboutPageComponents/AboutHero";
-import AboutHistory from "../components/aboutPageComponents/AboutHistory";
-import MissionVision from "../components/aboutPageComponents/MissionVision";
-import ValuesSection from "../components/aboutPageComponents/ValuesSection";
-import LocationMap from "../components/aboutPageComponents/LocationMap";
-import TeamSection from "../components/aboutPageComponents/TeamSection";
-import PartnershipSection from "../components/aboutPageComponents/PartnershipSection";
+import AboutHero from "../components/aboutPageComponents/AboutHero.jsx";
+import AboutHistory from "../components/aboutPageComponents/AboutHistory.jsx";
+import MissionVision from "../components/aboutPageComponents/MissionVision.jsx";
+import ValuesSection from "../components/aboutPageComponents/ValuesSection.jsx";
+import LocationMap from "../components/aboutPageComponents/LocationMap.jsx";
+import TeamSection from "../components/aboutPageComponents/TeamSection.jsx";
+import PartnershipSection from "../components/aboutPageComponents/PartnershipSection.jsx";
 
 export default function About() {
   return (

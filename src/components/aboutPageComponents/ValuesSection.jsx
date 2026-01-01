@@ -8,7 +8,7 @@ import {
   FaHandshake,
 } from "react-icons/fa";
 
-const ValuesSection = () => {
+export default ValuesSection = () => {
   const values = [
     {
       icon: <FaHeart />,
@@ -152,4 +152,4 @@ const ValuesSection = () => {
   );
 };
 
-export default ValuesSection;
+

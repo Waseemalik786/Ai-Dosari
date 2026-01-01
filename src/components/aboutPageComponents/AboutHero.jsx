@@ -1,7 +1,7 @@
 import React from "react";
 import { FaLeaf, FaMountain, FaWater } from "react-icons/fa";
 
-const AboutHero = () => {
+export default AboutHero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden lg:pt-16 text-center">
       {/* REAL Background Image - No more boring white look */}
@@ -81,4 +81,4 @@ const AboutHero = () => {
   );
 };
 
-export default AboutHero;
+

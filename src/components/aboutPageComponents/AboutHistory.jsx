@@ -1,7 +1,7 @@
 import React from "react";
 import { FaCalendarAlt, FaSeedling, FaUsers } from "react-icons/fa";
 
-const AboutHistory = () => {
+export default AboutHistory = () => {
   const timelineEvents = [
     {
       year: "2010",
@@ -119,4 +119,4 @@ const AboutHistory = () => {
   );
 };
 
-export default AboutHistory;
+
