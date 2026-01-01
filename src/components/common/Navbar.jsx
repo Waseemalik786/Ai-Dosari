@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaBars, FaTimes, FaChevronDown, FaChevronUp } from "react-icons/fa";
-import logo from "../../assets/logo.png";
-import al_logo from "../../assets/al-logo.png";
+import logo from "../../assets/al-logo.png";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -25,6 +24,14 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const navLinks = [
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Activities", path: "/activities" },
+    { name: "Gallery", path: "/gallery" },
+    { name: "Contact", path: "/contact" },
+  ];
+
   return (
     <nav className="bg-white z-50 shadow-lg fixed top-0 w-full border-b border-gray-200">
       <div className="max-w-screen-xl mx-auto px-6 py-3 flex items-center justify-between">
@@ -38,29 +45,23 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Navigation Links */}
-        <ul className="hidden md:flex space-x-8">
-          {[
-            { name: "Home", href: "/" },
-            { name: "About", href: "/about" },
-            { name: "Activities", href: "/activities" },
-            { name: "Gallery", href: "/gallery" },
-            { name: "Contact", href: "/contact" },
-          ].map((item, index) => (
-            <li key={index} className="group relative">
+        <ul className="hidden md:flex">
+          {navLinks.map((item) => (
+            <li key={item.name} className="group relative">
               <Link
-                to={`${item.href}`}
-                className="relative px-4 py-2 rounded-md text-sm font-medium text-white group overflow-hidden"
+                to={item.path}
+                className="relative px-3 py-2 text-lg font-semibold text-[#00627B] transition-all duration-300 group"
               >
-                <div className="absolute inset-0 bg-yellow-400 rounded-md transform origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-300 ease-out"></div>
-                <span className="relative z-10 group-hover:text-green-900 transition-colors duration-300">
+                <span className="relative z-10 group-hover:text-white">
                   {item.name}
                 </span>
+                <div className="absolute inset-0 bg-[#004a5d] rounded-md scale-y-0 group-hover:scale-y-100 transition-transform duration-300 ease-out"></div>
               </Link>
             </li>
           ))}
         </ul>
 
-        {/* Language Dropdown Button */}
+        {/* Language Dropdown & Desktop CTA */}
         <div className="flex items-center space-x-6">
           <div
             className="relative"
@@ -125,26 +126,24 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu Links */}
+      {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="bg-white p-6 md:hidden transition-all duration-300 ease-in-out border-t border-gray-200">
           <ul className="space-y-6">
-            {["Home", "About", "Activities", "Gallery", "Contact"].map(
-              (item) => (
-                <li key={item}>
-                  <Link
-                    to={`/${item.toLowerCase()}`}
-                    className="text-[#00627B] hover:text-[#004a5d] hover:bg-[#A9D4E8]/20 block text-lg py-3 px-4 rounded-md transition duration-300 font-medium"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {item}
-                  </Link>
-                </li>
-              )
-            )}
+            {navLinks.map((item) => (
+              <li key={item.name}>
+                <Link
+                  to={item.path}
+                  className="text-[#00627B] hover:text-[#004a5d] hover:bg-[#A9D4E8]/20 block text-lg py-3 px-4 rounded-md transition duration-300 font-medium"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              </li>
+            ))}
           </ul>
 
-          {/* Mobile CTA */}
+          {/* Mobile CTA & Language Buttons */}
           <div className="flex flex-col space-y-6 mt-8">
             <div className="flex space-x-4 justify-center">
               {languages.map((lang) => (

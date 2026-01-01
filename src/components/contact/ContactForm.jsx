@@ -9,20 +9,20 @@ const ContactForm = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="w-full max-w-3xl mx-auto px-4 py-12 mb-12"
+      className="w-full max-w-3xl mx-auto px-4 py-8 mb-8"
     >
       <motion.div 
-        className="text-center mb-10" 
+        className="text-center mb-6" 
         initial={{ opacity: 0, y: -10 }} 
         whileInView={{ opacity: 1, y: 0 }} 
         viewport={{ once: true }} 
         transition={{ duration: 0.5, delay: 0.2 }} 
       > 
-        <p className="inline-flex items-center gap-1 bg-[#00627B]/10 text-[#00627B] uppercase tracking-wider text-xs font-medium px-3 py-1 rounded-full mb-3"> 
+        <p className="inline-flex items-center gap-1 bg-[#00627B]/10 text-[#00627B] uppercase tracking-wider text-xs font-medium px-3 py-1 rounded-full mb-2"> 
           <Star className="w-3 h-3" /> 
           Inquiry
         </p> 
-        <h2 className="text-2xl md:text-3xl font-bold text-[#1e1e1e] mb-3"> 
+        <h2 className="text-2xl md:text-3xl font-bold text-[#1e1e1e] mb-2"> 
           Send a <span className="text-[#00627B]">Message</span> 
         </h2> 
         <p className="text-sm text-gray-600 max-w-2xl mx-auto leading-relaxed"> 

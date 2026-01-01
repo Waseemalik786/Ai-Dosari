@@ -51,11 +51,11 @@ const ActivitiesList = () => {
   return (
     <section className="py-20 bg-gray-50" id="activities">
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-extrabold text-[#00627B] mb-2">Our Activities</h2>
+        <h2 className="text-4xl font-bold text-[#00627B] mb-2"><span className='text-black'>Our</span> Activities</h2>
         <p className="text-xl text-gray-700 mt-2">Unique experiences for all ages, waiting for you to explore!</p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-12">
         {activitiesData.map((activity, index) => (
           <ActivityCard
             key={index}

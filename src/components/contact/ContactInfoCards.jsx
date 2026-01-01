@@ -31,8 +31,8 @@ const ContactInfoCards = () => {
   ];
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 py-16">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div className="w-full">
+      <div className="grid grid-cols-1 gap-6">
         {contactMethods.map((method, index) => (
           <motion.a
             key={method.id}
@@ -43,8 +43,8 @@ const ContactInfoCards = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1, duration: 0.5 }}
-            whileHover={{ y: -10 }}
-            className="relative flex flex-col items-center justify-center p-12 rounded-[2rem] overflow-hidden shadow-2xl group min-h-[320px] bg-black"
+            whileHover={{ y: -5 }}
+            className="relative flex flex-col items-center justify-center p-4 rounded-[1.25rem] overflow-hidden shadow-xl group min-h-[140px] bg-black"
           >
             {/* Background Image with Zoom Effect */}
             <img 
@@ -58,15 +58,15 @@ const ContactInfoCards = () => {
 
             {/* Content Layer */}
             <div className="relative z-10 flex flex-col items-center text-center">
-              <div className="mb-6 p-4 rounded-2xl bg-white/10 backdrop-blur-md text-[#00627B] border border-white/20 transition-colors duration-300 group-hover:bg-[#00627B] group-hover:text-white">
-                {method.icon}
+              <div className="mb-2 p-2 rounded-2xl bg-white/10 backdrop-blur-md text-[#00627B] border border-white/20 transition-colors duration-300 group-hover:bg-[#00627B] group-hover:text-white">
+                {React.cloneElement(method.icon, { className: "w-6 h-6" })}
               </div>
               
-              <h3 className="text-2xl font-bold mb-2 text-white tracking-tight">
+              <h3 className="text-lg font-bold mb-0.5 text-white tracking-tight">
                 {method.title}
               </h3>
               
-              <p className="text-lg font-medium text-white/80 group-hover:text-white transition-colors">
+              <p className="text-base font-medium text-white/80 group-hover:text-white transition-colors">
                 {method.info}
               </p>
             </div>

@@ -4,8 +4,8 @@ import {
   ContactInfoCards,
   ContactVisitInfo,
   ContactWhyWhatsApp,
-  
-  
+
+
   MapEmbed,
   ContactTrust,
   ContactForm,
@@ -14,22 +14,29 @@ import {
 
 const Contact = () => {
   return (
-    
+
     <div className="min-h-screen flex flex-col bg-white overflow-x-hidden">
 
-      {/* Hero Swiper - This component should have h-screen inside it */}
+
       <ContactHeroSwiper />
 
-      {/* Page Content */}
+
       <main className="flex-grow flex flex-col ">
-       
-        <ContactHeader /> 
-        <ContactInfoCards />
-        <ContactVisitInfo />
+        <ContactHeader />
+
+        <div className="max-w-7xl mx-auto px-4 py-2 w-full">
+          <div className="flex flex-col lg:flex-row gap-8 items-stretch">
+            <div className="w-full lg:w-[35%] flex flex-col gap-8">
+              <ContactInfoCards />
+              {/* <ContactVisitInfo /> */}
+            </div>
+            <div className="w-full lg:w-[65%]">
+              <MapEmbed />
+            </div>
+          </div>
+        </div>
+
         <ContactWhyWhatsApp />
-       
-       
-        <MapEmbed />
         <ContactTrust />
         <ContactForm />
       </main>

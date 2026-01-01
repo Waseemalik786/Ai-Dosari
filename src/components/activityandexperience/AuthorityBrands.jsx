@@ -62,7 +62,7 @@ const AuthorityPartners = () => {
   return (
     <div className="bg-green-50 py-4 px-4 rounded-2xl">
       <div className="max-w-7xl mx-auto text-center">
-        <h3 className="text-3xl md:text-3xl font-bold text-gray-900 mb-8">
+        <h3 className="text-4xl font-bold text-gray-900 mb-8">
           Our Trusted Wildlife  <span className="text-[#00627B]">Conservation Partners</span>
         </h3>
       </div>

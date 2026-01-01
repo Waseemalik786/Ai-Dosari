@@ -1,15 +1,17 @@
 import React from 'react'
 
-import HomeActivities from '../Components/Home/HomeActivities'
-import HomeTrips from '../Components/Home/HomeTrips'
-import HomeHeader from '../Components/Home/HomeHeader'
+import Homeactivity from '../components/home/Homeactivity'
+import HomeTrips from '../components/home/HomeTrips'
+import HomeHeader from '../components/home/HomeHeader'
+import Services from '../components/home/ExploreOurFacilities'
 
 export default function Home() {
   return (
     <div className='mt-10'>
       <HomeHeader/>
-      <HomeActivities/>
+      <Homeactivity/>
       <HomeTrips/>
+      <Services/>
     </div>
   )
 }
