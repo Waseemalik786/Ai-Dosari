@@ -35,7 +35,7 @@ const ContactHeroSwiper = () => {
   const swiperRef = useRef(null);
 
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-zinc-900">
+    <section className="relative w-full h-[100vh] lg:h-[100vh] overflow-hidden bg-zinc-900">
       <Swiper
         onSwiper={(swiper) => (swiperRef.current = swiper)}
         modules={[Autoplay, Navigation, EffectFade]}

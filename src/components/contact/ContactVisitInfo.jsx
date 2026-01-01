@@ -22,15 +22,14 @@ const items = [
 
 const ContactVisitInfo = () => {
   return (
-    <section className="px-4 md:px-8">
-      <div className="mx-auto max-w-7xl">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
-        >
+    <div className="w-full">
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2"
+      >
           {items.map((item, index) => {
             const Icon = item.icon;
             return (
@@ -52,7 +51,6 @@ const ContactVisitInfo = () => {
           })}
         </motion.div>
       </div>
-    </section>
   );
 };
 
