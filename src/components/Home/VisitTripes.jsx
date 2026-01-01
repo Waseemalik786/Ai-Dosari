@@ -38,7 +38,7 @@ export default function VisitTripes() {
 
         <div className="">
             <h3 className="text-2xl sm:text-4xl font-bold text-center text-gray-900 mb-12">
-                Choose Your Visit Type
+               <span className='text-[#00627B]'>Choose Your</span> Visit Type
             </h3>
             <div className="grid md:grid-cols-3 gap-8">
                 {tripTypes.map((trip, index) => (
@@ -47,7 +47,7 @@ export default function VisitTripes() {
                         className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-100"
                     >
                         {/* Header with gradient */}
-                        <div className={`bg-[#5F0020] p-6 text-white`}>
+                        <div className={`bg-[#00627B] p-6 text-white`}>
                             <div className="flex items-center justify-between mb-4">
                                 <div className="text-3xl">{trip.icon}</div>
                                 <span className="text-sm font-semibold bg-white/10 px-3 py-1 rounded-full">
@@ -63,14 +63,14 @@ export default function VisitTripes() {
                             <ul className="space-y-3 mb-6">
                                 {trip.features.map((feature, idx) => (
                                     <li key={idx} className="flex items-center text-gray-700">
-                                        <span className="w-2 h-2 bg-[#5F0020] rounded-full mr-3"></span>
+                                        <span className="w-2 h-2 bg-[#00627B] rounded-full mr-3"></span>
                                         {feature}
                                     </li>
                                 ))}
                             </ul>
                             <button
                                 onClick={() => handleWhatsAppBooking(trip.title)}
-                                className="w-full bg-[#5F0020] hover:bg-[#7A0030] text-white font-semibold py-3 rounded-lg text-md flex  items-center justify-center gap-2 transition-colors"
+                                className="w-full cursor-pointer bg-[#00627B] hover:bg-[#006277] text-white font-semibold py-2 rounded-lg text-md flex  items-center justify-center gap-2 transition-colors"
                             >
                                 <FaWhatsapp />
                                 Inquire About {trip.title}

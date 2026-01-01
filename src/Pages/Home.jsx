@@ -1,8 +1,9 @@
 import React from 'react'
 
-import HomeActivities from '../Components/Home/HomeActivities'
-import HomeTrips from '../Components/Home/HomeTrips'
-import HomeHeader from '../Components/Home/HomeHeader'
+import HomeActivities from '../components/home/HomeActivities'
+import HomeTrips from '../components/home/HomeTrips'
+import HomeHeader from '../components/home/HomeHeader'
+import Services from '../components/home/ExploreOurFacilities'
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <HomeHeader/>
       <HomeActivities/>
       <HomeTrips/>
+      <Services/>
     </div>
   )
 }

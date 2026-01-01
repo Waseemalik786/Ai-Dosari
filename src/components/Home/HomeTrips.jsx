@@ -11,7 +11,7 @@ export default function HomeTrips() {
                 <div className="text-center mb-10">
                  
                     <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-4">
-                        School Trips & Group Visits
+                       <span className='text-[#00627B]'>School Trips</span> & Group Visits
                     </h2>
                     <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                         Structured educational experiences and guided tours designed for learning, adventure, and conservation
@@ -22,7 +22,7 @@ export default function HomeTrips() {
                     {/* Left Content */}
                     <div>
                         <div className="mb-8">
-                            <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                            <h3 className="text-2xl font-bold text-[#00627B] mb-6">
                                 Why Choose Al Dosari Reserve for Group Visits?
                             </h3>
                             <div className="space-y-4">
@@ -36,8 +36,8 @@ export default function HomeTrips() {
                                 ].map((item, index) => (
                                     <div key={index} className="flex items-start">
                                         <div className="flex-shrink-0 mt-1">
-                                            <div className="w-6 h-6 rounded-full bg-[#5F0020]/10 flex items-center justify-center">
-                                                <span className="text-[#5F0020] text-sm font-bold">✓</span>
+                                            <div className="w-6 h-6 rounded-full bg-[#00627B]/10 flex items-center justify-center">
+                                                <span className="text-[#00627B] text-sm font-bold">✓</span>
                                             </div>
                                         </div>
                                         <p className="ml-3 text-gray-700 text-lg">{item}</p>
@@ -47,12 +47,12 @@ export default function HomeTrips() {
                         </div>
 
                         {/* Safety Note */}
-                        <div className="bg-[#5F0020]/10 border border-[#5F0020]/20 rounded-xl p-6">
+                        <div className="bg-[black]/1 border border-[#5F0020]/20 rounded-xl p-6">
                             <div className="flex items-start">
-                                <FaShieldAlt className="text-2xl text-[#5F0020] mt-1 mr-4" />
+                                <FaShieldAlt className="text-2xl text-[#00627B] mt-1 mr-4" />
                                 <div>
-                                    <h4 className="font-bold text-[#5F0020] text-lg mb-2">Safety & Organization</h4>
-                                    <p className="text-[#5F0020]">
+                                    <h4 className="font-bold text-[#00627B] text-lg mb-2">Safety & Organization</h4>
+                                    <p className="text-[#121212]">
                                         All group visits include trained staff, first-aid facilities, emergency plans, and appropriate safety equipment for activities.
                                     </p>
                                 </div>
@@ -73,15 +73,15 @@ export default function HomeTrips() {
                         <div className="absolute -bottom-6 left-6 right-6 bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-xl">
                             <div className="grid grid-cols-3 gap-4">
                                 <div className="text-center">
-                                    <div className="text-3xl font-bold text-[#5F0020]">500+</div>
+                                    <div className="text-3xl font-bold text-[#00627B]">500+</div>
                                     <div className="text-sm text-gray-600">School Groups</div>
                                 </div>
                                 <div className="text-center">
-                                    <div className="text-3xl font-bold text-[#5F0020]">10K+</div>
+                                    <div className="text-3xl font-bold text-[#00627B]">10K+</div>
                                     <div className="text-sm text-gray-600">Students Visited</div>
                                 </div>
                                 <div className="text-center">
-                                    <div className="text-3xl font-bold text-[#5F0020]">98%</div>
+                                    <div className="text-3xl font-bold text-[#00627B]">98%</div>
                                     <div className="text-sm text-gray-600">Satisfaction Rate</div>
                                 </div>
                             </div>

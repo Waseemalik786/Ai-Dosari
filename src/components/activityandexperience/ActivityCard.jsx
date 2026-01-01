@@ -16,7 +16,7 @@ const ActivityCard = ({ title, description, ageGroup, imageUrl, whatsappMessage 
       <p className="text-xs text-gray-500 mb-4"><strong>Suitable for:</strong> {ageGroup}</p>
       <button
         onClick={() => handleWhatsAppClick(whatsappMessage)}
-        className="bg-[#00627B] text-white py-2 px-5 rounded-full w-full hover:bg-[#004D63] cursor-pointer transition-all duration-300 text-sm"
+        className="bg-[#00627B] text-white py-2 px-5 rounded-lg w-full hover:bg-[#004D63] cursor-pointer transition-all duration-300 text-lg"
       >
         Book This Activity
       </button>

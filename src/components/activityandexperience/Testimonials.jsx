@@ -29,7 +29,7 @@ function Testimonials() {
     <div className="bg-gray-50 pb-8">
       <section className="container mx-auto px-6 text-center">
         {/* Title and Subtitle */}
-        <h2 className="text-4xl font-extrabold text-[#00627B] mb-8">What Our Visitors Say</h2>
+        <h2 className="text-4xl font-bold text-[#00627B] mb-8"><span className='text-black'>What Our</span> Visitors Say</h2>
         <p className="text-lg text-gray-600 mb-12">Real experiences shared by our happy guests. Read what they have to say about their time at Al Dosari Reserve!</p>
 
         {/* Testimonial Grid */}
