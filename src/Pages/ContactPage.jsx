@@ -1,23 +1,23 @@
 import React from "react";
-import ContactHeroSwiper from "../components/contact/ContactHeroSwiper";
-import ContactHeader from "../components/contact/ContactHeader";
-import ContactInfoCards from "../components/contact/ContactInfoCards";
-import ContactWhyWhatsApp from "../components/contact/ContactWhyWhatsApp";
-import MapEmbed from "../components/contact/MapEmbed";
-import ContactTrust from "../components/contact/ContactTrust";
-import ContactForm from "../components/contact/ContactForm";
+import ContactHeroSwiper from "../components/contact/ContactHeroSwiper.jsx";
+import ContactHeader from "../components/contact/ContactHeader.jsx";
+import ContactInfoCards from "../components/contact/ContactInfoCards.jsx";
+import ContactWhyWhatsApp from "../components/contact/ContactWhyWhatsApp.jsx";
+import MapEmbed from "../components/contact/MapEmbed.jsx";
+import ContactTrust from "../components/contact/ContactTrust.jsx";
+import ContactForm from "../components/contact/ContactForm.jsx";
 
-export default function ContactPage(){
+export default function ContactPage() {
   return (
 
     <div className="min-h-screen flex flex-col bg-white overflow-x-hidden">
 
 
-      <ContactHeroSwiper/>
+      <ContactHeroSwiper />
 
 
       <main className="flex-grow flex flex-col ">
-        <ContactHeader/>
+        <ContactHeader />
 
         <div className="max-w-7xl mx-auto px-4 py-2 w-full">
           <div className="flex flex-col lg:flex-row gap-8 items-stretch">
