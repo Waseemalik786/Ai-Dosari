@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaBars, FaTimes, FaChevronDown, FaChevronUp } from "react-icons/fa";
-import logo from '../../assets/al-logo.png';
+import logo from "../../assets/al-logo.png";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -37,7 +37,11 @@ const Navbar = () => {
       <div className="max-w-screen-xl mx-auto px-6 py-3 flex items-center justify-between">
         {/* Logo */}
         <div className="cursor-pointer transition-transform duration-300 hover:scale-105">
-          <img src={logo} alt="Al Dosari Reserve Logo" className="h-12 w-auto" />
+          <img
+            src={logo}
+            alt="Al Dosari Reserve Logo"
+            className="h-12 w-auto"
+          />
         </div>
 
         {/* Desktop Navigation Links */}
@@ -48,7 +52,9 @@ const Navbar = () => {
                 to={item.path}
                 className="relative px-3 py-2 text-lg font-semibold text-[#00627B] transition-all duration-300 group"
               >
-                <span className="relative z-10 group-hover:text-white">{item.name}</span>
+                <span className="relative z-10 group-hover:text-white">
+                  {item.name}
+                </span>
                 <div className="absolute inset-0 bg-[#004a5d] rounded-md scale-y-0 group-hover:scale-y-100 transition-transform duration-300 ease-out"></div>
               </Link>
             </li>
@@ -112,7 +118,11 @@ const Navbar = () => {
           className="text-[#00627B] md:hidden flex items-center p-2 rounded-md hover:bg-[#A9D4E8]/20 transition-colors duration-300"
           aria-label={isMobileMenuOpen ? "Close Menu" : "Open Menu"}
         >
-          {isMobileMenuOpen ? <FaTimes className="h-6 w-6" /> : <FaBars className="h-6 w-6" />}
+          {isMobileMenuOpen ? (
+            <FaTimes className="h-6 w-6" />
+          ) : (
+            <FaBars className="h-6 w-6" />
+          )}
         </button>
       </div>
 
