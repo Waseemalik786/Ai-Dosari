@@ -7,7 +7,7 @@ import {
   
   
   MapEmbed,
-  ContactTrust,
+  // ContactTrust,
   ContactForm,
   ContactHeader,
 } from "../components/contact";
@@ -30,7 +30,7 @@ const Contact = () => {
        
        
         <MapEmbed />
-        <ContactTrust />
+        {/* <ContactTrust /> */}
         <ContactForm />
       </main>
 
