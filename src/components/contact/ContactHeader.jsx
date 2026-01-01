@@ -7,8 +7,8 @@ const ContactHeader = () => {
     <section
       className="
         relative w-full
-        min-h-[45vh]
-        pt-10
+        min-h-[30vh]
+        pt-8 pb-4
         flex items-center justify-center
         overflow-hidden
         bg-white

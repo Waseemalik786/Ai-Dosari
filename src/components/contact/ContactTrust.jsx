@@ -57,9 +57,9 @@ const ContactTrust = () => {
 
   return (
     <div
-      className="w-full py-16 px-4 relative"
+      className="w-full py-10 px-4 relative"
       style={{
-        backgroundImage: 'url("https://images.pexels.com/photos/167699/pexels-photo-167699.jpeg?auto=compress&cs=tinysrgb&w=1600")',
+        backgroundImage: 'url("https://images.unsplash.com/photo-1472214103451-9374bd1c798e")',
         backgroundAttachment: "fixed",
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -69,10 +69,10 @@ const ContactTrust = () => {
       {/* Black Overlay */}
       <div className="absolute inset-0 bg-black/40"></div>
 
-      <div className="relative z-10 max-w-6xl mx-auto">
+      <div className="relative z-10 max-w-4xl mx-auto">
         {/* Animated Title */}
         <motion.h2
-          className="text-3xl md:text-5xl font-bold text-center text-white mb-12 tracking-tight"
+          className="text-2xl md:text-4xl font-bold text-center text-white mb-8 tracking-tight"
           variants={titleVariants}
           initial="hidden"
           whileInView="visible"
@@ -83,7 +83,7 @@ const ContactTrust = () => {
 
         {/* Stats Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-3 gap-5"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -92,41 +92,42 @@ const ContactTrust = () => {
           {stats.map((item) => (
             <motion.div
               key={item.id}
-              className="bg-white/95 backdrop-blur-sm rounded-xl p-8 flex flex-col border-2 border-gray-200 transition-all duration-300 cursor-default shadow-lg"
+              className="bg-white/95 backdrop-blur-sm rounded-xl p-6 flex flex-col border-2 border-gray-200 transition-all duration-300 cursor-default shadow-lg"
               variants={cardVariants}
               whileHover={{
-                y: -8,
+                y: -5,
                 borderColor: "#00627B",
-                boxShadow: "0 15px 30px rgba(0, 0, 0, 0.3)",
+                boxShadow: "0 10px 20px rgba(0, 0, 0, 0.2)",
               }}
             >
               {/* Icon Wrapper */}
-              <div className="flex justify-center mb-5">
+              <div className="flex justify-center mb-4">
                 <motion.div
-                  className="rounded-full p-4 bg-gray-100 text-[#00627B] shadow-inner"
+                  className="rounded-full p-3 bg-gray-100 text-[#00627B] shadow-inner"
                   whileHover={{
-                    scale: 1.1,
+                    scale: 1.05,
                     backgroundColor: "#00627B",
                     color: "white",
                   }}
                   transition={{ duration: 0.2 }}
                 >
-                  {item.icon}
+                  {/* Smaller Icon size */}
+                  {React.cloneElement(item.icon, { className: "w-6 h-6" })}
                 </motion.div>
               </div>
 
               {/* Stat Value (Title) */}
-              <h3 className="text-3xl font-black text-center text-[#1e1e1e] mb-3">
+              <h3 className="text-2xl font-black text-center text-[#1e1e1e] mb-2">
                 {item.title}
               </h3>
 
               {/* Label (Description) */}
-              <p className="text-sm text-gray-600 text-center leading-relaxed font-medium">
+              <p className="text-xs text-gray-600 text-center leading-relaxed font-medium">
                 {item.description}
               </p>
               
               {/* Optional Decorative Line */}
-              <div className="mt-6 w-12 h-1 bg-[#00627B]/20 mx-auto rounded-full group-hover:w-20 transition-all duration-300" />
+              <div className="mt-4 w-10 h-1 bg-[#00627B]/20 mx-auto rounded-full group-hover:w-16 transition-all duration-300" />
             </motion.div>
           ))}
         </motion.div>
