@@ -6,14 +6,6 @@ import ContactWhyWhatsApp from "../components/contact/ContactWhyWhatsApp.jsx";
 import MapEmbed from "../components/contact/MapEmbed.jsx";
 import ContactTrust from "../components/contact/ContactTrust.jsx";
 import ContactForm from "../components/contact/ContactForm.jsx";
-// import {
-//   ContactInfoCards,
-//   ContactWhyWhatsApp,
-//   MapEmbed,
-//   ContactTrust,
-//   ContactForm,
-//   ContactHeader,
-// } from "../components/contact";
 
 const ContactPage = () => {
   return (

@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import ContactPage from "./pages/ContactPage";
+import ContactPage from "./pages/ContactPage.jsx";
 import About from "./pages/About";
 import Navbar from './components/common/Navbar';
 import Footer from './components/common/Footer';
