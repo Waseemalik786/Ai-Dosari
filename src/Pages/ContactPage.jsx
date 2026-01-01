@@ -7,7 +7,7 @@ import MapEmbed from "../components/contact/MapEmbed.jsx";
 import ContactTrust from "../components/contact/ContactTrust.jsx";
 import ContactForm from "../components/contact/ContactForm.jsx";
 
-const ContactPage = () => {
+export default function ContactPage(){
   return (
 
     <div className="min-h-screen flex flex-col bg-white overflow-x-hidden">
@@ -40,4 +40,3 @@ const ContactPage = () => {
   );
 };
 
-export default ContactPage;
