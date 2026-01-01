@@ -30,7 +30,7 @@ function Testimonials() {
       <section className="container mx-auto px-6 text-center">
         {/* Title and Subtitle */}
         <h2 className="text-4xl font-bold text-[#00627B] mb-8"><span className='text-black'>What Our</span> Visitors Say</h2>
-        <p className="text-lg text-gray-600 mb-12">Real experiences shared by our happy guests. Read what they have to say about their time at Al Dosari Reserve!</p>
+        <p className="text-lg text-gray-600 mb-12">Real experiences shared by our happy guests. Read what they have to say about their time at Al Dosari Reserve</p>
 
         {/* Testimonial Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
