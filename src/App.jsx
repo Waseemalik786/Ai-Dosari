@@ -7,7 +7,7 @@ import Navbar from './components/common/Navbar';
 import Footer from './components/common/Footer';
 import WhatSapp from './components/common/Whatsapp';
 import ActivitiesExperiences from './Pages/ActivitiesExperiences';
-// import Home from './Pages/Home';
+import Home from './Pages/Home';
 
 
 
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
   {
     element: <MainLayout />,
     children: [
-      // { path: "/", element: <Home /> },
+      { path: "/", element: <Home /> },
       { path: "/about", element: <About /> },
       { path: "/activities", element: <ActivitiesExperiences /> },
 
