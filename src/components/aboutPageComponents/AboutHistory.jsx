@@ -72,7 +72,7 @@ const AboutHistory = () => {
           {/* Central Line */}
           <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-[1px] bg-slate-200 hidden lg:block"></div>
 
-          <div className="space-y-20 lg:space-y-32">
+          <div className="space-y-10 lg:space-y-15">
             {timelineEvents.map((event, index) => (
               <div
                 key={index}
@@ -113,29 +113,6 @@ const AboutHistory = () => {
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Bottom Stats - Hero Bottom Style Consistency */}
-        <div className="mt-32 grid grid-cols-1 md:grid-cols-3 border-y border-slate-100 divide-y md:divide-y-0 md:divide-x divide-slate-100">
-          {[
-            { value: "13+", label: "Years of Excellence" },
-            { value: "100+", label: "Conservation Projects" },
-            { value: "50K+", label: "Happy Visitors" },
-          ].map((stat, index) => (
-            <div
-              key={index}
-              className="py-12 px-6 text-center group hover:bg-[#00627b]/5 transition-all"
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
-            >
-              <div className="text-5xl font-black text-[#00627b] mb-2 tracking-tighter italic">
-                {stat.value}
-              </div>
-              <div className="text-slate-400 font-bold text-sm uppercase tracking-[4px]">
-                {stat.label}
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </section>

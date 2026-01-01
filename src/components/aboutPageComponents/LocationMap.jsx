@@ -34,7 +34,7 @@ const LocationMap = () => {
             className="rounded-sm overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border-8 border-white group"
             data-aos="fade-right"
           >
-            <div className="relative h-[500px] bg-slate-100">
+            <div className="relative h-125 bg-slate-100">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3600.000000000000!2d51.1895!3d25.4856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDI5JzA4LjIiTiA1McKwMTEnMjIuMiJF!5e0!3m2!1sen!2sqa!4v1620000000000!5m2!1sen!2sqa"
                 className="absolute inset-0 w-full h-full border-0 grayscale hover:grayscale-0 transition-all duration-700"

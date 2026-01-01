@@ -3,12 +3,14 @@ import "./App.css";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
+import WhatSapp from "./components/common/Whatsapp";
+import ActivitiesExperiences from "./Pages/Activities&Experiences";
+import Contact from "./Pages/Contact";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
-import WhatSapp from "./components/common/Whatsapp";
 
 const MainLayout = () => (
-  <div className="lg:mx-auto lg:max-w-384">
+  <div>
     <Navbar />
     <Outlet />
     <WhatSapp />
@@ -22,6 +24,8 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <Home /> },
       { path: "/about", element: <About /> },
+      { path: "/activities", element: <ActivitiesExperiences /> },
+      { path: "/contact", element: <Contact /> },
     ],
   },
   // { path: "*", element: <PageNotFound /> },

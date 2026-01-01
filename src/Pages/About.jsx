@@ -9,7 +9,7 @@ import PartnershipSection from "../components/aboutPageComponents/PartnershipSec
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-linear-to-b from-green-50 to-white">
+    <div className="min-h-screen bg-linear-to-b from-green-50 to-white overflow-hidden">
       <AboutHero />
       <AboutHistory />
       <MissionVision />

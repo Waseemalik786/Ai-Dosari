@@ -3,7 +3,7 @@ import { FaLeaf, FaMountain, FaWater } from "react-icons/fa";
 
 const AboutHero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden lg:pt-16">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden lg:pt-16 text-center">
       {/* REAL Background Image - No more boring white look */}
       <div
         className="absolute inset-0 z-0"
@@ -18,7 +18,7 @@ const AboutHero = () => {
         <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/40 to-transparent"></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className=" px-6 relative z-10">
         <div className="max-w-4xl">
           {/* Main Content */}
           <div className="space-y-4" data-aos="fade-up">

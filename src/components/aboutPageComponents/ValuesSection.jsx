@@ -48,9 +48,9 @@ const ValuesSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="pt-24 bg-white relative overflow-hidden">
       {/* Background Subtle Text ✅ */}
-      <div className="absolute right-[-20px] top-10 opacity-[0.03] select-none pointer-events-none">
+      <div className="absolute -right-5 top-10 opacity-[0.03] select-none pointer-events-none">
         <h2 className="text-[150px] font-black uppercase tracking-tighter italic">
           Principles
         </h2>
@@ -71,29 +71,31 @@ const ValuesSection = () => {
         </div>
 
         {/* Values Grid - Clean Minimalist Style ✅ */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border border-slate-100 mb-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border border-slate-100">
           {values.map((value, index) => (
             <div
               key={index}
-              className="p-12 border border-slate-50 hover:bg-[#00627b] group transition-all duration-500"
+              className=" group transition-all duration-500"
               data-aos="fade-up"
               data-aos-delay={index * 50}
             >
-              <div className="text-3xl text-[#00627b] group-hover:text-white mb-8 transition-colors">
-                {value.icon}
+              <div className="p-12 w-full h-full border transition duration-400  border-slate-50 hover:bg-[#00627b]">
+                <div className="text-3xl text-[#00627b] group-hover:text-white mb-8 transition-colors">
+                  {value.icon}
+                </div>
+                <h3 className="text-2xl font-black text-slate-900 group-hover:text-white uppercase tracking-tighter italic mb-4 transition-colors">
+                  {value.title}
+                </h3>
+                <p className="text-slate-500 group-hover:text-white/80 font-light leading-relaxed transition-colors">
+                  {value.description}
+                </p>
               </div>
-              <h3 className="text-2xl font-black text-slate-900 group-hover:text-white uppercase tracking-tighter italic mb-4 transition-colors">
-                {value.title}
-              </h3>
-              <p className="text-slate-500 group-hover:text-white/80 font-light leading-relaxed transition-colors">
-                {value.description}
-              </p>
             </div>
           ))}
         </div>
 
         {/* Environmental Impact - Side-by-Side Professional Layout ✅ */}
-        <div className="relative border-t border-slate-100 pt-32">
+        <div className="relative  pt-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div data-aos="fade-right">
               <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-8 uppercase tracking-tighter italic leading-none">

@@ -29,7 +29,7 @@ const TeamSection = () => {
       name: "Mohammed Hassan",
       role: "Education Director",
       image:
-        "https://images.unsplash.com/photo-1551836026-d5c2c8e71359?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFsZXxlbnwwfHwwfHx8MA%3D%3D",
       description:
         "Develops educational programs for schools and universities.",
       social: { linkedin: "#", facebook: "#" },
