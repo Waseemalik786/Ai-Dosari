@@ -1,206 +1,113 @@
 import { useState } from "react";
-import { FaHome } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
-  const navigate = useNavigate()
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-    contact: "",
+  const navigate = useNavigate();
+  const [data, setData] = useState({
+    name: "", email: "", password: "", confirmPassword: "", contact: ""
   });
+  const [err, setErr] = useState({});
 
-  // Errors State
-  const [errors, setErrors] = useState({});
-  const storedUser = JSON.parse(localStorage.getItem("user"))
+  const handleChange = e =>
+    setData({ ...data, [e.target.name]: e.target.value });
 
-  // Strong Password Requirements
-  const isStrongPassword = (password) =>
-    /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/.test(password);
-
-  // Input handler
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  // Form handler
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
-    console.log(storedUser);
-    
+    const eObj = {};
 
-    const newErrors = {};
+    if (!data.name) eObj.name = "Required";
+    if (!data.email) eObj.email = "Required";
+    if (!/^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/.test(data.password))
+      eObj.password = "Weak password";
+    if (data.password !== data.confirmPassword)
+      eObj.confirmPassword = "Mismatch";
+    if (!/^\+\d{9,15}$/.test(data.contact))
+      eObj.contact = "Invalid number";
 
-    if (!formData.name.trim()) {
-      newErrors.name = "Name is Required";
-    }
+    setErr(eObj);
+    if (Object.keys(eObj).length) return;
 
-    if (!formData.email) {
-      newErrors.email = "Email is required";
-    }
-
-    if (!formData.password) {
-      newErrors.password = "Password is Required";
-    } else if (!isStrongPassword(formData.password)) {
-      newErrors.password =
-        "Password must be strong (8 chars, 1 capital, number & special char)";
-    }
-
-    if (formData.confirmPassword !== formData.password) {
-      newErrors.confirmPassword = "Passwords do not match";
-    }
-
-    if (!/^\+\d{9,15}$/.test(formData.contact)) {
-      newErrors.contact = "Enter valid number with '+'";
-    }
-
-    setErrors(newErrors);
-    if (Object.keys(newErrors).length > 0) return;
-
-      localStorage.setItem("user", JSON.stringify(formData));
-    alert("✅ Signup successful! Please login now.");
+    localStorage.setItem("user", JSON.stringify(data));
+    alert("✅ Signup successful!");
     navigate("/login");
-
   };
+
+  const Input = ({ name, type, label, placeholder, className }) => (
+    <div>
+      <label className="block text-xs font-medium text-gray-500 mb-1">
+        {label}
+      </label>
+      <input
+        name={name}
+        type={type}
+        value={data[name]}
+        onChange={handleChange}
+        placeholder={placeholder}
+        className={`
+          w-full rounded-xl border border-gray-300 px-4 py-3 text-sm
+          focus:ring-2 focus:ring-[#00627B] focus:border-[#00627B]
+          transition ${className || ""}
+        `}
+      />
+      {err[name] && <p className="text-xs text-red-600 mt-1">{err[name]}</p>}
+    </div>
+  );
 
   return (
-    <div className="min-h-screen w-screen flex items-center justify-center bg-[#f6f9f6] px-4 absolute z-50">
-      {/* Card */}
-      <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-6 sm:p-8">
+    <div className="min-h-screen w-full mt-16 flex items-center justify-center bg-gradient-to-br from-[#e6f2f6] to-[#f9fcfd] px-4">
+      <div className="relative w-full max-w-md bg-white rounded-3xl shadow-2xl p-6 sm:p-8">
+
+        {/* Accent */}
+        <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#00627B] to-[#00a0c6]" />
+
         {/* Header */}
-        <div className="text-center mb-6">
-          <h1 className="text-2xl font-semibold text-[#1f3d2b]">Sign Up</h1>
-          <p className="text-sm text-gray-500 mt-1">
-            Join the Al Dosari Reserve Portal
+        <div className="text-center mb-8">
+          <h1 className="text-3xl font-bold text-[#00627B]">
+            Create Account
+          </h1>
+          <p className="text-sm text-gray-500 mt-2">
+            Join Al Dosari Reserve Portal
           </p>
         </div>
 
-        {/* Form */}
-        <form onSubmit={handleSubmit} className="space-y-4">
-          {/* Name */}
-          <div>
-            <label className="block text-sm text-gray-600 mb-1">
-              Full Name
-            </label>
-            <input
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              type="text"
-              placeholder="Enter your full name"
-              className="w-full rounded-lg border border-gray-300 px-4 py-2 text-sm focus:outline-none focus:border-[#1f3d2b]"
-            />
-            {errors.name && (
-              <p className="mt-1 text-sm text-red-600">{errors.name}</p>
-            )}
-          </div>
+        <form onSubmit={handleSubmit} className="space-y-5">
+          <Input name="name" type="text" label="FULL NAME" placeholder="John Doe" />
+          <Input name="email" type="email" label="EMAIL ADDRESS" placeholder="you@example.com" />
+          <Input name="password" type="password" label="PASSWORD" placeholder="Create password" />
+          <Input name="confirmPassword" type="password" label="CONFIRM PASSWORD" placeholder="Re-enter password" />
+          <Input name="contact" type="text" label="PHONE / WHATSAPP" placeholder="+966XXXXXXXXX" />
 
-          {/* Email */}
-          <div>
-            <label className="block text-sm text-gray-600 mb-1">Email</label>
-            <input
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              type="email"
-              placeholder="you@example.com"
-              className="w-full rounded-lg border border-gray-300 px-4 py-2 text-sm focus:outline-none focus:border-[#1f3d2b]"
-            />
-            {errors.email && (
-              <p className="mt-1 text-sm text-red-600">{errors.email}</p>
-            )}
-          </div>
-
-          {/* Password */}
-          <div>
-            <label className="block text-sm text-gray-600 mb-1">
-              Password
-            </label>
-            <input
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              type="password"
-              placeholder="Enter password"
-              className="w-full rounded-lg border border-gray-300 px-4 py-2 text-sm focus:outline-none focus:border-[#1f3d2b]"
-            />
-            {errors.password && (
-              <p className="mt-1 text-sm text-red-600">{errors.password}</p>
-            )}
-          </div>
-
-          {/* Confirm Password */}
-          <div>
-            <label className="block text-sm text-gray-600 mb-1">
-              Confirm Password
-            </label>
-            <input
-              name="confirmPassword"
-              value={formData.confirmPassword}
-              onChange={handleChange}
-              type="password"
-              placeholder="Confirm password"
-              className="w-full rounded-lg border border-gray-300 px-4 py-2 text-sm focus:outline-none focus:border-[#1f3d2b]"
-            />
-            {errors.confirmPassword && (
-              <p className="mt-1 text-sm text-red-600">
-                {errors.confirmPassword}
-              </p>
-            )}
-          </div>
-
-          {/* Phone / WhatsApp */}
-          <div>
-            <label className="block text-sm text-gray-600 mb-1">
-              Phone / WhatsApp
-            </label>
-            <input
-              name="contact"
-              value={formData.contact}
-              onChange={handleChange}
-              type="text"
-              placeholder="+966 xxx xxx xxx"
-              className="w-full rounded-lg border border-gray-300 px-4 py-2 text-sm focus:outline-none focus:border-[#1f3d2b]"
-            />
-            {errors.contact && (
-              <p className="mt-1 text-sm text-red-600">{errors.contact}</p>
-            )}
-          </div>
-
-          {/* Submit Button */}
           <button
             type="submit"
-            className="w-full bg-[#1f3d2b] text-white py-2.5 rounded-lg text-sm font-medium hover:bg-[#173023] transition"
+            className="w-full bg-gradient-to-r cursor-pointer from-[#00627B] to-[#008db0]
+                       text-white py-3 rounded-xl text-sm font-semibold
+                       hover:shadow-lg hover:scale-[1.01]
+                       active:scale-[0.98] transition"
           >
             Sign Up
           </button>
         </form>
 
-        {/* Login Button */}
-        <button
-          type="button"
-          className="w-full border border-gray-300 text-[#1f3d2b] py-2.5 rounded-lg text-sm font-medium hover:bg-gray-100 transition mt-2"
-        >
-          Already have an account? Login
-        </button>
+        {/* Divider */}
+        <div className="flex items-center my-6">
+          <div className="flex-grow h-px bg-gray-200" />
+          <span className="px-3 text-xs text-gray-400">OR</span>
+          <div className="flex-grow h-px bg-gray-200" />
+        </div>
 
         {/* Footer */}
-        <p className="text-xs text-gray-500 text-center mt-3">
-          By signing up, your account will be reviewed by the admin.
-        </p>
+        <div className="text-center">
+          <button
+            onClick={() => navigate("/login")}
+            className="text-sm font-semibold cursor-pointer text-[#00627B] hover:underline"
+          >
+            Already have an account? Login
+          </button>
+        </div>
+
       </div>
     </div>
   );
 };
 
 export default SignUp;
-
-
-
-

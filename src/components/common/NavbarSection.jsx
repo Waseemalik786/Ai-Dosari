@@ -1,39 +1,26 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { FaBars, FaTimes, FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
 import logo from "../../assets/al-logo.png";
 import { useTranslation } from "react-i18next";
-import i18n from "../../i18n/index";
+import i18n from "../../i18n";
 
 const NavbarSection = () => {
   const { t } = useTranslation("navbar");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
-  const [languageHovered, setLanguageHovered] = useState(false);
+  const [isLangOpen, setIsLangOpen] = useState(false);
 
   const languages = [
     { code: "en", name: "English" },
     { code: "ar", name: "العربية" },
   ];
 
-  const currentLanguageLabel =
-    languages.find((lang) => lang.code === i18n.language)?.name || "English";
+  const currentLang =
+    languages.find((l) => l.code === i18n.language)?.name || "English";
 
-  // Force LTR layout
   useEffect(() => {
     document.dir = "ltr";
   }, []);
-
-  // Dynamic text alignment for Arabic vs English
-  const textAlign = i18n.language === "ar" ? "text-right" : "text-left";
-  const itemsAlign = i18n.language === "ar" ? "items-end" : "items-start";
-
-  const handleLanguageChange = (langCode) => {
-    i18n.changeLanguage(langCode);
-    setIsLanguageDropdownOpen(false);
-  };
-
-  const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
   const navLinks = [
     { name: t("nav.home"), path: "/" },
@@ -43,61 +30,147 @@ const NavbarSection = () => {
     { name: t("nav.contact"), path: "/contact" },
   ];
 
-  return (
-    <nav className="bg-white z-50 shadow-lg fixed top-0 w-full border-b border-gray-200">
-      <div className="max-w-screen-xl mx-auto px-6 py-3 flex items-center justify-between">
-        {/* Logo */}
-        <div className="cursor-pointer transition-transform duration-300 hover:scale-105">
-          <img src={logo} alt="Al Dosari Reserve Logo" className="h-12 w-auto" />
-        </div>
+  const changeLang = (code) => {
+    i18n.changeLanguage(code);
+    setIsLangOpen(false);
+    setIsMobileMenuOpen(false);
+  };
 
-        {/* Desktop Navigation Links */}
-        <ul className={`hidden md:flex space-x-4 ${itemsAlign}`}>
-          {navLinks.map((item) => (
-            <li key={item.name} className={`group relative ${textAlign}`}>
-              <Link
-                to={item.path}
-                className="relative px-3 py-2 text-lg font-semibold text-[#00627B] transition-all duration-300 group"
-              >
-                <span className="relative z-10 group-hover:text-white">{item.name}</span>
-                <div className="absolute inset-0 bg-[#004a5d] rounded-md scale-y-0 group-hover:scale-y-100 transition-transform duration-300 ease-out"></div>
-              </Link>
-            </li>
+  return (
+    <nav className="fixed top-0 w-full bg-white shadow-md z-50">
+      <div className="max-w-screen-xl mx-auto px-6 py-3 flex justify-between items-center">
+
+        {/* Logo */}
+        <img src={logo} alt="Logo" className="h-12 cursor-pointer hover:scale-105 transition" />
+
+        {/* Desktop Nav */}
+        <ul className="hidden md:flex space-x-4">
+          {navLinks.map((l) => (
+            <Link
+              key={l.name}
+              to={l.path}
+              className="text-[#00627B] font-semibold px-3 py-2 rounded-md hover:bg-[#004a5d] hover:text-white transition"
+            >
+              {l.name}
+            </Link>
           ))}
         </ul>
 
-        {/* Language Dropdown & Desktop CTA */}
-        <div className={`flex items-center space-x-4 ${itemsAlign}`}>
-          {/* Language Selector */}
-          <div
-            className="relative"
-            onMouseEnter={() => {
-              setLanguageHovered(true);
-              setIsLanguageDropdownOpen(true);
+        {/* Desktop Right Buttons */}
+        <div className="hidden md:flex items-center space-x-4">
+
+        {/* Language Selector */}
+<div
+  className="relative"
+  onMouseEnter={() => setIsLangOpen(true)}
+  onMouseLeave={() => setIsLangOpen(false)}
+>
+  <button
+    aria-haspopup="listbox"
+    aria-expanded={isLangOpen}
+    className="flex items-center gap-2 border px-4 py-1.5 rounded-md text-[#00627B] border-[#00627B]/20 hover:bg-[#A9D4E8]/20 transition-all duration-200 cursor-pointer"
+  >
+    <span className="font-medium text-sm">{currentLang}</span>
+    <FaChevronDown 
+      className={`text-[10px] transition-transform duration-300 ${isLangOpen ? "rotate-180" : ""}`} 
+    />
+  </button>
+
+  {/* Dropdown Menu */}
+  {isLangOpen && (
+    <div className="absolute left-0 top-full pt-2 w-30 z-50">
+      <div className="bg-white rounded-lg shadow-2xl border border-gray-100 overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+        {languages.map((lang) => (
+          <button
+            key={lang.code}
+            onClick={() => {
+              changeLang(lang.code);
+              setIsLangOpen(false); // Close menu after selection
             }}
-            onMouseLeave={() => {
-              setLanguageHovered(false);
-              setIsLanguageDropdownOpen(false);
-            }}
+            className={`w-full px-4 py-2.5 text-left text-sm transition-colors cursor-pointer flex items-center justify-between
+              ${i18n.language === lang.code 
+                ? "bg-[#00627B] text-white" 
+                : "text-[#00627B] hover:bg-[#A9D4E8]/30"
+              }`}
           >
-            <button className="flex cursor-pointer items-center cursor-pointer px-4 py-1 rounded-md text-lg font-medium text-[#00627B] border border-[#00627B]/30">
-              <span className="relative text-[16px] z-10 flex items-center">
-                {currentLanguageLabel}
-                {languageHovered ? (
-                  <FaChevronUp className="ml-2 text-xs" />
-                ) : (
-                  <FaChevronDown className="ml-2 text-xs" />
-                )}
-              </span>
+            {lang.name}
+            {/* Visual indicator for active language */}
+            {i18n.language === lang.code && (
+              <div className="w-1.5 h-1.5 rounded-full bg-white" />
+            )}
+          </button>
+        ))}
+      </div>
+    </div>
+  )}
+</div>
+
+          {/* Book a Visit */}
+          <a
+            href="https://wa.me/320303"
+            className="bg-[#00627B] text-white py-1 px-5 rounded-lg shadow-md hover:bg-[#004a5d] transition"
+          >
+            {t("nav.bookVisit")}
+          </a>
+
+          {/* Login */}
+          <Link
+            to="/login"
+            className="flex items-center gap-2 border px-4 py-1.5 rounded-md text-[#00627B] border-[#00627B]/20 hover:bg-[#A9D4E8]/20 transition-all duration-200 cursor-pointer"
+          >
+            {t("nav.login")}
+          </Link>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden text-[#00627B]"
+          onClick={() => {
+            setIsMobileMenuOpen(!isMobileMenuOpen);
+            setIsLangOpen(false);
+          }}
+        >
+          {isMobileMenuOpen ? <FaTimes size={22} /> : <FaBars size={22} />}
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden bg-white border-t px-6 py-6 space-y-6">
+
+          {/* Links */}
+          {navLinks.map((l) => (
+            <Link
+              key={l.name}
+              to={l.path}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="block text-[#00627B] text-lg font-medium py-2"
+            >
+              {l.name}
+            </Link>
+          ))}
+
+          {/* Language Selector */}
+          <div>
+            <button
+              onClick={() => setIsLangOpen(!isLangOpen)}
+              className="w-full flex justify-between items-center border px-4 py-3 rounded-md text-[#00627B]"
+            >
+              {currentLang}
+              <FaChevronDown className={`transition ${isLangOpen ? "rotate-180" : ""}`} />
             </button>
 
-            {isLanguageDropdownOpen && (
-              <div className="absolute left-0 mt-1.5 w-40 bg-white rounded-md shadow-lg py-1 z-50 border border-gray-200">
+            {isLangOpen && (
+              <div className="mt-3 space-y-2">
                 {languages.map((lang) => (
                   <button
                     key={lang.code}
-                    onClick={() => handleLanguageChange(lang.code)}
-                    className="block w-full cursor-pointer text-left px-6 py-3 text-lg text-[#00627B] hover:bg-[#A9D4E8]/30 hover:text-[#004a5d] transition-colors duration-200"
+                    onClick={() => changeLang(lang.code)}
+                    className={`w-full py-2 rounded-md text-center ${
+                      i18n.language === lang.code
+                        ? "bg-[#00627B] text-white"
+                        : "bg-[#A9D4E8]/30 text-[#00627B]"
+                    }`}
                   >
                     {lang.name}
                   </button>
@@ -106,79 +179,17 @@ const NavbarSection = () => {
             )}
           </div>
 
-          {/* Desktop "Book a Visit" Button */}
-          <a
-            href="https://wa.me/320303"
-            className="hidden md:block text-white bg-[#00627B] hover:bg-[#004a5d] py-1 px-5 rounded-full shadow-xl transition duration-300 hover:scale-110 transform font-medium"
-          >
-            {t("nav.bookVisit")}
-          </a>
-
-          {/* Desktop "Login" Button */}
-          <Link
-            to="/login"
-            className="hidden md:block text-[#00627B] border border-[#00627B] hover:bg-[#A9D4E8]/30 py-1 px-5 rounded-full shadow-md transition duration-300 hover:scale-105 font-medium"
-          >
-            {t("nav.login")}
-          </Link>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <button
-          onClick={toggleMobileMenu}
-          className="text-[#00627B] md:hidden flex items-center p-2 rounded-md hover:bg-[#A9D4E8]/20 transition-colors duration-300"
-        >
-          {isMobileMenuOpen ? <FaTimes className="h-6 w-6" /> : <FaBars className="h-6 w-6" />}
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="bg-white p-6 md:hidden transition-all duration-300 ease-in-out border-t border-gray-200">
-          <ul className={`space-y-6 ${textAlign}`}>
-            {navLinks.map((item) => (
-              <li key={item.name}>
-                <Link
-                  to={item.path}
-                  className={`text-[#00627B] hover:text-[#004a5d] hover:bg-[#A9D4E8]/20 block text-lg py-3 px-4 rounded-md transition duration-300 font-medium ${textAlign}`}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-
-          {/* Mobile CTA & Language Buttons */}
-          <div className={`flex flex-col space-y-6 mt-8 ${itemsAlign}`}>
-            <div className="flex justify-center space-x-4">
-              {languages.map((lang) => (
-                <button
-                  key={lang.code}
-                  onClick={() => handleLanguageChange(lang.code)}
-                  className={`text-lg py-3 px-6 rounded-full transition duration-300 ${
-                    currentLanguageLabel === lang.name
-                      ? "bg-[#00627B] text-white"
-                      : "bg-[#A9D4E8]/30 text-[#00627B] hover:bg-[#A9D4E8]/50"
-                  }`}
-                >
-                  {lang.name}
-                </button>
-              ))}
-            </div>
-
-            {/* Mobile "Book a Visit" Button */}
+          {/* Mobile Buttons */}
+          <div className="flex flex-col gap-4 mt-6">
             <a
               href="https://wa.me/320303"
-              className="text-white bg-[#00627B] hover:bg-[#004a5d] py-3 px-8 rounded-full shadow-xl transition duration-300 text-center font-medium"
+              className="bg-[#00627B] text-white py-3 rounded-full text-center"
             >
               {t("nav.bookVisit")}
             </a>
-
-            {/* Mobile "Login" Button */}
             <Link
               to="/login"
-              className="text-[#00627B] border border-[#00627B] hover:bg-[#A9D4E8]/30 py-3 px-8 rounded-full shadow-md transition duration-300 text-center font-medium"
+              className="border border-[#00627B] text-[#00627B] py-3 rounded-full text-center"
             >
               {t("nav.login")}
             </Link>
