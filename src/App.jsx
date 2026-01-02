@@ -6,7 +6,7 @@ import ActivitiesExperiences from "./pages/ActivitiesExperiences";
 import ContactPage from "./pages/ContactPage";
 import WhatsApp from "./components/common/Whatsapp";
 import FooterSection from "./components/common/FooterSection";
-import NavbarSection from "./Components/common/NavbarSection";
+import NavbarSection from "./components/common/NavbarSection";
 import MainHome from "./pages/MainHome";
 
 const MainLayout = () => (
