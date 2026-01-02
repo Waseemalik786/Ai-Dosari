@@ -1,0 +1,12 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "activities": "Activities",
+    "gallery": "Gallery",
+    "contact": "Contact",
+    "bookVisit": "Book a Visit",
+    "login": "Login",
+    "language": "English"
+  }
+}

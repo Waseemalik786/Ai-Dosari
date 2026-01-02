@@ -1,0 +1,26 @@
+{
+  "brand": {
+    "description": "Explore wildlife like never before. Join us in our mission to protect endangered species and provide education about the animal kingdom."
+  },
+  "quickLinks": {
+    "title": "Quick Links",
+    "links": ["Home", "About", "Activities", "Events"]
+  },
+  "resources": {
+    "title": "Resources",
+    "links": ["FAQ", "Blog & News", "Volunteer", "Support Center"]
+  },
+  "contact": {
+    "title": "Contact Us",
+    "address": "123 Safari Lane, Animal City",
+    "phone": "+123 456 7890",
+    "email": "info@zooworld.org"
+  },
+  "bottomBar": {
+    "copyright": "© {{year}} Al Dosari Reserve. All rights reserved.",
+    "links": [
+      { "label": "Privacy Policy", "link": "#" },
+      { "label": "Terms of Service", "link": "#" }
+    ]
+  }
+}
