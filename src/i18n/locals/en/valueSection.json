@@ -1,0 +1,57 @@
+{
+  "bgText": "Principles",
+  "badge": "What Drives Us",
+  "heading": {
+    "main": "Our Core",
+    "highlight": "Values"
+  },
+  "values": [
+    {
+      "id": "passion",
+      "title": "Passion",
+      "description": "Our team's dedication to animal welfare drives everything we do."
+    },
+    {
+      "id": "stewardship",
+      "title": "Stewardship",
+      "description": "Commitment to sustainable practices and habitat protection."
+    },
+    {
+      "id": "community",
+      "title": "Community",
+      "description": "Working with local communities for mutual educational benefit."
+    },
+    {
+      "id": "integrity",
+      "title": "Integrity",
+      "description": "Honest communication and ethical conservation operations."
+    },
+    {
+      "id": "innovation",
+      "title": "Innovation",
+      "description": "Implementing cutting-edge technology in wildlife protection."
+    },
+    {
+      "id": "partnership",
+      "title": "Partnership",
+      "description": "Collaborating with global bodies for a greater environmental impact."
+    }
+  ],
+  "impact": {
+    "heading": {
+      "main": "Environmental",
+      "highlight": "Global Impact"
+    },
+    "description": "Our conservation efforts extend beyond the reserve boundaries, contributing to regional biodiversity and setting international standards for habitat restoration.",
+    "stats": [
+      { "id": "restoration", "label": "Habitat Restoration", "val": "95%" },
+      { "id": "growth", "label": "Population Growth", "val": "120%" },
+      { "id": "trees", "label": "Trees Planted", "val": "50K+" },
+      { "id": "renewable", "label": "Renewable Usage", "val": "100%" }
+    ],
+    "iso": {
+      "title": "ISO 14001",
+      "badge": "Certified Excellence"
+    }
+  }
+}

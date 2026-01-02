@@ -1,8 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function ContactHeader() {
+  const { t } = useTranslation("contactHeader");
+
   return (
     <section
       className="
@@ -35,15 +38,13 @@ export default function ContactHeader() {
         > 
           <p className="inline-flex items-center gap-1 bg-[#00627B]/10 text-[#00627B] uppercase tracking-wider text-xs font-medium px-3 py-1 rounded-full mb-3"> 
             <Star className="w-3 h-3" /> 
-            Support
+            {t("badge")}
           </p> 
           <h1 className="text-4xl md:text-4xl lg:text-4xl font-bold text-[#1e1e1e] mb-5 tracking-tight"> 
-            Contact <span className="text-[#00627B]">Us</span> 
+            {t("title.main")} <span className="text-[#00627B]">{t("title.highlight")}</span> 
           </h1> 
-          <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed"> 
-            We’re here to help you plan your visit and answer any questions. 
-            <br className="hidden sm:block" />
-            Reach out to us anytime.
+          <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed whitespace-pre-line"> 
+            {t("description")}
           </p> 
         </motion.div>
 
@@ -65,6 +66,6 @@ export default function ContactHeader() {
       </motion.div>
     </section>
   );
-};
+}
 
 

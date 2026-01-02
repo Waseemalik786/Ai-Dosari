@@ -1,0 +1,24 @@
+{
+  "primaryBtnText": "Book Activity",
+  "secondaryBtnText": "Explore More →",
+  "slides": [
+    {
+      "id": 1,
+      "title": "Wildlife Viewing",
+      "subtitle": "Enjoy a unique opportunity to observe wildlife in its natural habitat and see various species up close.",
+      "highlightIndex": 0
+    },
+    {
+      "id": 2,
+      "title": "Safari Tours",
+      "subtitle": "Experience the thrill of a Safari tour across vast landscapes with opportunities to spot exotic wildlife.",
+      "highlightIndex": 1
+    },
+    {
+      "id": 3,
+      "title": "Horse & Camel Riding",
+      "subtitle": "Explore the desert landscape on horseback or camelback for a peaceful way to experience the beauty of the reserve.",
+      "highlightIndex": 2
+    }
+  ]
+}

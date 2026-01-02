@@ -5,41 +5,35 @@ import {
   FaInstagram,
   FaLinkedinIn,
 } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const SectionTeam = () => {
+  const { t } = useTranslation("sectionTeam");
+  const teamData = t("team", { returnObjects: true });
+
   const teamMembers = [
     {
-      name: "Dr. Ahmed Al Dosari",
-      role: "Founder & Director",
+      id: "ahmed",
       image:
         "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80",
-      description:
-        "Wildlife biologist with 25+ years of conservation experience.",
       social: { linkedin: "#", twitter: "#" },
     },
     {
-      name: "Sarah Johnson",
-      role: "Conservation Manager",
+      id: "sarah",
       image:
         "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=800&q=80",
-      description: "Specialist in Arabian wildlife and habitat restoration.",
       social: { instagram: "#", twitter: "#" },
     },
     {
-      name: "Mohammed Hassan",
-      role: "Education Director",
+      id: "mohammed",
       image:
         "https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFsZXxlbnwwfHwwfHx8MA%3D%3D",
-      description:
-        "Develops educational programs for schools and universities.",
       social: { linkedin: "#", facebook: "#" },
     },
     {
-      name: "Fatima Al-Mansoori",
-      role: "Visitor Experience",
+      id: "fatima",
       image:
         "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80",
-      description: "Creates memorable and educational visitor experiences.",
       social: { instagram: "#", linkedin: "#" },
     },
   ];
@@ -56,7 +50,7 @@ const SectionTeam = () => {
       {/* Background Subtle Text ✅ */}
       <div className="absolute left-[-30px] top-20 opacity-[0.03] select-none pointer-events-none">
         <h2 className="text-[180px] font-black uppercase tracking-tighter italic">
-          Experts
+          {t("bgText")}
         </h2>
       </div>
 
@@ -65,65 +59,72 @@ const SectionTeam = () => {
         <div className="text-center mb-24" data-aos="fade-up">
           <div className="inline-block px-4 py-1.5 bg-[#00627b]/10 rounded-full mb-6">
             <span className="text-[#00627b] font-bold text-xs tracking-[0.3em] uppercase">
-              Meet Our Team
+              {t("badge")}
             </span>
           </div>
           <h2 className="text-5xl md:text-7xl font-black text-slate-900 leading-tight italic uppercase tracking-tighter">
-            Passionate{" "}
-            <span className="text-white bg-[#00627b] px-4">Experts</span>
+            {t("heading.main")}{" "}
+            <span className="text-white bg-[#00627b] px-4">
+              {t("heading.highlight")}
+            </span>
           </h2>
           <p className="mt-6 text-xl text-slate-500 max-w-3xl mx-auto font-light leading-relaxed">
-            Our dedicated team of conservationists and specialists work
-            tirelessly to protect Arabian wildlife.
+            {t("subheading")}
           </p>
         </div>
 
         {/* Team Grid - Clean Square Cards ✅ */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border border-slate-100 mb-32">
-          {teamMembers.map((member, index) => (
-            <div
-              key={index}
-              className="group relative bg-white border border-slate-100 overflow-hidden"
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
-            >
-              {/* Member Image - Grayscale Effect */}
-              <div className="relative h-80 overflow-hidden">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
-                />
-                {/* Overlay Info on Hover */}
-                <div className="absolute inset-x-0 bottom-0 bg-[#00627b] p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                  <div className="flex space-x-4">
-                    {Object.entries(member.social).map(([platform, link]) => (
-                      <a
-                        key={platform}
-                        href={link}
-                        className="text-white hover:text-slate-900 transition-colors"
-                      >
-                        {socialIcons[platform]}
-                      </a>
-                    ))}
+          {teamData.map((member, index) => {
+            const memberInfo = teamMembers.find((m) => m.id === member.id);
+            return (
+              <div
+                key={index}
+                className="group relative bg-white border border-slate-100 overflow-hidden"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+              >
+                {/* Member Image - Grayscale Effect */}
+                <div className="relative h-80 overflow-hidden">
+                  <img
+                    src={memberInfo?.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                  />
+                  {/* Overlay Info on Hover */}
+                  <div className="absolute inset-x-0 bottom-0 bg-[#00627b] p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                    <div className="flex space-x-4">
+                      {memberInfo &&
+                        Object.entries(memberInfo.social).map(
+                          ([platform, link]) => (
+                            <a
+                              key={platform}
+                              href={link}
+                              className="text-white hover:text-slate-900 transition-colors"
+                            >
+                              {socialIcons[platform]}
+                            </a>
+                          )
+                        )}
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Member Details */}
-              <div className="p-8 text-center">
-                <h3 className="text-xl font-black text-slate-900 uppercase tracking-tighter italic mb-1">
-                  {member.name}
-                </h3>
-                <div className="text-[#00627b] font-bold text-[10px] uppercase tracking-[0.2em] mb-4">
-                  {member.role}
+                {/* Member Details */}
+                <div className="p-8 text-center">
+                  <h3 className="text-xl font-black text-slate-900 uppercase tracking-tighter italic mb-1">
+                    {member.name}
+                  </h3>
+                  <div className="text-[#00627b] font-bold text-[10px] uppercase tracking-[0.2em] mb-4">
+                    {member.role}
+                  </div>
+                  <p className="text-slate-500 text-sm font-light leading-relaxed italic">
+                    "{member.description}"
+                  </p>
                 </div>
-                <p className="text-slate-500 text-sm font-light leading-relaxed italic">
-                  "{member.description}"
-                </p>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Volunteer Section - Modern Split Layout ✅ */}
@@ -134,38 +135,37 @@ const SectionTeam = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
             <div>
               <h3 className="text-4xl font-black text-white mb-6 uppercase tracking-tighter italic">
-                Volunteer{" "}
+                {t("volunteer.heading.main")}{" "}
                 <span className="text-[#00627b] bg-white px-3 tracking-tighter">
-                  Program
+                  {t("volunteer.heading.highlight")}
                 </span>
               </h3>
               <p className="text-slate-400 text-lg font-light leading-relaxed mb-8">
-                Join our passionate team of volunteers who contribute their time
-                to support our conservation efforts. Make a real impact today.
+                {t("volunteer.description")}
               </p>
 
               {/* Stats in Volunteer Card */}
               <div className="grid grid-cols-2 gap-8 mb-10 border-l border-white/10 pl-8">
                 <div>
                   <div className="text-4xl font-black text-white italic tracking-tighter mb-1">
-                    200+
+                    {t("volunteer.stats.members.val")}
                   </div>
                   <div className="text-[#00627b] font-bold text-xs uppercase tracking-widest">
-                    Active Members
+                    {t("volunteer.stats.members.label")}
                   </div>
                 </div>
                 <div>
                   <div className="text-4xl font-black text-white italic tracking-tighter mb-1">
-                    10K+
+                    {t("volunteer.stats.hours.val")}
                   </div>
                   <div className="text-[#00627b] font-bold text-xs uppercase tracking-widest">
-                    Hours Contributed
+                    {t("volunteer.stats.hours.label")}
                   </div>
                 </div>
               </div>
 
               <button className="px-10 py-5 bg-white text-slate-900 font-black uppercase tracking-widest hover:bg-[#00627b] hover:text-white transition-all duration-300">
-                Become a Volunteer
+                {t("volunteer.button")}
               </button>
             </div>
 

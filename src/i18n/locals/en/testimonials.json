@@ -1,0 +1,27 @@
+{
+  "heading": {
+    "highlight": "What Our",
+    "main": "Visitors Say"
+  },
+  "subheading": "Real experiences shared by our happy guests. Read what they have to say about their time at Al Dosari Reserve",
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Ali Hassan",
+      "location": "USA",
+      "text": "Al Dosari Reserve offers a once-in-a-lifetime experience! The wildlife is stunning, and the staff is knowledgeable and friendly. A must-visit for nature lovers!"
+    },
+    {
+      "id": 2,
+      "name": "Sarah Ahmed",
+      "location": "Qatar",
+      "text": "The Safari Tour was incredible! We saw a variety of animals in their natural habitat. The guides were so passionate about conservation. I will definitely return!"
+    },
+    {
+      "id": 3,
+      "name": "Ali Al-Farsi",
+      "location": "UAE",
+      "text": "Amazing experience with the Horse & Camel Riding! A peaceful and unique way to explore the Reserve. Highly recommend it to anyone looking to connect with nature!"
+    }
+  ]
+}

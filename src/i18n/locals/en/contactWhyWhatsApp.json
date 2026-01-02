@@ -1,0 +1,22 @@
+{
+  "badge": "WhatsApp",
+  "title": {
+    "main": "Why Contact Us via",
+    "highlight": "WhatsApp?"
+  },
+  "description": "Experience the most convenient and fastest way to reach our team for bookings and inquiries.",
+  "features": [
+    {
+      "title": "Fast Response",
+      "text": "Get quick answers directly from our team"
+    },
+    {
+      "title": "Direct Communication",
+      "text": "Discuss your visit details without delays"
+    },
+    {
+      "title": "Reliable Coordination",
+      "text": "Trusted by schools, families, and institutions"
+    }
+  ]
+}

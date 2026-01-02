@@ -1,0 +1,55 @@
+{
+  "categories": {
+    "all": "الكل",
+    "wildlife": "الحياة البرية",
+    "schools": "المدارس",
+    "events": "الفعاليات"
+  },
+  "items": [
+    {
+      "id": 5,
+      "category": "schools",
+      "title": "مجموعة الكشافة"
+    },
+    {
+      "id": 6,
+      "category": "schools",
+      "title": "زراعة الأشجار"
+    },
+    {
+      "id": 7,
+      "category": "schools",
+      "title": "فصل دراسي خارجي"
+    },
+    {
+      "id": 8,
+      "category": "events",
+      "title": "ركوب الجمال عند الغروب"
+    },
+    {
+      "id": 9,
+      "category": "events",
+      "title": "رحلة تنزه للشركات"
+    },
+    {
+      "id": 10,
+      "category": "events",
+      "title": "تجمع عائلي"
+    },
+    {
+      "id": 1,
+      "category": "wildlife",
+      "title": "غزال المها يرعى"
+    },
+    {
+      "id": 2,
+      "category": "wildlife",
+      "title": "لقطة قريبة للزرافة"
+    },
+    {
+      "id": 3,
+      "category": "wildlife",
+      "title": "غزال عند الغروب"
+    }
+  ]
+}

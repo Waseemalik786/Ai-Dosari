@@ -1,7 +1,22 @@
 import React from "react";
 import { FaLeaf, FaMountain, FaWater } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const HeroAbout = () => {
+  const { t } = useTranslation("aboutHero");
+  const translatedStats = t("stats", { returnObjects: true });
+
+  const statIcons = {
+    species: <FaLeaf />,
+    hectares: <FaMountain />,
+    visitors: <FaWater />,
+  };
+
+  const stats = translatedStats.map((stat) => ({
+    ...stat,
+    icon: statIcons[stat.id],
+  }));
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden lg:pt-16 text-center">
       {/* REAL Background Image - No more boring white look */}
@@ -23,33 +38,27 @@ const HeroAbout = () => {
           {/* Main Content */}
           <div className="space-y-4" data-aos="fade-up">
             <h1 className="text-5xl md:text-5xl font-black text-white leading-tight italic uppercase tracking-tighter">
-              Discover <br />
+              {t("heading.main")} <br />
               <span className="text-[#00627b] bg-white px-4 inline-block mt-2">
-                Nature's Legacy
+                {t("heading.highlight")}
               </span>
             </h1>
 
             <p className="text-xl md:text-xl text-gray-200 leading-relaxed max-w-2xl font-light drop-shadow-lg">
-              Al Dosari Reserve stands as a sanctuary where wildlife thrives and
-              conservation meets education. We protect endangered species for a
-              better tomorrow.
+              {t("description")}
             </p>
 
             {/* CTA Buttons */}
             <div className="pt-6 pb-8">
               <button className="px-6 py-3 bg-[#00627b] text-white font-bold text-lg rounded-sm hover:bg-white hover:text-[#00627b] transition-all duration-300">
-                BOOK A TOUR
+                {t("button")}
               </button>
             </div>
           </div>
 
           {/* Stats Bar - Bottom Overlay Style */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-white/20">
-            {[
-              { icon: <FaLeaf />, value: "500+", label: "Species" },
-              { icon: <FaMountain />, value: "1200+", label: "Hectares" },
-              { icon: <FaWater />, value: "50K+", label: "Visitors" },
-            ].map((stat, index) => (
+            {stats.map((stat, index) => (
               <div
                 key={index}
                 className="flex items-center justify-center gap-4 py-10 group hover:bg-[#00627b]/20 transition-colors px-4"
@@ -74,12 +83,11 @@ const HeroAbout = () => {
       {/* Side Decorative Text */}
       <div className="absolute -right-45 -top-0.3 -rotate-90 hidden lg:block">
         <span className="text-white/10 text-9xl font-black tracking-widest uppercase pointer-events-none">
-          WILDLIFE
+          {t("decorativeText")}
         </span>
       </div>
     </section>
   );
 };
 
-
-export default HeroAbout
+export default HeroAbout;

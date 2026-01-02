@@ -1,0 +1,42 @@
+{
+  "bgText": "History",
+  "badge": "Our Journey",
+  "heading": {
+    "prefix": "The",
+    "highlight": "Legacy",
+    "suffix": "Behind Us"
+  },
+  "subheading": "From humble beginnings to a premier conservation sanctuary, driven by passion and a commitment to nature.",
+  "timeline": [
+    {
+      "id": "foundation",
+      "year": "2010",
+      "title": "Foundation Established",
+      "description": "Al Dosari Reserve was founded with a vision to protect Arabian wildlife and create an eco-tourism destination."
+    },
+    {
+      "id": "conservation",
+      "year": "2013",
+      "title": "Conservation Programs",
+      "description": "Launched comprehensive breeding programs for endangered Arabian Oryx and Gazelles."
+    },
+    {
+      "id": "education",
+      "year": "2016",
+      "title": "Educational Center",
+      "description": "Opened the Educational Center to host school trips and environmental workshops."
+    },
+    {
+      "id": "recognition",
+      "year": "2020",
+      "title": "International Recognition",
+      "description": "Received UNESCO recognition for conservation efforts and sustainable tourism practices."
+    },
+    {
+      "id": "expansion",
+      "year": "2023",
+      "title": "Expansion Phase",
+      "description": "Expanded reserve boundaries and introduced new safari experiences and activities."
+    }
+  ]
+}

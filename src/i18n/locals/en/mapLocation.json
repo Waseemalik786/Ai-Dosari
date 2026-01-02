@@ -1,0 +1,58 @@
+{
+  "bgText": "Location",
+  "badge": "Visit Us",
+  "heading": {
+    "main": "Our",
+    "highlight": "Location"
+  },
+  "subheading": "Easily accessible from major cities with premium facilities for our visitors.",
+  "mapBadge": "Al Dosari Reserve, Qatar",
+  "gettingHere": {
+    "title": "Getting Here",
+    "transport": [
+      {
+        "id": "car",
+        "title": "By Car",
+        "description": "45 minutes from Doha city center via Al Shamal Road"
+      },
+      {
+        "id": "bus",
+        "title": "Public Transport",
+        "description": "Bus service available from Al Khor bus station"
+      }
+    ]
+  },
+  "hours": {
+    "title": "Visiting Hours",
+    "weekdays": {
+      "days": "Sat - Thu",
+      "time": "8:00 AM - 6:00 PM"
+    },
+    "friday": {
+      "days": "Friday",
+      "time": "2:00 PM - 8:00 PM"
+    }
+  },
+  "button": "Book Your Visit Now",
+  "attractions": {
+    "title": "Nearby Attractions",
+    "items": [
+      {
+        "name": "Al Khor Park",
+        "distance": "15 min",
+        "desc": "Beautiful park and trails"
+      },
+      {
+        "name": "Purple Island",
+        "distance": "25 min",
+        "desc": "Mangrove forests & wildlife"
+      },
+      {
+        "name": "Al Thakira Beach",
+        "distance": "30 min",
+        "desc": "Perfect for family outings"
+      }
+    ],
+    "away": "away"
+  }
+}

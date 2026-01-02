@@ -1,0 +1,28 @@
+{
+  "stats": [
+    {
+      "id": "animal",
+      "value": "50+",
+      "label": "Animal Species",
+      "description": "Rare and local wildlife cared for in our sanctuary."
+    },
+    {
+      "id": "trees",
+      "value": "10k+",
+      "label": "Trees & Plants",
+      "description": "A lush green oasis in the heart of the desert."
+    },
+    {
+      "id": "visitors",
+      "value": "15k+",
+      "label": "Annual Visitors",
+      "description": "Families and students joining our eco-mission."
+    },
+    {
+      "id": "heritage",
+      "value": "40+",
+      "label": "Years of Heritage",
+      "description": "Decades of conservation and cultural pride."
+    }
+  ]
+}

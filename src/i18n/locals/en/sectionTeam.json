@@ -1,0 +1,53 @@
+{
+  "bgText": "Experts",
+  "badge": "Meet Our Team",
+  "heading": {
+    "main": "Passionate",
+    "highlight": "Experts"
+  },
+  "subheading": "Our dedicated team of conservationists and specialists work tirelessly to protect Arabian wildlife.",
+  "team": [
+    {
+      "id": "ahmed",
+      "name": "Dr. Ahmed Al Dosari",
+      "role": "Founder & Director",
+      "description": "Wildlife biologist with 25+ years of conservation experience."
+    },
+    {
+      "id": "sarah",
+      "name": "Sarah Johnson",
+      "role": "Conservation Manager",
+      "description": "Specialist in Arabian wildlife and habitat restoration."
+    },
+    {
+      "id": "mohammed",
+      "name": "Mohammed Hassan",
+      "role": "Education Director",
+      "description": "Develops educational programs for schools and universities."
+    },
+    {
+      "id": "fatima",
+      "name": "Fatima Al-Mansoori",
+      "role": "Visitor Experience",
+      "description": "Creates memorable and educational visitor experiences."
+    }
+  ],
+  "volunteer": {
+    "heading": {
+      "main": "Volunteer",
+      "highlight": "Program"
+    },
+    "description": "Join our passionate team of volunteers who contribute their time to support our conservation efforts. Make a real impact today.",
+    "stats": {
+      "members": {
+        "val": "200+",
+        "label": "Active Members"
+      },
+      "hours": {
+        "val": "10K+",
+        "label": "Hours Contributed"
+      }
+    },
+    "button": "Become a Volunteer"
+  }
+}
