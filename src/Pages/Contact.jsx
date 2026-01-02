@@ -2,10 +2,7 @@ import React from "react";
 import ContactHeroSwiper from "../components/contact/ContactHeroSwiper";
 import {
   ContactInfoCards,
-  ContactVisitInfo,
   ContactWhyWhatsApp,
-
-
   MapEmbed,
   ContactTrust,
   ContactForm,
@@ -17,9 +14,7 @@ const Contact = () => {
 
     <div className="min-h-screen flex flex-col bg-white overflow-x-hidden">
 
-
       <ContactHeroSwiper />
-
 
       <main className="flex-grow flex flex-col ">
         <ContactHeader />
@@ -28,7 +23,7 @@ const Contact = () => {
           <div className="flex flex-col lg:flex-row gap-8 items-stretch">
             <div className="w-full lg:w-[35%] flex flex-col gap-8">
               <ContactInfoCards />
-              {/* <ContactVisitInfo /> */}
+
             </div>
             <div className="w-full lg:w-[65%]">
               <MapEmbed />

@@ -37,7 +37,7 @@ const ContactHeader = () => {
             <Star className="w-3 h-3" /> 
             Support
           </p> 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1e1e1e] mb-5 tracking-tight"> 
+          <h1 className="text-4xl md:text-4xl lg:text-4xl font-bold text-[#1e1e1e] mb-5 tracking-tight"> 
             Contact <span className="text-[#00627B]">Us</span> 
           </h1> 
           <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed"> 

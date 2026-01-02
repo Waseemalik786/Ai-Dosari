@@ -1,6 +1,5 @@
 export { default as ContactHeader } from "./ContactHeader";
 export { default as ContactInfoCards } from "./ContactInfoCards";
-export { default as ContactVisitInfo } from "./ContactVisitInfo";
 export { default as ContactWhyWhatsApp } from "./ContactWhyWhatsApp";
 
 

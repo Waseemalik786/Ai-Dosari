@@ -8,9 +8,7 @@ import Navbar from './components/common/Navbar';
 import Footer from './components/common/Footer';
 import WhatSapp from './components/common/Whatsapp';
 import ActivitiesExperiences from './Pages/ActivitiesExperiences';
-// import Home from './Pages/Home';
-
-
+import Gallery from './Pages/Gallery'; // Import Gallery Page
 
 const MainLayout = () => (
   <div>
@@ -27,11 +25,8 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <Home /> },
       { path: "/about", element: <About /> },
-
       { path: "/activities", element: <ActivitiesExperiences /> },
-     
-
-      // { path: "/", element: <Home/> },
+      { path: "/gallery", element: <Gallery /> }, // Added Gallery Route
       { path: "/contact", element: <Contact /> },
     ],
   },

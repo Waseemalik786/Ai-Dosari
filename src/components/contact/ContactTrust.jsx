@@ -6,84 +6,66 @@ const ContactTrust = () => {
   const stats = [
     {
       id: "school",
-      icon: <School className="w-8 h-8" />,
+      icon: <School className="w-6 h-6" />,
       title: "100+",
-      description: "Educational school visits hosted annually to spread environmental awareness.",
+      description: "Educational school visits hosted annually.",
     },
     {
       id: "visitors",
-      icon: <Users className="w-8 h-8" />,
+      icon: <Users className="w-6 h-6" />,
       title: "5,000+",
-      description: "Visitors welcomed to the reserve for tours and family experiences.",
+      description: "Visitors welcomed for family experiences.",
     },
     {
       id: "programs",
-      icon: <Leaf className="w-8 h-8" />,
+      icon: <Leaf className="w-6 h-6" />,
       title: "Eco-Friendly",
-      description: "Dedicated nature programs focused on conservation and wildlife protection.",
+      description: "Dedicated nature and conservation programs.",
     },
   ];
 
-  // Container variants for staggering children
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
+      transition: { staggerChildren: 0.1 },
     },
   };
 
-  // Individual card entrance variants
   const cardVariants = {
-    hidden: { y: 50, opacity: 0, scale: 0.8 },
+    hidden: { y: 30, opacity: 0, scale: 0.95 },
     visible: {
       y: 0,
       opacity: 1,
       scale: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 10,
-      },
+      transition: { type: "spring", stiffness: 100, damping: 12 },
     },
-  };
-
-  const titleVariants = {
-    hidden: { opacity: 0, y: -20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
 
   return (
     <div
-      className="w-full py-10 px-4 relative"
+      className="w-full py-10 px-4 relative" // Reduced from py-20 to py-10
       style={{
         backgroundImage: 'url("https://images.unsplash.com/photo-1472214103451-9374bd1c798e")',
         backgroundAttachment: "fixed",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
       }}
     >
-      {/* Black Overlay */}
-      <div className="absolute inset-0 bg-black/40"></div>
+      <div className="absolute inset-0 bg-black/50"></div>
 
-      <div className="relative z-10 max-w-4xl mx-auto">
-        {/* Animated Title */}
+      <div className="relative z-10 max-w-5xl mx-auto">
         <motion.h2
-          className="text-2xl md:text-4xl font-bold text-center text-white mb-8 tracking-tight"
-          variants={titleVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
+          className="text-2xl md:text-3xl font-bold text-center text-white mb-6 tracking-tight" // Reduced text size and margin
+          initial={{ opacity: 0, y: -10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
         >
           Our Impact & Reach
         </motion.h2>
 
-        {/* Stats Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-5"
+          className="grid grid-cols-1 md:grid-cols-3 gap-5" // Reduced gap
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -92,42 +74,27 @@ const ContactTrust = () => {
           {stats.map((item) => (
             <motion.div
               key={item.id}
-              className="bg-white/95 backdrop-blur-sm rounded-xl p-6 flex flex-col border-2 border-gray-200 transition-all duration-300 cursor-default shadow-lg"
               variants={cardVariants}
-              whileHover={{
-                y: -5,
-                borderColor: "#00627B",
-                boxShadow: "0 10px 20px rgba(0, 0, 0, 0.2)",
-              }}
+              whileHover={{ y: -5 }}
+              className="group bg-white/95 backdrop-blur-sm p-6 rounded-xl flex flex-col items-center text-center shadow-lg transition-all duration-300 border border-transparent hover:border-[#00627B]/30" // Reduced p-10 to p-6
             >
-              {/* Icon Wrapper */}
-              <div className="flex justify-center mb-4">
-                <motion.div
-                  className="rounded-full p-3 bg-gray-100 text-[#00627B] shadow-inner"
-                  whileHover={{
-                    scale: 1.05,
-                    backgroundColor: "#00627B",
-                    color: "white",
-                  }}
-                  transition={{ duration: 0.2 }}
-                >
-                  {/* Smaller Icon size */}
-                  {React.cloneElement(item.icon, { className: "w-6 h-6" })}
-                </motion.div>
+              {/* Icon Wrapper - Compact Size */}
+              <div className="w-14 h-14 flex items-center justify-center rounded-full bg-[#00627B]/5 text-[#00627B] mb-3 transition-all duration-300 group-hover:bg-[#00627B] group-hover:text-white group-hover:scale-105">
+                {item.icon}
               </div>
 
-              {/* Stat Value (Title) */}
-              <h3 className="text-2xl font-black text-center text-[#1e1e1e] mb-2">
+              {/* Stat Value */}
+              <h3 className="text-xl font-black text-gray-900 mb-1 transition-colors duration-300">
                 {item.title}
               </h3>
 
-              {/* Label (Description) */}
-              <p className="text-xs text-gray-600 text-center leading-relaxed font-medium">
+              {/* Description */}
+              <p className="text-xs text-gray-600 leading-snug font-medium mb-3">
                 {item.description}
               </p>
               
-              {/* Optional Decorative Line */}
-              <div className="mt-4 w-10 h-1 bg-[#00627B]/20 mx-auto rounded-full group-hover:w-16 transition-all duration-300" />
+              {/* Decorative Line */}
+              <div className="w-8 h-1 bg-[#00627B]/20 rounded-full group-hover:w-16 group-hover:bg-[#00627B] transition-all duration-500" />
             </motion.div>
           ))}
         </motion.div>
