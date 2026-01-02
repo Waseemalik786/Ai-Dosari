@@ -1,0 +1,29 @@
+{
+  "slides": [
+    {
+      "id": 1,
+      "image": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05",
+      "title": "اكتشف الحياة البرية والطبيعة",
+      "subtitle": "جولات إرشادية، زيارات عائلية، وبرامج تعليمية.",
+      "highlightIndex": 1
+    },
+    {
+      "id": 2,
+      "image": "https://plus.unsplash.com/premium_photo-1673697239981-389164b7b87f",
+      "title": "خطط لزيارتك اليوم",
+      "subtitle": "نحن هنا لمساعدتك على تخطيط تجربة ذات معنى.",
+      "highlightIndex": 0
+    },
+    {
+      "id": 3,
+      "image": "https://images.unsplash.com/photo-1433086966358-54859d0ed716",
+      "title": "استكشف محمية آل دوساري",
+      "subtitle": "تجربة سياحة بيئية لا تُنسى وسط الطبيعة.",
+      "highlightIndex": 2
+    }
+  ],
+  "buttons": {
+    "primary": "تواصل معنا",
+    "secondary": "اعثر على الموقع →"
+  }
+}

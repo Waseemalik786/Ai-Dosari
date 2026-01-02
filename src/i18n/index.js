@@ -6,13 +6,16 @@ import en_Navbar from "./locals/en/Navbar.json";
 import ar_Navbar from "./locals/ar/Navbar.json";
 import en_Footer from "./locals/en/footer.json";
 import ar_Footer from "./locals/ar/footer.json";
-
+import en_contactslider from "./locals/en/contactSlides.json";
+import ar_contactslider from "./locals/ar/contactSlides.json";
 const resources = {
   en: { navbar: en_Navbar,
         footer: en_Footer,
+        contactslider: en_contactslider
    },
   ar: { navbar: ar_Navbar,
-         footer: ar_Footer
+         footer: ar_Footer,
+         contactslider: ar_contactslider
    },
 };
 

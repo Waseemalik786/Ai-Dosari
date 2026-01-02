@@ -10,6 +10,9 @@ import NavbarSection from "./components/common/NavbarSection";
 import MainHome from "./pages/MainHome";
 // import PageNotFound from "./pages/PageNotFound";
 import Gallery from './Pages/Gallery'; // Import Gallery Page
+import Login from "./components/common/Login";
+import SignUp from "./components/common/SignUp";
+
 
 const MainLayout = () => (
   <div>
@@ -30,6 +33,8 @@ const router = createBrowserRouter([
       { path: '/activities', element: <ActivitiesExperiences /> },
       { path: '/contact', element: <ContactPage /> },
       { path: "/gallery", element: <Gallery /> }, 
+      { path: "/login", element: <Login/> }, 
+      { path: "/signup", element: <SignUp /> }, 
 
     ],
   },
