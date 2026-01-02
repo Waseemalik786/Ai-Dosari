@@ -8,7 +8,7 @@ import WhatsApp from "./components/common/Whatsapp";
 import FooterSection from "./components/common/FooterSection";
 import NavbarSection from "./components/common/NavbarSection";
 import MainHome from "./pages/MainHome";
-
+// import PageNotFound from "./pages/PageNotFound";
 const MainLayout = () => (
   <div>
     <NavbarSection />
