@@ -5,7 +5,7 @@ import logo from "../../assets/al-logo.png";
 import { useTranslation } from "react-i18next";
 import i18n from "../../i18n/index";
 
-const Navbar = () => {
+const NavbarSection = () => {
   const { t } = useTranslation("navbar");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);

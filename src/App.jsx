@@ -9,8 +9,6 @@ import FooterSection from "./components/common/FooterSection";
 import NavbarSection from "./components/common/NavbarSection";
 import MainHome from "./pages/MainHome";
 // import PageNotFound from "./pages/PageNotFound";
-import Contact from "./Pages/Contact";
-import ActivitiesExperiences from './Pages/ActivitiesExperiences';
 import Gallery from './Pages/Gallery'; // Import Gallery Page
 
 const MainLayout = () => (
@@ -31,14 +29,8 @@ const router = createBrowserRouter([
       { path: '/about', element: <AboutPage /> },
       { path: '/activities', element: <ActivitiesExperiences /> },
       { path: '/contact', element: <ContactPage /> },
+      { path: "/gallery", element: <Gallery /> }, 
 
-
-
-      { path: "/", element: <Home /> },
-      { path: "/about", element: <About /> },
-      { path: "/activities", element: <ActivitiesExperiences /> },
-      { path: "/gallery", element: <Gallery /> }, // Added Gallery Route
-      { path: "/contact", element: <Contact /> },
     ],
   },
   // { path: "*", element: <PageNotFound /> },

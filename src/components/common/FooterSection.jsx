@@ -14,7 +14,7 @@ import "aos/dist/aos.css";
 import logo from "../../assets/al-logo.png";
 import { useTranslation } from "react-i18next";
 
-const Footer = () => {
+const FooterSection = () => {
   const { t, i18n } = useTranslation("footer"); // Using "footer" namespace
 
   useEffect(() => {
