@@ -1,0 +1,12 @@
+import React from "react";
+import GenericHero from "../common/GenericHero";
+
+const homeSlides = [
+  { id: 1, image: "https://img.freepik.com/free-photo/tourist-carrying-luggage_23-2151747443.jpg?ga=GA1.1.1146211304.1754028702&semt=ais_hybrid&w=740&q=80", title: "Al Dosari Reserve", subtitle: "A Premium Eco-Tourism & Educational Destination", highlightIndex: 0 },
+  { id: 2, image: "https://img.freepik.com/premium-photo/conducting-population-surveys-endangered-speci-generative-ai_883586-255779.jpg?ga=GA1.1.1146211304.1754028702&semt=ais_hybrid&w=740&q=80", title: "Nature Wildlife Learning", subtitle: "Unique experiences for families and institutions", highlightIndex: 1 },
+  { id: 3, image: "https://img.freepik.com/free-photo/adventure-hike-people-concept-group-smiling-friends-forest-man-with-map_1157-45166.jpg?ga=GA1.1.1146211304.1754028702&semt=ais_hybrid&w=740&q=80", title: "Schools Groups Education", subtitle: "Educational trips that inspire and educate", highlightIndex: 2 },
+];
+
+export default function HomeHeader() {
+  return <GenericHero slides={homeSlides} primaryBtnText="Book via WhatsApp" secondaryBtnText="Explore Activities →" />;
+}

@@ -47,7 +47,7 @@ const activities = [
   }
 ];
 
-export default function Homeactivity() {
+export default function HomeActivity() {
   const whatsappNumber = "966XXXXXXXXX"; // Replace with actual number
 
   const handleBookActivity = (activityTitle, message) => {
@@ -71,7 +71,7 @@ export default function Homeactivity() {
         {/* Activities Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
           {activities.map((activity) => (
-            <ActivityCard 
+            <ActivityCard
               key={activity.id}
               title={activity.title}
               image={activity.image}
@@ -85,7 +85,7 @@ export default function Homeactivity() {
           ))}
         </div>
 
-        
+
       </div>
     </section>
   );

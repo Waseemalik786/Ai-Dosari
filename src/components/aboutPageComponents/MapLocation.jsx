@@ -1,7 +1,7 @@
 import React from "react";
 import { FaMapMarkerAlt, FaCar, FaBus, FaClock } from "react-icons/fa";
 
-const LocationMap = () => {
+const MapLocation = () => {
   return (
     <section className="py-24 bg-white relative overflow-hidden">
       {/* Background Subtle Text - Consistency check ✅ */}
@@ -178,5 +178,4 @@ const LocationMap = () => {
     </section>
   );
 };
-
-export default LocationMap;
+export default MapLocation;

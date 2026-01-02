@@ -1,50 +1,50 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Phone, MessageCircle, Mail } from 'lucide-react';
+import { MessageSquare, Users, HelpCircle } from 'lucide-react';
 
-const ContactInfoCards = () => {
+export default function ContactInfoCards() {
   const contactMethods = [
     {
-      id: 'phone',
-      icon: <Phone className="w-8 h-8" />,
-      title: 'Call Us',
-      info: '+966 50 123 4567',
-      link: 'tel:+966501234567',
-      bgImage: 'https://plus.unsplash.com/premium_photo-1673697239981-389164b7b87f',
-    },
-    {
-      id: 'whatsapp',
-      icon: <MessageCircle className="w-8 h-8" />,
-      title: 'WhatsApp',
+      id: 'whatsapp-general',
+      icon: <MessageSquare className="w-8 h-8" />,
+      title: 'General Inquiry',
       info: 'Chat with us',
       link: 'https://wa.me/966501234567',
-      bgImage: 'https://images.pexels.com/photos/1072824/pexels-photo-1072824.jpeg?auto=compress&cs=tinysrgb&w=600',
+      bgImage: 'https://images.unsplash.com/photo-1575550959106-5a7defe28b56',
     },
     {
-      id: 'email',
-      icon: <Mail className="w-8 h-8" />,
-      title: 'Email Us',
-      info: 'info@ai-dosari.com',
-      link: 'mailto:info@ai-dosari.com',
-      bgImage: 'https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=600',
+      id: 'whatsapp-booking',
+      icon: <Users className="w-8 h-8" />,
+      title: 'School & Groups',
+      info: 'Book your visit',
+      link: 'https://wa.me/966501234567',
+      bgImage: 'https://plus.unsplash.com/premium_photo-1729791088769-6157499dbe9d',
+    },
+    {
+      id: 'whatsapp-support',
+      icon: <HelpCircle className="w-8 h-8" />,
+      title: 'Support & Help',
+      info: 'Get assistance',
+      link: 'https://wa.me/966501234567',
+      bgImage: 'https://images.unsplash.com/photo-1504618223053-559bdef9dd5a',
     }
   ];
 
   return (
     <div className="w-full">
-      <div className="grid grid-cols-1 gap-6">
+      <div className="grid grid-cols-1 gap-4">
         {contactMethods.map((method, index) => (
           <motion.a
             key={method.id}
             href={method.link}
-            target={method.id === 'whatsapp' ? '_blank' : '_self'}
-            rel={method.id === 'whatsapp' ? 'noopener noreferrer' : ''}
+            target="_blank"
+            rel="noopener noreferrer"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1, duration: 0.5 }}
             whileHover={{ y: -5 }}
-            className="relative flex flex-col items-center justify-center p-4 rounded-[1.25rem] overflow-hidden shadow-xl group min-h-[140px] bg-black"
+            className="relative flex flex-col items-center justify-center p-4 rounded-[1.25rem] overflow-hidden shadow-xl group min-h-[120px] bg-black"
           >
             {/* Background Image with Zoom Effect */}
             <img 
@@ -77,4 +77,3 @@ const ContactInfoCards = () => {
   );
 };
 
-export default ContactInfoCards;

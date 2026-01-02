@@ -118,5 +118,5 @@ const AboutHistory = () => {
     </section>
   );
 };
-
 export default AboutHistory;
+

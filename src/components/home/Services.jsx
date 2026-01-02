@@ -154,7 +154,7 @@ const Services = () => {
   </h1>
 
   <p className='text-gray-600 max-w-2xl text-center'>
-    We provide top-notch services to make your visit comfortable,
+    We provide top notch services to make your visit comfortable,
     enjoyable, and memorable.
   </p>
 </div>
