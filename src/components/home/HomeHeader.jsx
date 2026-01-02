@@ -1,11 +1,9 @@
-"use client";
-
 import React from "react";
 import GenericHero from "../common/GenericHero";
 import { useTranslation } from "react-i18next";
 
 export default function HomeHeader() {
-  const { t, i18n } = useTranslation("homeslider");
+  const { t, i18n } = useTranslation("homeheader");
 
   // Force it to be an array. If t() returns a string or null, use []
   const slidesData = t("slides", { returnObjects: true });

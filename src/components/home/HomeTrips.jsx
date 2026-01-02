@@ -6,7 +6,7 @@ import VisitTripes from './VisitTripes';
 import { useTranslation } from 'react-i18next';
 
 export default function HomeTrips() {
-  const { t, i18n } = useTranslation('trips');
+  const { t, i18n } = useTranslation('hometrip');
   const isAr = i18n.language === "ar";
 
   // --- SAFE DATA FETCHING ---
