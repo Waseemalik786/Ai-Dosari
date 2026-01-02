@@ -68,7 +68,7 @@ export default function ContactForm() {
 
           <div className="pt-4">
             <a 
-              href="https://wa.me/966501234567" // Placeholder
+              href="https://wa.me/966501234567" 
               target="_blank"
               rel="noopener noreferrer"
               className="w-full flex items-center justify-center gap-2 bg-gray-100 hover:bg-[#00627B]/5 text-gray-600 hover:text-[#00627B] font-semibold py-4 px-6 rounded-xl transition-all duration-300 border border-gray-200 hover:border-[#00627B]/20"
