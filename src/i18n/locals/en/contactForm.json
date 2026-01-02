@@ -1,0 +1,23 @@
+{
+  "badge": "Inquiry",
+  "title": {
+    "main": "Send a",
+    "highlight": "Message"
+  },
+  "description": "Have a specific question or request? Fill out the form below and our team will get back to you shortly.",
+  "labels": {
+    "name": "Name",
+    "phone": "Phone",
+    "message": "Message"
+  },
+  "placeholders": {
+    "name": "Your Name",
+    "phone": "Your Phone",
+    "message": "How can we help you?"
+  },
+  "button": "Send Message",
+  "footer": {
+    "text": "For faster response, please contact us via",
+    "highlight": "WhatsApp"
+  }
+}

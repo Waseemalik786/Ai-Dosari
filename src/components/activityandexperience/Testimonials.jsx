@@ -1,38 +1,29 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
-// Example Testimonial Data
-const testimonials = [
-  {
-    name: "Ali Hassan   ",
-    location: "USA",
-    text: "Al Dosari Reserve offers a once-in-a-lifetime experience! The wildlife is stunning, and the staff is knowledgeable and friendly. A must-visit for nature lovers!",
-    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBK8qVdyjaDW3a0zJeeWIYwnObm7HI2mYUZw&s", // Replace with actual image URL
-  },
-  {
-    name: "Sarah Ahmed",
-    location: "Qatar",
-    text: "The Safari Tour was incredible! We saw a variety of animals in their natural habitat. The guides were so passionate about conservation. I will definitely return!",
-    imageUrl: "https://media.istockphoto.com/id/1179823780/photo/three-business-men-walking-in-dubai-wearing-traditional-emirati-clothes.jpg?s=612x612&w=0&k=20&c=IkzF9R3atWHVG9BySI2Kl-1a1dpQt936tDo5xLvnGus=", // Replace with actual image URL
-  },
-  {
-    name: "Ali Al-Farsi",
-    location: "UAE",
-    text: "Amazing experience with the Horse & Camel Riding! A peaceful and unique way to explore the Reserve. Highly recommend it to anyone looking to connect with nature!",
-    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUQgr-MFu8h0_Hz_eG-xBZQX7d4_EOyx1xwKTYGPXamg&s", // Replace with actual image URL
-  },
-  
-];
-
+const testimonialImages = {
+  1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBK8qVdyjaDW3a0zJeeWIYwnObm7HI2mYUZw&s",
+  2: "https://media.istockphoto.com/id/1179823780/photo/three-business-men-walking-in-dubai-wearing-traditional-emirati-clothes.jpg?s=612x612&w=0&k=20&c=IkzF9R3atWHVG9BySI2Kl-1a1dpQt936tDo5xLvnGus=",
+  3: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUQgr-MFu8h0_Hz_eG-xBZQX7d4_EOyx1xwKTYGPXamg&s",
+};
 
 function Testimonials() {
+  const { t } = useTranslation("testimonials");
+  const translatedTestimonials = t("testimonials", { returnObjects: true });
+
+  const testimonials = translatedTestimonials.map((testimonial) => ({
+    ...testimonial,
+    imageUrl: testimonialImages[testimonial.id],
+  }));
+
   return (
     <div className="bg-gray-50 pb-8">
       <section className="container mx-auto px-6 text-center">
-        {/* Title and Subtitle */}
-        <h2 className="text-4xl font-bold text-[#00627B] mb-8"><span className='text-black'>What Our</span> Visitors Say</h2>
-        <p className="text-lg text-gray-600 mb-12">Real experiences shared by our happy guests. Read what they have to say about their time at Al Dosari Reserve</p>
+        <h2 className="text-4xl font-bold text-[#00627B] mb-8">
+          <span className='text-black'>{t("heading.highlight")}</span> {t("heading.main")}
+        </h2>
+        <p className="text-lg text-gray-600 mb-12">{t("subheading")}</p>
 
-        {/* Testimonial Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {testimonials.map((testimonial, index) => (
             <div

@@ -1,0 +1,51 @@
+{
+  "heading": {
+    "highlight": "Our",
+    "main": "Activities"
+  },
+  "subheading": "Unique experiences for all ages, waiting for you to explore!",
+  "activities": [
+    {
+      "id": "wildlife",
+      "title": "Wildlife Viewing",
+      "description": "Get up close to incredible wildlife at Al Dosari Reserve. Watch various species in their natural habitat.",
+      "ageGroup": "All ages",
+      "whatsappMessage": "I'd like to book the Wildlife Viewing activity."
+    },
+    {
+      "id": "safari",
+      "title": "Safari Tours",
+      "description": "Explore the vast landscapes of the reserve with a thrilling safari experience, guided by experts.",
+      "ageGroup": "6+",
+      "whatsappMessage": "I'd like to book the Safari Tour activity."
+    },
+    {
+      "id": "riding",
+      "title": "Horse & Camel Riding",
+      "description": "Enjoy a unique riding experience on horseback or camel, offering a serene way to explore the reserve.",
+      "ageGroup": "4+",
+      "whatsappMessage": "I'd like to book Horse & Camel Riding."
+    },
+    {
+      "id": "education",
+      "title": "Educational Programs",
+      "description": "Engage in hands-on learning about wildlife conservation, animal behavior, and the environment.",
+      "ageGroup": "School groups / 10+",
+      "whatsappMessage": "I'd like to book an Educational Program."
+    },
+    {
+      "id": "birds",
+      "title": "Bird Watching",
+      "description": "Discover the diverse bird species at the reserve with expert guides and binoculars.",
+      "ageGroup": "All ages",
+      "whatsappMessage": "I'd like to book the Bird Watching activity."
+    },
+    {
+      "id": "hikes",
+      "title": "Nature Hikes",
+      "description": "Explore scenic trails, spot native plants and wildlife, and immerse yourself in the tranquility of nature.",
+      "ageGroup": "12+",
+      "whatsappMessage": "I'd like to book the Nature Hike activity."
+    }
+  ]
+}

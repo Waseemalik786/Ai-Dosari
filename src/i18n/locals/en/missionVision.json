@@ -1,0 +1,27 @@
+{
+  "bgText": "Purpose",
+  "badge": "Our Purpose",
+  "heading": {
+    "main": "Mission &",
+    "highlight": "Vision"
+  },
+  "subheading": "Driving conservation through education and creating sustainable wildlife experiences for future generations.",
+  "mission": {
+    "title": "Our Mission",
+    "description": "To protect and conserve Arabian wildlife through innovative conservation programs, while providing immersive educational experiences that foster environmental stewardship.",
+    "points": [
+      "Wildlife Protection",
+      "Environmental Education",
+      "Sustainable Tourism"
+    ]
+  },
+  "vision": {
+    "title": "Our Vision",
+    "description": "To become the leading conservation destination in the Middle East, setting global standards in wildlife protection while inspiring the world to value our natural heritage.",
+    "points": [
+      "Global Excellence",
+      "Conservation Standards",
+      "Cultural Heritage"
+    ]
+  }
+}

@@ -1,28 +1,22 @@
 import React from "react";
 import { School, Users, Leaf } from "lucide-react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export default function ContactTrust() {
-  const stats = [
-    {
-      id: "school",
-      icon: <School className="w-6 h-6" />,
-      title: "100+",
-      description: "Educational school visits hosted annually.",
-    },
-    {
-      id: "visitors",
-      icon: <Users className="w-6 h-6" />,
-      title: "5,000+",
-      description: "Visitors welcomed for family experiences.",
-    },
-    {
-      id: "programs",
-      icon: <Leaf className="w-6 h-6" />,
-      title: "Eco-Friendly",
-      description: "Dedicated nature and conservation programs.",
-    },
-  ];
+  const { t } = useTranslation("contactTrust");
+  const translatedStats = t("stats", { returnObjects: true });
+
+  const icons = {
+    school: <School className="w-6 h-6" />,
+    visitors: <Users className="w-6 h-6" />,
+    programs: <Leaf className="w-6 h-6" />,
+  };
+
+  const stats = translatedStats.map((stat) => ({
+    ...stat,
+    icon: icons[stat.id],
+  }));
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -44,7 +38,7 @@ export default function ContactTrust() {
 
   return (
     <div
-      className="w-full py-10 px-4 relative" // Reduced from py-20 to py-10
+      className="w-full py-10 px-4 relative"
       style={{
         backgroundImage: 'url("https://images.unsplash.com/photo-1472214103451-9374bd1c798e")',
         backgroundAttachment: "fixed",
@@ -56,16 +50,16 @@ export default function ContactTrust() {
 
       <div className="relative z-10 max-w-5xl mx-auto">
         <motion.h2
-          className="text-2xl md:text-3xl font-bold text-center text-white mb-6 tracking-tight" // Reduced text size and margin
+          className="text-2xl md:text-3xl font-bold text-center text-white mb-6 tracking-tight"
           initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          Our Impact & Reach
+          {t("heading")}
         </motion.h2>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-5" // Reduced gap
+          className="grid grid-cols-1 md:grid-cols-3 gap-5"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -76,7 +70,7 @@ export default function ContactTrust() {
               key={item.id}
               variants={cardVariants}
               whileHover={{ y: -5 }}
-              className="group bg-white/95 backdrop-blur-sm p-6 rounded-xl flex flex-col items-center text-center shadow-lg transition-all duration-300 border border-transparent hover:border-[#00627B]/30" // Reduced p-10 to p-6
+              className="group bg-white/95 backdrop-blur-sm p-6 rounded-xl flex flex-col items-center text-center shadow-lg transition-all duration-300 border border-transparent hover:border-[#00627B]/30"
             >
               {/* Icon Wrapper - Compact Size */}
               <div className="w-14 h-14 flex items-center justify-center rounded-full bg-[#00627B]/5 text-[#00627B] mb-3 transition-all duration-300 group-hover:bg-[#00627B] group-hover:text-white group-hover:scale-105">
@@ -101,5 +95,5 @@ export default function ContactTrust() {
       </div>
     </div>
   );
-};
+}
 

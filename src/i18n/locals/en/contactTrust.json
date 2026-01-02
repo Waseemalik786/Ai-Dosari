@@ -1,0 +1,20 @@
+{
+  "heading": "Our Impact & Reach",
+  "stats": [
+    {
+      "id": "school",
+      "title": "100+",
+      "description": "Educational school visits hosted annually."
+    },
+    {
+      "id": "visitors",
+      "title": "5,000+",
+      "description": "Visitors welcomed for family experiences."
+    },
+    {
+      "id": "programs",
+      "title": "Eco-Friendly",
+      "description": "Dedicated nature and conservation programs."
+    }
+  ]
+}

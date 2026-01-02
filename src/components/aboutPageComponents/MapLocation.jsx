@@ -1,13 +1,23 @@
 import React from "react";
 import { FaMapMarkerAlt, FaCar, FaBus, FaClock } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const MapLocation = () => {
+  const { t } = useTranslation("mapLocation");
+  const transportData = t("gettingHere.transport", { returnObjects: true });
+  const attractionsData = t("attractions.items", { returnObjects: true });
+
+  const transportIcons = {
+    car: <FaCar />,
+    bus: <FaBus />,
+  };
+
   return (
     <section className="py-24 bg-white relative overflow-hidden">
       {/* Background Subtle Text - Consistency check ✅ */}
       <div className="absolute right-[-50px] top-20 opacity-[0.03] select-none pointer-events-none">
         <h2 className="text-[200px] font-black uppercase tracking-tighter">
-          Location
+          {t("bgText")}
         </h2>
       </div>
 
@@ -16,15 +26,17 @@ const MapLocation = () => {
         <div className="text-center mb-20" data-aos="fade-up">
           <div className="inline-block px-4 py-1.5 bg-[#00627b]/10 rounded-full mb-6">
             <span className="text-[#00627b] font-bold text-xs tracking-[0.3em] uppercase">
-              Visit Us
+              {t("badge")}
             </span>
           </div>
           <h2 className="text-5xl md:text-7xl font-black text-slate-900 leading-tight italic uppercase tracking-tighter">
-            Our <span className="text-white bg-[#00627b] px-4">Location</span>
+            {t("heading.main")}{" "}
+            <span className="text-white bg-[#00627b] px-4">
+              {t("heading.highlight")}
+            </span>
           </h2>
           <p className="mt-6 text-xl text-slate-500 max-w-2xl mx-auto font-light">
-            Easily accessible from major cities with premium facilities for our
-            visitors.
+            {t("subheading")}
           </p>
         </div>
 
@@ -47,7 +59,7 @@ const MapLocation = () => {
                 <div className="flex items-center gap-3">
                   <FaMapMarkerAlt className="text-[#00627b] text-xl" />
                   <span className="font-bold text-slate-900 uppercase tracking-tight">
-                    Al Dosari Reserve, Qatar
+                    {t("mapBadge")}
                   </span>
                 </div>
               </div>
@@ -58,28 +70,15 @@ const MapLocation = () => {
           <div className="space-y-8" data-aos="fade-left">
             <div className="bg-white p-10 shadow-[0_10px_40px_rgba(0,0,0,0.04)] border-l-4 border-[#00627b]">
               <h3 className="text-3xl font-black text-slate-900 uppercase tracking-tighter italic mb-8">
-                Getting Here
+                {t("gettingHere.title")}
               </h3>
 
               {/* Transport Options */}
               <div className="space-y-6 mb-10">
-                {[
-                  {
-                    icon: <FaCar />,
-                    title: "By Car",
-                    description:
-                      "45 minutes from Doha city center via Al Shamal Road",
-                  },
-                  {
-                    icon: <FaBus />,
-                    title: "Public Transport",
-                    description:
-                      "Bus service available from Al Khor bus station",
-                  },
-                ].map((transport, index) => (
+                {transportData.map((transport, index) => (
                   <div key={index} className="flex gap-6 group">
                     <div className="w-12 h-12 bg-[#00627b]/5 rounded-sm flex items-center justify-center text-[#00627b] text-xl group-hover:bg-[#00627b] group-hover:text-white transition-all">
-                      {transport.icon}
+                      {transportIcons[transport.id]}
                     </div>
                     <div>
                       <h4 className="text-lg font-bold text-slate-900 uppercase tracking-tight">
@@ -98,24 +97,24 @@ const MapLocation = () => {
                 <div className="flex items-center gap-3 mb-6">
                   <FaClock className="text-[#00627b] text-xl" />
                   <h4 className="text-xl font-bold uppercase tracking-tight">
-                    Visiting Hours
+                    {t("hours.title")}
                   </h4>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div>
                     <div className="text-[#00627b] font-bold text-xs uppercase tracking-widest mb-1">
-                      Sat - Thu
+                      {t("hours.weekdays.days")}
                     </div>
                     <div className="text-2xl font-black text-slate-900 tracking-tighter italic">
-                      8:00 AM - 6:00 PM
+                      {t("hours.weekdays.time")}
                     </div>
                   </div>
                   <div>
                     <div className="text-[#00627b] font-bold text-xs uppercase tracking-widest mb-1">
-                      Friday
+                      {t("hours.friday.days")}
                     </div>
                     <div className="text-2xl font-black text-slate-900 tracking-tighter italic">
-                      2:00 PM - 8:00 PM
+                      {t("hours.friday.time")}
                     </div>
                   </div>
                 </div>
@@ -128,7 +127,7 @@ const MapLocation = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Book Your Visit Now
+                {t("button")}
               </a>
             </div>
           </div>
@@ -137,26 +136,10 @@ const MapLocation = () => {
         {/* Nearby Attractions - History Stats Style Consistency ✅ */}
         <div className="mt-24 pt-16 border-t border-slate-100">
           <h3 className="text-2xl font-black text-center mb-12 uppercase tracking-widest italic text-slate-400">
-            Nearby Attractions
+            {t("attractions.title")}
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-slate-100 divide-y md:divide-y-0 md:divide-x divide-slate-100">
-            {[
-              {
-                name: "Al Khor Park",
-                distance: "15 min",
-                desc: "Beautiful park and trails",
-              },
-              {
-                name: "Purple Island",
-                distance: "25 min",
-                desc: "Mangrove forests & wildlife",
-              },
-              {
-                name: "Al Thakira Beach",
-                distance: "30 min",
-                desc: "Perfect for family outings",
-              },
-            ].map((attraction, index) => (
+            {attractionsData.map((attraction, index) => (
               <div
                 key={index}
                 className="p-10 text-center hover:bg-[#00627b]/5 transition-all group"
@@ -165,7 +148,7 @@ const MapLocation = () => {
                   {attraction.name}
                 </div>
                 <div className="text-slate-400 font-bold text-xs uppercase tracking-[4px] mb-4">
-                  {attraction.distance} away
+                  {attraction.distance} {t("attractions.away")}
                 </div>
                 <p className="text-slate-500 font-light text-sm italic">
                   {attraction.desc}

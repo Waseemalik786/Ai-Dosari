@@ -1,26 +1,19 @@
 import React from "react";
 import { MessageCircle, Zap, ShieldCheck, Star } from "lucide-react";
 import { motion } from "framer-motion";
-
-const features = [
-  {
-    icon: Zap,
-    title: "Fast Response",
-    text: "Get quick answers directly from our team",
-  },
-  {
-    icon: MessageCircle,
-    title: "Direct Communication",
-    text: "Discuss your visit details without delays",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Reliable Coordination",
-    text: "Trusted by schools, families, and institutions",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 export default function ContactWhyWhatsApp() {
+  const { t } = useTranslation("contactWhyWhatsApp");
+  const translatedFeatures = t("features", { returnObjects: true });
+
+  const icons = [Zap, MessageCircle, ShieldCheck];
+
+  const features = translatedFeatures.map((feature, index) => ({
+    ...feature,
+    icon: icons[index],
+  }));
+
   return (
     <section className="bg-white px-4 py-8 md:px-8 md:py-10">
       <div className="mx-auto max-w-7xl">
@@ -33,13 +26,13 @@ export default function ContactWhyWhatsApp() {
         > 
           <p className="inline-flex items-center gap-1 bg-[#00627B]/10 text-[#00627B] uppercase tracking-wider text-xs font-medium px-3 py-1 rounded-full mb-2"> 
             <Star className="w-3 h-3" /> 
-            WhatsApp
+            {t("badge")}
           </p> 
           <h2 className="text-2xl md:text-3xl font-bold text-[#1e1e1e] mb-2"> 
-            Why Contact Us via <span className="text-[#00627B]">WhatsApp?</span> 
+            {t("title.main")} <span className="text-[#00627B]">{t("title.highlight")}</span> 
           </h2> 
           <p className="text-sm text-gray-600 max-w-2xl mx-auto leading-relaxed"> 
-            Experience the most convenient and fastest way to reach our team for bookings and inquiries.
+            {t("description")}
           </p> 
         </motion.div>
 
@@ -67,6 +60,6 @@ export default function ContactWhyWhatsApp() {
       </div>
     </section>
   );
-};
+}
 
 

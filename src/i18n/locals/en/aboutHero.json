@@ -1,0 +1,14 @@
+{
+  "heading": {
+    "main": "Discover",
+    "highlight": "Nature's Legacy"
+  },
+  "description": "Al Dosari Reserve stands as a sanctuary where wildlife thrives and conservation meets education. We protect endangered species for a better tomorrow.",
+  "button": "BOOK A TOUR",
+  "stats": [
+    { "id": "species", "value": "500+", "label": "Species" },
+    { "id": "hectares", "value": "1200+", "label": "Hectares" },
+    { "id": "visitors", "value": "50K+", "label": "Visitors" }
+  ],
+  "decorativeText": "WILDLIFE"
+}

@@ -1,0 +1,50 @@
+{
+  "bgText": "Alliance",
+  "badge": "Collaborations",
+  "heading": {
+    "main": "Partners &",
+    "highlight": "Accredits"
+  },
+  "subheading": "Working with global organizations to enhance our conservation impact and set new standards.",
+  "partners": {
+    "title": "Our Global Network",
+    "items": [
+      { "id": "unesco", "name": "UNESCO", "description": "Cultural Heritage Partner" },
+      { "id": "wwf", "name": "WWF", "description": "Conservation Alliance" },
+      { "id": "qu", "name": "Qatar University", "description": "Research Partner" },
+      { "id": "env", "name": "Ministry of Environment", "description": "Government Partner" },
+      { "id": "eco", "name": "Eco Tourism", "description": "Tourism Partner" },
+      { "id": "wildlife", "name": "Wildlife Trust", "description": "Conservation Partner" }
+    ]
+  },
+  "accreditations": {
+    "title": "Official Accreditations",
+    "items": [
+      { "id": "iso", "title": "ISO 14001", "description": "Environmental Management" },
+      { "id": "greenkey", "title": "Green Key", "description": "Eco Tourism Certification" },
+      { "id": "earthcheck", "title": "EarthCheck", "description": "Sustainable Tourism" },
+      { "id": "unesco_site", "title": "UNESCO", "description": "Heritage Site Partner" }
+    ]
+  },
+  "future": {
+    "heading": {
+      "main": "Future",
+      "highlight": "Collaborations"
+    },
+    "description": "We're actively seeking partnerships with research institutions and conservation bodies to develop innovative solutions for wildlife.",
+    "list": [
+      "Wildlife Research Partnerships",
+      "Educational Program Development",
+      "Conservation Technology"
+    ],
+    "button": "Partner With Us"
+  },
+  "cta": {
+    "heading": "Ready to Explore?",
+    "description": "Join us in our mission to protect wildlife while enjoying unforgettable eco-tourism experiences.",
+    "buttons": {
+      "book": "Book Your Visit",
+      "contact": "Contact Team"
+    }
+  }
+}

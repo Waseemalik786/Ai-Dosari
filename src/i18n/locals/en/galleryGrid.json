@@ -1,0 +1,55 @@
+{
+  "categories": {
+    "all": "All",
+    "wildlife": "Wildlife",
+    "schools": "Schools",
+    "events": "Events"
+  },
+  "items": [
+    {
+      "id": 5,
+      "category": "schools",
+      "title": "Scouts Group"
+    },
+    {
+      "id": 6,
+      "category": "schools",
+      "title": "Tree Planting"
+    },
+    {
+      "id": 7,
+      "category": "schools",
+      "title": "Outdoor Classroom"
+    },
+    {
+      "id": 8,
+      "category": "events",
+      "title": "Camel Ride Sunset"
+    },
+    {
+      "id": 9,
+      "category": "events",
+      "title": "Corporate Hike"
+    },
+    {
+      "id": 10,
+      "category": "events",
+      "title": "Family Gathering"
+    },
+    {
+      "id": 1,
+      "category": "wildlife",
+      "title": "Oryx Grazing"
+    },
+    {
+      "id": 2,
+      "category": "wildlife",
+      "title": "Giraffe Close-up"
+    },
+    {
+      "id": 3,
+      "category": "wildlife",
+      "title": "Gazelle at Sunset"
+    }
+  ]
+}

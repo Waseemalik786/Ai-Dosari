@@ -7,52 +7,33 @@ import {
   FaLightbulb,
   FaHandshake,
 } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const ValueSection = () => {
-  const values = [
-    {
-      icon: <FaHeart />,
-      title: "Passion",
-      description:
-        "Our team's dedication to animal welfare drives everything we do.",
-    },
-    {
-      icon: <FaLeaf />,
-      title: "Stewardship",
-      description:
-        "Commitment to sustainable practices and habitat protection.",
-    },
-    {
-      icon: <FaUsers />,
-      title: "Community",
-      description:
-        "Working with local communities for mutual educational benefit.",
-    },
-    {
-      icon: <FaShieldAlt />,
-      title: "Integrity",
-      description: "Honest communication and ethical conservation operations.",
-    },
-    {
-      icon: <FaLightbulb />,
-      title: "Innovation",
-      description:
-        "Implementing cutting-edge technology in wildlife protection.",
-    },
-    {
-      icon: <FaHandshake />,
-      title: "Partnership",
-      description:
-        "Collaborating with global bodies for a greater environmental impact.",
-    },
-  ];
+  const { t } = useTranslation("valueSection");
+  const translatedValues = t("values", { returnObjects: true });
+  const translatedStats = t("impact.stats", { returnObjects: true });
+
+  const valueIcons = {
+    passion: <FaHeart />,
+    stewardship: <FaLeaf />,
+    community: <FaUsers />,
+    integrity: <FaShieldAlt />,
+    innovation: <FaLightbulb />,
+    partnership: <FaHandshake />,
+  };
+
+  const values = translatedValues.map((value) => ({
+    ...value,
+    icon: valueIcons[value.id],
+  }));
 
   return (
     <section className="pt-24 bg-white relative overflow-hidden">
       {/* Background Subtle Text ✅ */}
       <div className="absolute -right-5 top-10 opacity-[0.03] select-none pointer-events-none">
         <h2 className="text-[150px] font-black uppercase tracking-tighter italic">
-          Principles
+          {t("bgText")}
         </h2>
       </div>
 
@@ -61,12 +42,14 @@ const ValueSection = () => {
         <div className="text-center mb-24" data-aos="fade-up">
           <div className="inline-block px-4 py-1.5 bg-[#00627b]/10 rounded-full mb-6">
             <span className="text-[#00627b] font-bold text-xs tracking-[0.3em] uppercase">
-              What Drives Us
+              {t("badge")}
             </span>
           </div>
           <h2 className="text-5xl md:text-7xl font-black text-slate-900 leading-tight italic uppercase tracking-tighter">
-            Our Core{" "}
-            <span className="text-white bg-[#00627b] px-4">Values</span>
+            {t("heading.main")}{" "}
+            <span className="text-white bg-[#00627b] px-4">
+              {t("heading.highlight")}
+            </span>
           </h2>
         </div>
 
@@ -99,23 +82,16 @@ const ValueSection = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div data-aos="fade-right">
               <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-8 uppercase tracking-tighter italic leading-none">
-                Environmental <br />
-                <span className="text-[#00627b]">Global Impact</span>
+                {t("impact.heading.main")} <br />
+                <span className="text-[#00627b]">{t("impact.heading.highlight")}</span>
               </h3>
               <p className="text-slate-500 text-lg font-light leading-relaxed mb-10">
-                Our conservation efforts extend beyond the reserve boundaries,
-                contributing to regional biodiversity and setting international
-                standards for habitat restoration.
+                {t("impact.description")}
               </p>
 
               {/* Stats Grid - Square Clean ✅ */}
               <div className="grid grid-cols-2 gap-1 border-l-4 border-[#00627b]">
-                {[
-                  { label: "Habitat Restoration", val: "95%" },
-                  { label: "Population Growth", val: "120%" },
-                  { label: "Trees Planted", val: "50K+" },
-                  { label: "Renewable Usage", val: "100%" },
-                ].map((stat, i) => (
+                {translatedStats.map((stat, i) => (
                   <div key={i} className="p-6 bg-slate-50">
                     <div className="text-3xl font-black text-slate-900 italic tracking-tighter">
                       {stat.val}
@@ -138,10 +114,10 @@ const ValueSection = () => {
               />
               <div className="absolute bottom-8 right-8 bg-[#00627b] text-white p-8 shadow-2xl">
                 <div className="text-3xl font-black italic tracking-tighter">
-                  ISO 14001
+                  {t("impact.iso.title")}
                 </div>
                 <div className="text-xs font-bold uppercase tracking-[0.3em] opacity-80">
-                  Certified Excellence
+                  {t("impact.iso.badge")}
                 </div>
               </div>
             </div>

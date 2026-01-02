@@ -1,34 +1,34 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MessageSquare, Users, HelpCircle } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export default function ContactInfoCards() {
-  const contactMethods = [
-    {
-      id: 'whatsapp-general',
+  const { t } = useTranslation("contactInfoCards");
+  const translatedMethods = t("methods", { returnObjects: true });
+
+  const staticData = {
+    'whatsapp-general': {
       icon: <MessageSquare className="w-8 h-8" />,
-      title: 'General Inquiry',
-      info: 'Chat with us',
       link: 'https://wa.me/966501234567',
       bgImage: 'https://images.unsplash.com/photo-1575550959106-5a7defe28b56',
     },
-    {
-      id: 'whatsapp-booking',
+    'whatsapp-booking': {
       icon: <Users className="w-8 h-8" />,
-      title: 'School & Groups',
-      info: 'Book your visit',
       link: 'https://wa.me/966501234567',
       bgImage: 'https://plus.unsplash.com/premium_photo-1729791088769-6157499dbe9d',
     },
-    {
-      id: 'whatsapp-support',
+    'whatsapp-support': {
       icon: <HelpCircle className="w-8 h-8" />,
-      title: 'Support & Help',
-      info: 'Get assistance',
       link: 'https://wa.me/966501234567',
       bgImage: 'https://images.unsplash.com/photo-1504618223053-559bdef9dd5a',
     }
-  ];
+  };
+
+  const contactMethods = translatedMethods.map(method => ({
+    ...method,
+    ...staticData[method.id]
+  }));
 
   return (
     <div className="w-full">
@@ -75,5 +75,5 @@ export default function ContactInfoCards() {
       </div>
     </div>
   );
-};
+}
 

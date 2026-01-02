@@ -1,0 +1,19 @@
+{
+  "methods": [
+    {
+      "id": "whatsapp-general",
+      "title": "استفسار عام",
+      "info": "تحدث معنا"
+    },
+    {
+      "id": "whatsapp-booking",
+      "title": "المدارس والمجموعات",
+      "info": "احجز زيارتك"
+    },
+    {
+      "id": "whatsapp-support",
+      "title": "الدعم والمساعدة",
+      "info": "احصل على المساعدة"
+    }
+  ]
+}

@@ -1,13 +1,16 @@
 import React from "react";
-import { FaEye, FaBullseye, FaLeaf, FaGraduationCap } from "react-icons/fa";
+import { FaEye, FaBullseye } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const MissionVision = () => {
+  const { t } = useTranslation("missionVision");
+
   return (
     <section className=" bg-white relative overflow-hidden">
       {/* Background Subtle Text */}
       <div className="absolute -left-12.5 top-40 opacity-[0.03] select-none pointer-events-none">
         <h2 className="text-[200px] font-black uppercase tracking-tighter">
-          Purpose
+          {t("bgText")}
         </h2>
       </div>
 
@@ -16,16 +19,17 @@ const MissionVision = () => {
         <div className="text-center mb-10 bg-white" data-aos="fade-up">
           <div className="inline-block px-4 py-1.5 bg-[#00627b]/10 rounded-full mb-6">
             <span className="text-[#00627b] font-bold text-xs tracking-[0.3em] uppercase">
-              Our Purpose
+              {t("badge")}
             </span>
           </div>
           <h2 className="text-5xl md:text-7xl font-black text-slate-900 leading-tight italic uppercase tracking-tighter">
-            Mission &{" "}
-            <span className="text-white bg-[#00627b] px-4">Vision</span>
+            {t("heading.main")}{" "}
+            <span className="text-white bg-[#00627b] px-4">
+              {t("heading.highlight")}
+            </span>
           </h2>
           <p className="mt-6 text-xl text-slate-500 max-w-2xl mx-auto font-light">
-            Driving conservation through education and creating sustainable
-            wildlife experiences for future generations.
+            {t("subheading")}
           </p>
         </div>
 
@@ -39,26 +43,17 @@ const MissionVision = () => {
               <FaBullseye />
             </div>
             <h3 className="text-4xl font-black text-slate-900 uppercase tracking-tighter italic mb-6">
-              Our Mission
+              {t("mission.title")}
             </h3>
             <p className="text-lg text-slate-600 leading-relaxed font-light mb-8">
-              To protect and conserve Arabian wildlife through innovative
-              conservation programs, while providing immersive educational
-              experiences that foster environmental stewardship.
+              {t("mission.description")}
             </p>
             <ul className="space-y-4 text-slate-700 font-medium uppercase text-sm tracking-widest">
-              <li className="flex items-center gap-3 italic">
-                <span className="w-2 h-2 bg-[#00627b]"></span> Wildlife
-                Protection
-              </li>
-              <li className="flex items-center gap-3 italic">
-                <span className="w-2 h-2 bg-[#00627b]"></span> Environmental
-                Education
-              </li>
-              <li className="flex items-center gap-3 italic">
-                <span className="w-2 h-2 bg-[#00627b]"></span> Sustainable
-                Tourism
-              </li>
+              {t("mission.points", { returnObjects: true }).map((point, index) => (
+                <li key={index} className="flex items-center gap-3 italic">
+                  <span className="w-2 h-2 bg-[#00627b]"></span> {point}
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -71,24 +66,17 @@ const MissionVision = () => {
               <FaEye />
             </div>
             <h3 className="text-4xl font-black text-slate-900 uppercase tracking-tighter italic mb-6">
-              Our Vision
+              {t("vision.title")}
             </h3>
             <p className="text-lg text-slate-600 leading-relaxed font-light mb-8">
-              To become the leading conservation destination in the Middle East,
-              setting global standards in wildlife protection while inspiring
-              the world to value our natural heritage.
+              {t("vision.description")}
             </p>
             <ul className="space-y-4 text-slate-700 font-medium uppercase text-sm tracking-widest">
-              <li className="flex items-center gap-3 italic">
-                <span className="w-2 h-2 bg-[#00627b]"></span> Global Excellence
-              </li>
-              <li className="flex items-center gap-3 italic">
-                <span className="w-2 h-2 bg-[#00627b]"></span> Conservation
-                Standards
-              </li>
-              <li className="flex items-center gap-3 italic">
-                <span className="w-2 h-2 bg-[#00627b]"></span> Cultural Heritage
-              </li>
+              {t("vision.points", { returnObjects: true }).map((point, index) => (
+                <li key={index} className="flex items-center gap-3 italic">
+                  <span className="w-2 h-2 bg-[#00627b]"></span> {point}
+                </li>
+              ))}
             </ul>
           </div>
         </div>
