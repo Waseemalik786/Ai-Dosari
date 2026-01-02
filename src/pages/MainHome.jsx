@@ -1,13 +1,13 @@
 import React from 'react'
 import HomeHeader from '../components/home/HomeHeader.jsx'
-import HomeActivity from '../Components/Home/Homeactivity.jsx'
-import HomeTrips from '../Components/Home/HomeTrips.jsx'
-import Services from '../Components/home/Services.jsx'
+import HomeActivity from '../components/Home/Homeactivity.jsx'
+import HomeTrips from '../components/Home/HomeTrips.jsx'
+import Services from '../components/home/Services.jsx'
 
 
 
 
-export default function Home() {
+const MainHome = () => {
   return (
     <div className='mt-10'>
       <HomeHeader />
@@ -17,3 +17,4 @@ export default function Home() {
     </div>
   )
 }
+export default MainHome;

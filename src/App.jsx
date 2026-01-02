@@ -1,20 +1,17 @@
 import React from "react";
 import "./App.css";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import Home from "./pages/Home";
 import AboutPage from "./pages/AboutPage";
 import ActivitiesExperiences from "./pages/ActivitiesExperiences";
 import ContactPage from "./pages/ContactPage";
-import WhatsApp from "./Components/common/Whatsapp";
-import FooterSection from "./Components/common/FooterSection";
+import WhatsApp from "./components/common/Whatsapp";
+import FooterSection from "./components/common/FooterSection";
 import NavbarSection from "./Components/common/NavbarSection";
-
-
-
+import MainHome from "./pages/MainHome";
 
 const MainLayout = () => (
   <div>
-    <NavbarSection/>
+    <NavbarSection />
     <Outlet />
     <WhatsApp />
     <FooterSection />
@@ -26,7 +23,7 @@ const router = createBrowserRouter([
     element: <MainLayout />,
     children: [
 
-      { path: '/', element: <Home /> },
+      { path: '/', element: <MainHome /> },
       { path: '/about', element: <AboutPage /> },
       { path: '/activities', element: <ActivitiesExperiences /> },
       { path: '/contact', element: <ContactPage /> },
