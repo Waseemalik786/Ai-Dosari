@@ -1,21 +1,20 @@
-import React from 'react'
-import './App.css'
-import { createBrowserRouter, Outlet, Route, RouterProvider, Routes } from "react-router-dom";
-import Navbar from './components/common/Navbar';
-import Footer from './components/common/Footer';
-import Home from './Pages/Home';
-import WhatSapp from './components/common/Whatsapp';
-import SignUp from './components/common/SignUp';
-import Login from './components/common/Login';
-
-
-
+import React from "react";
+import "./App.css";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import AboutPage from "./pages/AboutPage";
+import ActivitiesExperiences from "./pages/ActivitiesExperiences";
+import ContactPage from "./pages/ContactPage";
+import WhatsApp from "./components/common/WhatsApp";
+import FooterSection from "./components/common/FooterSection";
+import NavbarSection from "./components/common/NavbarSection";
+import MainHome from "./pages/MainHome";
+// import PageNotFound from "./pages/PageNotFound";
 const MainLayout = () => (
-  <div className="lg:mx-auto lg:max-w-[1536px]">
-    <Navbar />
+  <div>
+    <NavbarSection />
     <Outlet />
-    <WhatSapp />
-    <Footer />
+    <WhatsApp />
+    <FooterSection />
   </div>
 );
 
@@ -23,23 +22,21 @@ const router = createBrowserRouter([
   {
     element: <MainLayout />,
     children: [
-      { path: "/", element: <Home /> }, 
-      {path:"/signup", element:<SignUp/> } ,
-      {path:"/login" , element:<Login/>} 
+
+      { path: '/', element: <MainHome /> },
+      { path: '/about', element: <AboutPage /> },
+      { path: '/activities', element: <ActivitiesExperiences /> },
+      { path: '/contact', element: <ContactPage /> },
+
+
+
     ],
   },
   // { path: "*", element: <PageNotFound /> },
 ]);
 
-
 const App = () => {
-  return (
-    <div>
-      <RouterProvider router={router}></RouterProvider>
-    </div>
-  )
-}
+  return <RouterProvider router={router}></RouterProvider>;
+};
 
-export default App
-
-
+export default App;
