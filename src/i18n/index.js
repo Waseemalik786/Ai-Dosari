@@ -48,6 +48,16 @@ import en_sectionTeam from "./locals/en/sectionTeam.json";
 import ar_sectionTeam from "./locals/ar/sectionTeam.json";
 import en_sectionPartnership from "./locals/en/sectionPartnership.json";
 import ar_sectionPartnership from "./locals/ar/sectionPartnership.json";
+import en_homeheader from "./locals/en/homeslider.json";
+import ar_homeheader from "./locals/ar/homeslider.json";
+import en_homeactivities from "./locals/en/homeactivities.json";
+import ar_homeactivities from "./locals/ar/homeactivities.json";
+import en_hometrip from "./locals/en/trips.json";
+import ar_hometrip from "./locals/ar/trips.json";
+import en_visittripes from "./locals/en/visittripes.json";
+import ar_visittripes from "./locals/ar/visittripes.json";
+import en_services from "./locals/en/services.json";
+import ar_services from "./locals/ar/services.json";  
 const resources = {
   en: { navbar: en_Navbar,
         footer: en_Footer,
@@ -71,7 +81,12 @@ const resources = {
         valueSection: en_valueSection,
         mapLocation: en_mapLocation,
         sectionTeam: en_sectionTeam,
-        sectionPartnership: en_sectionPartnership
+        sectionPartnership: en_sectionPartnership,
+        homeheader: en_homeheader,
+        homeactivities: en_homeactivities,
+        hometrip: en_hometrip,
+        visittripes: en_visittripes,
+        services: en_services,
    },
   ar: { navbar: ar_Navbar,
          footer: ar_Footer,
@@ -95,7 +110,12 @@ const resources = {
          valueSection: ar_valueSection,
          mapLocation: ar_mapLocation,
          sectionTeam: ar_sectionTeam,
-         sectionPartnership: ar_sectionPartnership
+         sectionPartnership: ar_sectionPartnership,
+          homeheader: ar_homeheader,
+          homeactivities: ar_homeactivities,
+          hometrip: ar_hometrip,
+          visittripes: ar_visittripes,
+          services: ar_services,  
    },
 };
 
