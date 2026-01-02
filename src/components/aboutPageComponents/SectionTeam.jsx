@@ -6,7 +6,7 @@ import {
   FaLinkedinIn,
 } from "react-icons/fa";
 
-const TeamSection = () => {
+const SectionTeam = () => {
   const teamMembers = [
     {
       name: "Dr. Ahmed Al Dosari",
@@ -189,4 +189,4 @@ const TeamSection = () => {
   );
 };
 
-export default TeamSection;
+export default SectionTeam; 

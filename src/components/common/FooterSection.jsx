@@ -13,7 +13,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import logo from "../../assets/al-logo.png";
 
-const Footer = () => {
+const FooterSection = () => {
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -235,4 +235,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default FooterSection;

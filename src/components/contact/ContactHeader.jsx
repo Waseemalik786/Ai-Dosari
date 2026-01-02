@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 
-const ContactHeader = () => {
+export default function ContactHeader() {
   return (
     <section
       className="
@@ -67,4 +67,4 @@ const ContactHeader = () => {
   );
 };
 
-export default ContactHeader;
+

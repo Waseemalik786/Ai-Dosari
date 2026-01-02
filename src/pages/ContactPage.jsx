@@ -9,7 +9,7 @@ import {
   ContactHeader,
 } from "../components/contact";
 
-const Contact = () => {
+const ContactPage = () => {
   return (
 
     <div className="min-h-screen flex flex-col bg-white overflow-x-hidden">
@@ -39,5 +39,5 @@ const Contact = () => {
     </div>
   );
 };
+export default ContactPage;
 
-export default Contact;

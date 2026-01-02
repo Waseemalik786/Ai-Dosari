@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FaBars, FaTimes, FaChevronDown, FaChevronUp } from "react-icons/fa";
 import logo from "../../assets/al-logo.png";
 
-const Navbar = () => {
+const NavbarSection = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
   const [isLanguageHovered, setIsLanguageHovered] = useState(false);
@@ -174,4 +174,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavbarSection;
