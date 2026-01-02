@@ -52,7 +52,7 @@ export default function ActivityCard({
         {/* WhatsApp Booking Button */}
         <button
           onClick={onBook}
-          className="w-full bg-gradient-to-r from-[#00627B] to-[#004d5c] text-white font-semibold py-2 rounded-lg flex items-center justify-center gap-2 hover:scale-[1.02] transition-all duration-300 group"
+          className="w-full cursor-pointer bg-gradient-to-r from-[#00627B] to-[#004d5c] text-white font-semibold py-2 rounded-lg flex items-center justify-center gap-2 hover:scale-[1.02] transition-all duration-300 group"
         >
           <FaWhatsapp className="text-lg group-hover:scale-110 transition-transform" />
           <span>Book via WhatsApp</span>

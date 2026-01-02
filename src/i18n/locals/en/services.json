@@ -1,0 +1,45 @@
+{
+  "services": {
+    "heading": {
+      "title": "Explore Our Facilities",
+      "subtitle": "Our Services",
+      "description": "We provide top notch services to make your visit comfortable, enjoyable, and memorable."
+    },
+    "leftServices": [
+      {
+        "title": "Car Parking",
+        "desc": "Safe & spacious parking."
+      },
+      {
+        "title": "Animal Photos",
+        "desc": "Capture zoo memories."
+      },
+      {
+        "title": "Guide Services",
+        "desc": "Professional guides available."
+      },
+      {
+        "title": "Food & Beverages",
+        "desc": "Delicious meals & drinks."
+      }
+    ],
+    "rightServices": [
+      {
+        "title": "Zoo Shopping",
+        "desc": "Souvenirs, toys, and more."
+      },
+      {
+        "title": "Free Hi-Speed WiFi",
+        "desc": "Stay connected anytime."
+      },
+      {
+        "title": "Playground",
+        "desc": "Fun play area for children."
+      },
+      {
+        "title": "Rest House",
+        "desc": "Relax & refresh comfortably."
+      }
+    ]
+  }
+}

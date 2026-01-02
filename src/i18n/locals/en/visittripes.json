@@ -1,0 +1,22 @@
+{
+  "sectionTitle": "Choose Your Visit Type",
+  "sectionHighlight": "Choose Your",
+  "tripTypes": [
+    {
+      "title": "School Trips",
+      "description": "Curriculum-aligned programs for educational institutions",
+      "features": ["Grade-specific learning", "Worksheets provided", "Guided by educators"]
+    },
+    {
+      "title": "Family & Group Visits",
+      "description": "Memorable experiences for families and private groups",
+      "features": ["Flexible scheduling", "Custom activities", "Private guides available"]
+    },
+    {
+      "title": "Institutional Tours",
+      "description": "Organized visits for companies and organizations",
+      "features": ["Team building", "Corporate packages", "Custom itineraries"]
+    }
+  ],
+  "buttonText": "Inquire About"
+}

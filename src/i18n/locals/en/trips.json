@@ -1,0 +1,22 @@
+{
+  "sectionTitle": "School Trips & Group Visits",
+  "sectionHighlight": "School Trips",
+  "sectionDesc": "Structured educational experiences and guided tours designed for learning, adventure, and conservation",
+  "whyTitle": "Why Choose Al Dosari Reserve for Group Visits?",
+  "whyList": [
+    "Guided by certified educators and naturalists",
+    "Age-appropriate programs for all educational levels",
+    "Safety-first approach with trained staff",
+    "Flexible scheduling and customizable packages",
+    "Hands-on learning experiences in natural settings",
+    "Support materials and pre-visit resources provided"
+  ],
+  "safetyTitle": "Safety & Organization",
+  "safetyDesc": "All group visits include trained staff, first-aid facilities, emergency plans, and appropriate safety equipment for activities.",
+  "imageAlt": "Students enjoying educational trip at Al Dosari Reserve",
+  "stats": [
+    { "value": "500+", "label": "School Groups" },
+    { "value": "10K+", "label": "Students Visited" },
+    { "value": "98%", "label": "Satisfaction Rate" }
+  ]
+}

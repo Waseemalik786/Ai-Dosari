@@ -80,7 +80,7 @@ const NavbarSection = () => {
               setIsLanguageDropdownOpen(false);
             }}
           >
-            <button className="flex items-center cursor-pointer px-4 py-1 rounded-md text-lg font-medium text-[#00627B] border border-[#00627B]/30">
+            <button className="flex cursor-pointer items-center cursor-pointer px-4 py-1 rounded-md text-lg font-medium text-[#00627B] border border-[#00627B]/30">
               <span className="relative text-[16px] z-10 flex items-center">
                 {currentLanguageLabel}
                 {languageHovered ? (
@@ -97,7 +97,7 @@ const NavbarSection = () => {
                   <button
                     key={lang.code}
                     onClick={() => handleLanguageChange(lang.code)}
-                    className="block w-full text-left px-6 py-3 text-lg text-[#00627B] hover:bg-[#A9D4E8]/30 hover:text-[#004a5d] transition-colors duration-200"
+                    className="block w-full cursor-pointer text-left px-6 py-3 text-lg text-[#00627B] hover:bg-[#A9D4E8]/30 hover:text-[#004a5d] transition-colors duration-200"
                   >
                     {lang.name}
                   </button>

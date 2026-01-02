@@ -1,0 +1,29 @@
+{
+  "slides": [
+    {
+      "id": 1,
+      "image": "https://img.freepik.com/free-photo/tourist-carrying-luggage_23-2151747443.jpg?ga=GA1.1.1146211304.1754028702&semt=ais_hybrid&w=740&q=80",
+      "title": "محمية آل دوساري",
+      "subtitle": "وجهة سياحة بيئية وتعليمية متميزة",
+      "highlightIndex": 0
+    },
+    {
+      "id": 2,
+      "image": "https://img.freepik.com/premium-photo/conducting-population-surveys-endangered-speci-generative-ai_883586-255779.jpg?ga=GA1.1.1146211304.1754028702&semt=ais_hybrid&w=740&q=80",
+      "title": "تعلم الحياة البرية والطبيعة",
+      "subtitle": "تجارب فريدة للعائلات والمؤسسات",
+      "highlightIndex": 1
+    },
+    {
+      "id": 3,
+      "image": "https://img.freepik.com/free-photo/adventure-hike-people-concept-group-smiling-friends-forest-man-with-map_1157-45166.jpg?ga=GA1.1.1146211304.1754028702&semt=ais_hybrid&w=740&q=80",
+      "title": "رحلات تعليمية للمجموعات المدرسية",
+      "subtitle": "رحلات تعليمية تلهم وتعلم",
+      "highlightIndex": 2
+    }
+  ],
+  "buttons": {
+    "primary": "احجز عبر واتساب",
+    "secondary": "استكشف الأنشطة →"
+  }
+}
