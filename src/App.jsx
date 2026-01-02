@@ -1,23 +1,23 @@
 import React from "react";
 import "./App.css";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import Navbar from './Components/common/Navbar';
-import Footer from './Components/common/Footer';
-import WhatSapp from './Components/common/Whatsapp';
 import Home from "./pages/Home";
 import AboutPage from "./pages/AboutPage";
 import ActivitiesExperiences from "./pages/ActivitiesExperiences";
 import ContactPage from "./pages/ContactPage";
+import WhatsApp from "./Components/common/Whatsapp";
+import FooterSection from "./Components/common/FooterSection";
+import NavbarSection from "./Components/common/NavbarSection";
 
 
 
 
 const MainLayout = () => (
   <div>
-    <Navbar />
+    <NavbarSection/>
     <Outlet />
-    <WhatSapp />
-    <Footer />
+    <WhatsApp />
+    <FooterSection />
   </div>
 );
 
