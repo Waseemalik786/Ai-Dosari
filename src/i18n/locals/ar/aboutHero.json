@@ -1,14 +1,31 @@
 {
-  "heading": {
-    "main": "اكتشف",
-    "highlight": "إرث الطبيعة"
-  },
-  "description": "تقف محمية الدوسري كصرح حيث تزدهر الحياة البرية ويلتقي الحفاظ على البيئة بالتعليم. نحن نحمي الأنواع المهددة بالانقراض من أجل غد أفضل.",
-  "button": "احجز جولة",
-  "stats": [
-    { "id": "species", "value": "+500", "label": "فصيلة" },
-    { "id": "hectares", "value": "+1200", "label": "هكتار" },
-    { "id": "visitors", "value": "+50 ألف", "label": "زائر" }
-  ],
-  "decorativeText": "الحياة البرية"
+  "aboutHero": {
+    "slides": [
+      {
+        "id": 1,
+        "image": "https://images.pexels.com/photos/1462364/pexels-photo-1462364.jpeg",
+        "title": "استمتع بجمال الطبيعة الخالصة",
+        "subtitle": "اكتشف جمال المناظر الطبيعية في قطر واستنشق الهواء النقي في محميتنا الصديقة للبيئة.",
+        "highlightIndex": 2
+      },
+      {
+        "id": 2,
+        "image": "https://images.pexels.com/photos/8954864/pexels-photo-8954864.jpeg",
+        "title": "برامج الرحلات التعليمية",
+        "subtitle": "إلهام الجيل القادم من خلال تجارب تعليمية تفاعلية ورحلات توعوية بيئية.",
+        "highlightIndex": 0
+      },
+      {
+        "id": 3,
+        "image": "https://images.pexels.com/photos/8146867/pexels-photo-8146867.jpeg",
+        "title": "ركوب الخيل والجمال",
+        "subtitle": "تواصل مع التراث القطري من خلال تجارب الركوب التقليدية في محميتنا الجميلة.",
+        "highlightIndex": 3
+      }
+    ],
+    "buttons": {
+      "whatsapp": "الحجز عبر واتساب",
+      "activities": "استكشف الأنشطة ←"
+    }
+  }
 }
