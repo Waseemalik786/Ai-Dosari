@@ -1,13 +1,13 @@
 import React from "react";
 import "./App.css";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import AboutPage from "./pages/AboutPage";
-import ActivitiesExperiences from "./pages/ActivitiesExperiences";
-import ContactPage from "./pages/ContactPage";
+import AboutPage from "./Pages/AboutPage";
+import ActivitiesExperiences from "./Pages/ActivitiesExperiences";
+import ContactPage from "./Pages/ContactPage";
 import WhatsApp from "./components/common/WhatsApp";
 import FooterSection from "./components/common/FooterSection";
 import NavbarSection from "./components/common/NavbarSection";
-import MainHome from "./pages/MainHome";
+import MainHome from "./Pages/MainHome";
 // import PageNotFound from "./pages/PageNotFound";
 import Gallery from './Pages/Gallery'; // Import Gallery Page
 import Login from "./components/common/Login";
