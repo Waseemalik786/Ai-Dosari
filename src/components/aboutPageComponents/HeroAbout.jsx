@@ -1,93 +1,147 @@
-import React from "react";
-import { FaLeaf, FaMountain, FaWater } from "react-icons/fa";
-import { useTranslation } from "react-i18next";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { FaWhatsapp } from "react-icons/fa";
 
-const HeroAbout = () => {
-  const { t } = useTranslation("aboutHero");
-  const translatedStats = t("stats", { returnObjects: true });
+// 4 Slides Data
+const aboutSlides = [
+  {
+    id: 1,
+    image:
+      "https://images.unsplash.com/photo-1501854140801-50d01698950b?q=80&w=1920&auto=format&fit=crop",
+    title: "Embrace Pure Nature",
+    subtitle:
+      "Experience the serene beauty of Qatar's landscapes and breathe in the fresh air of our eco-friendly sanctuary.",
+    highlightIndex: 2,
+  },
+  {
+    id: 2,
+    image:
+      "https://images.unsplash.com/photo-1761523884504-7c09f077d4be?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2hpbGRyZW4lMjB3aXRoJTIwZGVlcnxlbnwwfHwwfHx8MA%3D%3D",
+    title: "Educational Tours Programs",
+    subtitle:
+      "Inspiring the next generation through interactive learning experiences and environmental awareness trips.",
+    highlightIndex: 0,
+  },
+  {
+    id: 3,
+    image:
+      "https://images.unsplash.com/photo-1743890914470-8908cbbbe8d5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGVkdWNhdGlvbmFsJTIwdG91cnMlMjB0byUyMGFsJTIwZG9zZXJpfGVufDB8fDB8fHww",
+    title: "Horse and Camel Riding",
+    subtitle:
+      "Connect with Qatari heritage through traditional riding experiences across our beautiful reserve.",
+    highlightIndex: 3,
+  }
+];
 
-  const statIcons = {
-    species: <FaLeaf />,
-    hectares: <FaMountain />,
-    visitors: <FaWater />,
-  };
+export default function AboutHero() {
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const stats = translatedStats.map((stat) => ({
-    ...stat,
-    icon: statIcons[stat.id],
-  }));
+  // Auto Slide
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % aboutSlides.length);
+    }, 6000);
+
+    return () => clearInterval(interval);
+  }, [aboutSlides.length]);
+
+  const currentSlide = aboutSlides[currentIndex];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden lg:pt-16 text-center">
-      {/* REAL Background Image - No more boring white look */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1511497584788-876760111969?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        {/* Dark subtle gradient taake image bhi dikhe aur text bhi parha jaye */}
-        <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/40 to-transparent"></div>
-      </div>
+    <section className="relative h-screen w-full overflow-hidden bg-black">
+      {/* Background Slides */}
+      {aboutSlides.map((slide, index) => (
+        <div
+          key={slide.id}
+          className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
+            index === currentIndex ? "opacity-70" : "opacity-0"
+          }`}
+          style={{
+            backgroundImage: `url(${slide.image})`,
+            animation:
+              index === currentIndex
+                ? "zoomEffect 20s infinite alternate ease-in-out"
+                : "none",
+          }}
+        />
+      ))}
 
-      <div className=" px-6 relative z-10">
-        <div className="max-w-4xl">
-          {/* Main Content */}
-          <div className="space-y-4" data-aos="fade-up">
-            <h1 className="text-5xl md:text-5xl font-black text-white leading-tight italic uppercase tracking-tighter">
-              {t("heading.main")} <br />
-              <span className="text-[#00627b] bg-white px-4 inline-block mt-2">
-                {t("heading.highlight")}
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/20" />
+
+      {/* Content */}
+      <div className="relative z-10 flex items-center justify-center h-full px-4 sm:px-6 md:px-10">
+        <div className="w-full max-w-5xl text-center animate-fadeIn">
+          {/* Title */}
+          <h1 className="font-bold mb-5 sm:mb-6 leading-tight tracking-tight text-[clamp(1.8rem,6vw,3.8rem)]">
+            {currentSlide.title.split(" ").map((word, index) => (
+              <span
+                key={index}
+                className={
+                  index === currentSlide.highlightIndex
+                    ? "text-[#00627B]"
+                    : "text-white"
+                }
+              >
+                {word + " "}
               </span>
-            </h1>
+            ))}
+          </h1>
 
-            <p className="text-xl md:text-xl text-gray-200 leading-relaxed max-w-2xl font-light drop-shadow-lg">
-              {t("description")}
-            </p>
+          {/* Subtitle */}
+          <p className="mx-auto mb-8 sm:mb-10 max-w-2xl text-[clamp(1rem,3.5vw,1.3rem)] leading-relaxed text-gray-200">
+            {currentSlide.subtitle}
+          </p>
 
-            {/* CTA Buttons */}
-            <div className="pt-6 pb-8">
-              <button className="px-6 py-3 bg-[#00627b] text-white font-bold text-lg rounded-sm hover:bg-white hover:text-[#00627b] transition-all duration-300">
-                {t("button")}
-              </button>
-            </div>
+          {/* Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-10">
+            <Link
+              to="https://wa.me/yournumber"
+              className="flex items-center justify-center gap-3 px-6 py-2 rounded-lg bg-[#00627B] text-white font-semibold shadow-lg transition-all hover:scale-105 hover:bg-[#004f63] w-full sm:w-auto"
+            >
+              <FaWhatsapp className="text-xl" />
+              Book via WhatsApp
+            </Link>
+
+            <Link
+              to="/activities"
+              className="px-6 py-2 rounded-lg border-2 border-white text-white font-semibold transition-all hover:scale-105 hover:bg-white hover:text-black w-full sm:w-auto text-center"
+            >
+              Explore Activities →
+            </Link>
           </div>
 
-          {/* Stats Bar - Bottom Overlay Style */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-white/20">
-            {stats.map((stat, index) => (
-              <div
+          {/* Dots */}
+          <div className="flex justify-center gap-3">
+            {aboutSlides.map((_, index) => (
+              <button
                 key={index}
-                className="flex items-center justify-center gap-4 py-10 group hover:bg-[#00627b]/20 transition-colors px-4"
-              >
-                <div className="text-[#00627b] text-4xl group-hover:scale-110 transition-transform">
-                  {stat.icon}
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-white leading-none">
-                    {stat.value}
-                  </div>
-                  <div className="text-gray-400 text-sm uppercase tracking-[3px] mt-1">
-                    {stat.label}
-                  </div>
-                </div>
-              </div>
+                onClick={() => setCurrentIndex(index)}
+                className={`transition-all duration-500 rounded-full ${
+                  currentIndex === index
+                    ? "bg-[#00627B] w-8 h-3"
+                    : "bg-white/40 w-3 h-3 hover:bg-[#00627B]"
+                }`}
+              />
             ))}
           </div>
         </div>
       </div>
 
-      {/* Side Decorative Text */}
-      <div className="absolute -right-45 -top-0.3 -rotate-90 hidden lg:block">
-        <span className="text-white/10 text-9xl font-black tracking-widest uppercase pointer-events-none">
-          {t("decorativeText")}
-        </span>
-      </div>
+      {/* Animations */}
+      <style>{`
+        @keyframes zoomEffect {
+          from { transform: scale(1); }
+          to { transform: scale(1.1); }
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+          animation: fadeIn 0.8s ease-out;
+        }
+      `}</style>
     </section>
   );
-};
-
-export default HeroAbout;
+}

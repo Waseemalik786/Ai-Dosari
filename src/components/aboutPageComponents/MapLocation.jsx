@@ -16,7 +16,7 @@ const MapLocation = () => {
     <section className="py-24 bg-white relative overflow-hidden">
       {/* Background Subtle Text - Consistency check ✅ */}
       <div className="absolute right-[-50px] top-20 opacity-[0.03] select-none pointer-events-none">
-        <h2 className="text-[200px] font-black uppercase tracking-tighter">
+        <h2 className="text-[200px] font-bold  tracking-tighter">
           {t("bgText")}
         </h2>
       </div>
@@ -25,13 +25,13 @@ const MapLocation = () => {
         {/* Section Header - Hero Style Typography ✅ */}
         <div className="text-center mb-20" data-aos="fade-up">
           <div className="inline-block px-4 py-1.5 bg-[#00627b]/10 rounded-full mb-6">
-            <span className="text-[#00627b] font-bold text-xs tracking-[0.3em] uppercase">
+            <span className="text-[#00627b] font-bold text-xs tracking-[0.3em] ">
               {t("badge")}
             </span>
           </div>
-          <h2 className="text-5xl md:text-7xl font-black text-slate-900 leading-tight italic uppercase tracking-tighter">
+          <h2 className="text-5xl md:text-3xl font-bold text-slate-900 leading-tight   tracking-tighter">
             {t("heading.main")}{" "}
-            <span className="text-white bg-[#00627b] px-4">
+            <span className="text-[#00627b]">
               {t("heading.highlight")}
             </span>
           </h2>
@@ -58,7 +58,7 @@ const MapLocation = () => {
               <div className="absolute bottom-6 left-6 bg-white p-4 shadow-xl rounded-sm border-l-4 border-[#00627b]">
                 <div className="flex items-center gap-3">
                   <FaMapMarkerAlt className="text-[#00627b] text-xl" />
-                  <span className="font-bold text-slate-900 uppercase tracking-tight">
+                  <span className="font-bold text-slate-900  tracking-tight">
                     {t("mapBadge")}
                   </span>
                 </div>
@@ -69,7 +69,7 @@ const MapLocation = () => {
           {/* Location Details - History Card Style Consistency ✅ */}
           <div className="space-y-8" data-aos="fade-left">
             <div className="bg-white p-10 shadow-[0_10px_40px_rgba(0,0,0,0.04)] border-l-4 border-[#00627b]">
-              <h3 className="text-3xl font-black text-slate-900 uppercase tracking-tighter italic mb-8">
+              <h3 className="text-3xl font-bold text-slate-900  tracking-tighter  mb-8">
                 {t("gettingHere.title")}
               </h3>
 
@@ -81,7 +81,7 @@ const MapLocation = () => {
                       {transportIcons[transport.id]}
                     </div>
                     <div>
-                      <h4 className="text-lg font-bold text-slate-900 uppercase tracking-tight">
+                      <h4 className="text-lg font-bold text-slate-900  tracking-tight">
                         {transport.title}
                       </h4>
                       <p className="text-slate-500 font-light">
@@ -96,24 +96,24 @@ const MapLocation = () => {
               <div className="bg-slate-50 p-8 border border-slate-100 rounded-sm mb-10">
                 <div className="flex items-center gap-3 mb-6">
                   <FaClock className="text-[#00627b] text-xl" />
-                  <h4 className="text-xl font-bold uppercase tracking-tight">
+                  <h4 className="text-xl font-bold  tracking-tight">
                     {t("hours.title")}
                   </h4>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div>
-                    <div className="text-[#00627b] font-bold text-xs uppercase tracking-widest mb-1">
+                    <div className="text-[#00627b] font-bold text-xs  tracking-widest mb-1">
                       {t("hours.weekdays.days")}
                     </div>
-                    <div className="text-2xl font-black text-slate-900 tracking-tighter italic">
+                    <div className="text-2xl font-bold text-slate-900 tracking-tighter ">
                       {t("hours.weekdays.time")}
                     </div>
                   </div>
                   <div>
-                    <div className="text-[#00627b] font-bold text-xs uppercase tracking-widest mb-1">
+                    <div className="text-[#00627b] font-bold text-xs  tracking-widest mb-1">
                       {t("hours.friday.days")}
                     </div>
-                    <div className="text-2xl font-black text-slate-900 tracking-tighter italic">
+                    <div className="text-2xl font-bold text-slate-900 tracking-tighter ">
                       {t("hours.friday.time")}
                     </div>
                   </div>
@@ -123,7 +123,7 @@ const MapLocation = () => {
               {/* CTA Button - Hero Style Consistency ✅ */}
               <a
                 href="https://wa.me/320303"
-                className="inline-flex items-center justify-center w-full py-5 px-8 bg-[#00627b] text-white font-black text-lg uppercase tracking-widest hover:bg-slate-900 transition-all duration-300 shadow-lg shadow-[#00627b]/20"
+                className="inline-flex items-center justify-center w-full py-5 px-8 bg-[#00627b] text-white font-bold text-lg  tracking-widest hover:bg-slate-900 transition-all duration-300 shadow-lg shadow-[#00627b]/20"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -133,30 +133,7 @@ const MapLocation = () => {
           </div>
         </div>
 
-        {/* Nearby Attractions - History Stats Style Consistency ✅ */}
-        <div className="mt-24 pt-16 border-t border-slate-100">
-          <h3 className="text-2xl font-black text-center mb-12 uppercase tracking-widest italic text-slate-400">
-            {t("attractions.title")}
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-slate-100 divide-y md:divide-y-0 md:divide-x divide-slate-100">
-            {attractionsData.map((attraction, index) => (
-              <div
-                key={index}
-                className="p-10 text-center hover:bg-[#00627b]/5 transition-all group"
-              >
-                <div className="text-[#00627b] font-black text-3xl tracking-tighter italic uppercase mb-2">
-                  {attraction.name}
-                </div>
-                <div className="text-slate-400 font-bold text-xs uppercase tracking-[4px] mb-4">
-                  {attraction.distance} {t("attractions.away")}
-                </div>
-                <p className="text-slate-500 font-light text-sm italic">
-                  {attraction.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
+        
       </div>
     </section>
   );

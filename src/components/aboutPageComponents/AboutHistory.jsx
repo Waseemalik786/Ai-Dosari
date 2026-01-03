@@ -22,8 +22,8 @@ const AboutHistory = () => {
   return (
     <section className="py-24 bg-white relative overflow-hidden">
       {/* Background Subtle Text - Hero se match karne ke liye */}
-      <div className="absolute left-[-50px] top-20 opacity-[0.03] select-none pointer-events-none">
-        <h2 className="text-[200px] font-black uppercase tracking-tighter">
+      <div className="absolute -left-12.5 top-20 opacity-[0.03] select-none pointer-events-none">
+        <h2 className="text-[200px] font-black  tracking-tighter">
           {t("bgText")}
         </h2>
       </div>
@@ -32,13 +32,13 @@ const AboutHistory = () => {
         {/* Section Header - Hero Style Typography */}
         <div className="text-center mb-24" data-aos="fade-up">
           <div className="inline-block px-4 py-1.5 bg-[#00627b]/10 rounded-full mb-6">
-            <span className="text-[#00627b] font-bold text-xs tracking-[0.3em] uppercase">
+            <span className="text-[#00627b] font-bold text-xs tracking-[0.3em] ">
               {t("badge")}
             </span>
           </div>
-          <h2 className="text-5xl md:text-7xl font-black text-slate-900 leading-tight italic uppercase tracking-tighter">
+          <h2 className="text-5xl md:text-4xl font-black text-slate-900 leading-tight tracking-normal">
             {t("heading.prefix")}{" "}
-            <span className="text-white bg-[#00627b] px-4">
+            <span className="text-[#00627b]">
               {t("heading.highlight")}
             </span>{" "}
             {t("heading.suffix")}
@@ -51,7 +51,7 @@ const AboutHistory = () => {
         {/* Timeline - Cleaner and More Consistent */}
         <div className="relative">
           {/* Central Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-[1px] bg-slate-200 hidden lg:block"></div>
+          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-slate-200 hidden lg:block"></div>
 
           <div className="space-y-10 lg:space-y-15">
             {timelineEvents.map((event, index) => (
@@ -73,9 +73,9 @@ const AboutHistory = () => {
                       <span className="text-4xl font-black text-[#00627b]/20 group-hover:text-[#00627b]/40 transition-colors">
                         {event.year}
                       </span>
-                      <div className="h-[2px] w-12 bg-[#00627b]"></div>
+                      <div className="h-0.5 w-12 bg-[#00627b]"></div>
                     </div>
-                    <h3 className="text-2xl font-bold text-slate-900 mb-4 uppercase tracking-tight italic">
+                    <h3 className="text-2xl font-bold text-slate-900 mb-4  tracking-tight ">
                       {event.title}
                     </h3>
                     <p className="text-slate-600 leading-relaxed font-light">
@@ -85,7 +85,7 @@ const AboutHistory = () => {
                 </div>
 
                 {/* Center Circle Icon */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-14 h-14 bg-white border-2 border-[#00627b] rounded-full flex items-center justify-center text-[#00627b] text-xl z-20 shadow-lg hidden lg:flex">
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-14 h-14 bg-white border-2 border-[#00627b] rounded-full flex items-center justify-center text-[#00627b] text-xl z-20 shadow-lg  lg:flex">
                   {event.icon}
                 </div>
 

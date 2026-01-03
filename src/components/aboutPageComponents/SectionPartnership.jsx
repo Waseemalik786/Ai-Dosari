@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  FaUniversity,
-  FaHandshake,
-  FaAward,
-  FaGlobe,
-} from "react-icons/fa";
+import { FaUniversity, FaHandshake, FaAward, FaGlobe } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 
 const SectionPartnership = () => {
@@ -33,7 +28,7 @@ const SectionPartnership = () => {
     <section className="py-24 bg-white relative overflow-hidden">
       {/* Background Subtle Text - Consistency ✅ */}
       <div className="absolute right-[-50px] top-1/4 opacity-[0.03] select-none pointer-events-none">
-        <h2 className="text-[180px] font-black uppercase tracking-tighter">
+        <h2 className="text-[180px] font-bold  tracking-normal">
           {t("bgText")}
         </h2>
       </div>
@@ -42,11 +37,11 @@ const SectionPartnership = () => {
         {/* Section Header - Hero Style ✅ */}
         <div className="text-center mb-24" data-aos="fade-up">
           <div className="inline-block px-4 py-1.5 bg-[#00627b]/10 rounded-full mb-6">
-            <span className="text-[#00627b] font-bold text-xs tracking-[0.3em] uppercase">
+            <span className="text-[#00627b] font-bold text-xs tracking-[0.3em] ">
               {t("badge")}
             </span>
           </div>
-          <h2 className="text-5xl md:text-7xl font-black text-slate-900 leading-tight italic uppercase tracking-tighter">
+          <h2 className="text-5xl md:text-4xl font-bold text-slate-900 leading-tight   tracking-normal">
             {t("heading.main")}{" "}
             <span className="text-white bg-[#00627b] px-4">
               {t("heading.highlight")}
@@ -59,7 +54,7 @@ const SectionPartnership = () => {
 
         {/* Partners Grid - Minimalist Style ✅ */}
         <div className="mb-32">
-          <h3 className="text-2xl font-black text-slate-400 text-center mb-16 uppercase tracking-[0.2em] italic">
+          <h3 className="text-2xl font-bold text-slate-400 text-center mb-16  tracking-[0.2em] ">
             {t("partners.title")}
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 border border-slate-100 divide-x divide-y md:divide-y-0 divide-slate-100">
@@ -75,10 +70,10 @@ const SectionPartnership = () => {
                   <div className="text-5xl mb-6 grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500">
                     {partnerInfo?.logo}
                   </div>
-                  <h4 className="text-sm font-black text-slate-900 uppercase tracking-tight mb-1">
+                  <h4 className="text-sm font-bold text-slate-900  tracking-tight mb-1">
                     {partner.name}
                   </h4>
-                  <p className="text-[10px] text-slate-400 uppercase font-bold tracking-widest leading-tight">
+                  <p className="text-[10px] text-slate-400  font-bold tracking-widest leading-tight">
                     {partner.description}
                   </p>
                 </div>
@@ -89,7 +84,7 @@ const SectionPartnership = () => {
 
         {/* Certifications - Professional Card Style ✅ */}
         <div className="mb-32 bg-slate-50 p-12 md:p-20 rounded-sm border border-slate-100">
-          <h3 className="text-3xl font-black text-slate-900 text-center mb-16 uppercase tracking-tighter italic">
+          <h3 className="text-3xl font-bold text-slate-900 text-center mb-16  tracking-normal ">
             {t("accreditations.title")}
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -103,7 +98,7 @@ const SectionPartnership = () => {
                 <div className="inline-flex items-center justify-center w-20 h-20 bg-white border border-slate-200 text-[#00627b] text-3xl mb-6 shadow-sm group-hover:bg-[#00627b] group-hover:text-white transition-all duration-500 rounded-sm">
                   {certificationIcons[cert.id]}
                 </div>
-                <h4 className="text-xl font-black text-slate-900 uppercase tracking-tighter mb-2 italic">
+                <h4 className="text-xl font-bold text-slate-900  tracking-normal mb-2 ">
                   {cert.title}
                 </h4>
                 <p className="text-slate-500 text-sm font-light leading-relaxed">
@@ -121,7 +116,7 @@ const SectionPartnership = () => {
         >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
             <div>
-              <h3 className="text-4xl font-black text-slate-900 mb-8 uppercase tracking-tighter italic leading-none">
+              <h3 className="text-4xl font-bold text-slate-900 mb-8  tracking-normal  leading-none">
                 {t("future.heading.main")} <br />{" "}
                 <span className="text-[#00627b]">
                   {t("future.heading.highlight")}
@@ -135,14 +130,14 @@ const SectionPartnership = () => {
                 {futureList.map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
                     <div className="w-1.5 h-1.5 bg-[#00627b]"></div>
-                    <span className="text-sm font-bold text-slate-700 uppercase tracking-widest">
+                    <span className="text-sm font-bold text-slate-700  tracking-widest">
                       {item}
                     </span>
                   </div>
                 ))}
               </div>
 
-              <button className="px-10 py-4 bg-[#00627b] text-white font-black uppercase tracking-widest hover:bg-slate-900 transition-all text-sm">
+              <button className="px-5 py-3 rounded-lg bg-[#00627b] text-white font-bold  tracking-widest hover:bg-slate-900 transition-all text-sm">
                 {t("future.button")}
               </button>
             </div>
@@ -163,7 +158,7 @@ const SectionPartnership = () => {
           className="mt-40 text-center py-20 border-t border-slate-100"
           data-aos="fade-up"
         >
-          <h3 className="text-5xl md:text-6xl font-black text-slate-900 mb-8 uppercase tracking-tighter italic">
+          <h3 className="text-5xl md:text-4xl font-bold text-slate-900 mb-8  tracking-normal ">
             {t("cta.heading")}
           </h3>
           <p className="text-xl text-slate-500 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
@@ -172,13 +167,13 @@ const SectionPartnership = () => {
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <a
               href="https://wa.me/320303"
-              className="px-12 py-5 bg-[#00627b] text-white font-black text-lg uppercase tracking-widest hover:bg-slate-900 transition-all shadow-xl shadow-[#00627b]/20"
+              className="px-5 py-3 rounded-lg bg-[#00627b] text-white font-bold text-lg  tracking-widest hover:bg-slate-900 transition-all shadow-xl shadow-[#00627b]/20"
             >
               {t("cta.buttons.book")}
             </a>
             <a
               href="#contact"
-              className="px-12 py-5 border-2 border-slate-900 text-slate-900 font-black text-lg uppercase tracking-widest hover:bg-slate-900 hover:text-white transition-all"
+              className="px-5 py-3 rounded-lg border-2 border-slate-900 text-slate-900 font-bold text-lg  tracking-widest hover:bg-slate-900 hover:text-white transition-all"
             >
               {t("cta.buttons.contact")}
             </a>
