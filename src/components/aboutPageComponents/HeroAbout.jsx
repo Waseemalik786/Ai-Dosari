@@ -28,7 +28,7 @@ const aboutSlides = [
       "https://images.unsplash.com/photo-1743890914470-8908cbbbe8d5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGVkdWNhdGlvbmFsJTIwdG91cnMlMjB0byUyMGFsJTIwZG9zZXJpfGVufDB8fDB8fHww",
     title: "Horse and Camel Riding",
     subtitle:
-      "Connect with Qatari heritage through traditional riding experiences across our beautiful reserve.",
+      "Connect with Qatar heritage through traditional riding experiences across our beautiful reserve.",
     highlightIndex: 3,
   }
 ];
