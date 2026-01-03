@@ -1,14 +1,31 @@
 {
-  "heading": {
-    "main": "Discover",
-    "highlight": "Nature's Legacy"
-  },
-  "description": "Al Dosari Reserve stands as a sanctuary where wildlife thrives and conservation meets education. We protect endangered species for a better tomorrow.",
-  "button": "BOOK A TOUR",
-  "stats": [
-    { "id": "species", "value": "500+", "label": "Species" },
-    { "id": "hectares", "value": "1200+", "label": "Hectares" },
-    { "id": "visitors", "value": "50K+", "label": "Visitors" }
-  ],
-  "decorativeText": "WILDLIFE"
+  "aboutHero": {
+    "slides": [
+      {
+        "id": 1,
+        "image": "https://images.pexels.com/photos/1462364/pexels-photo-1462364.jpeg",
+        "title": "Embrace Pure Nature",
+        "subtitle": "Experience the serene beauty of Qatar's landscapes and breathe in the fresh air of our eco-friendly sanctuary.",
+        "highlightIndex": 2
+      },
+      {
+        "id": 2,
+        "image": "https://images.pexels.com/photos/8954864/pexels-photo-8954864.jpeg",
+        "title": "Educational Tours Programs",
+        "subtitle": "Inspiring the next generation through interactive learning experiences and environmental awareness trips.",
+        "highlightIndex": 0
+      },
+      {
+        "id": 3,
+        "image": "https://images.pexels.com/photos/8146867/pexels-photo-8146867.jpeg",
+        "title": "Horse and Camel Riding",
+        "subtitle": "Connect with Qatar heritage through traditional riding experiences across our beautiful reserve.",
+        "highlightIndex": 3
+      }
+    ],
+    "buttons": {
+      "whatsapp": "Book via WhatsApp",
+      "activities": "Explore Activities →"
+    }
+  }
 }

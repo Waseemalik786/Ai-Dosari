@@ -1,56 +1,35 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaWhatsapp } from "react-icons/fa";
-
-// 4 Slides Data
-const aboutSlides = [
-  {
-    id: 1,
-    image:
-      "https://images.unsplash.com/photo-1501854140801-50d01698950b?q=80&w=1920&auto=format&fit=crop",
-    title: "Embrace Pure Nature",
-    subtitle:
-      "Experience the serene beauty of Qatar's landscapes and breathe in the fresh air of our eco-friendly sanctuary.",
-    highlightIndex: 2,
-  },
-  {
-    id: 2,
-    image:
-      "https://images.unsplash.com/photo-1761523884504-7c09f077d4be?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2hpbGRyZW4lMjB3aXRoJTIwZGVlcnxlbnwwfHwwfHx8MA%3D%3D",
-    title: "Educational Tours Programs",
-    subtitle:
-      "Inspiring the next generation through interactive learning experiences and environmental awareness trips.",
-    highlightIndex: 0,
-  },
-  {
-    id: 3,
-    image:
-      "https://images.unsplash.com/photo-1743890914470-8908cbbbe8d5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGVkdWNhdGlvbmFsJTIwdG91cnMlMjB0byUyMGFsJTIwZG9zZXJpfGVufDB8fDB8fHww",
-    title: "Horse and Camel Riding",
-    subtitle:
-      "Connect with Qatar heritage through traditional riding experiences across our beautiful reserve.",
-    highlightIndex: 3,
-  }
-];
+import { useTranslation } from "react-i18next";
 
 export default function AboutHero() {
+  const { t, i18n } = useTranslation("aboutHero");
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  const slides = t("aboutHero.slides", { returnObjects: true });
+  const buttons = t("aboutHero.buttons", { returnObjects: true });
+
+  const isRTL = i18n.language === "ar";
 
   // Auto Slide
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % aboutSlides.length);
+      setCurrentIndex((prev) => (prev + 1) % slides.length);
     }, 6000);
 
     return () => clearInterval(interval);
-  }, [aboutSlides.length]);
+  }, [slides.length]);
 
-  const currentSlide = aboutSlides[currentIndex];
+  const currentSlide = slides[currentIndex];
 
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-black">
+    <section
+      className="relative h-screen w-full overflow-hidden bg-black"
+      dir={isRTL ? "rtl" : "ltr"}
+    >
       {/* Background Slides */}
-      {aboutSlides.map((slide, index) => (
+      {slides.map((slide, index) => (
         <div
           key={slide.id}
           className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
@@ -67,7 +46,7 @@ export default function AboutHero() {
       ))}
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/20" />
+      <div className="absolute inset-0 bg-black/10" />
 
       {/* Content */}
       <div className="relative z-10 flex items-center justify-center h-full px-4 sm:px-6 md:px-10">
@@ -100,24 +79,24 @@ export default function AboutHero() {
               className="flex items-center justify-center gap-3 px-6 py-2 rounded-lg bg-[#00627B] text-white font-semibold shadow-lg transition-all hover:scale-105 hover:bg-[#004f63] w-full sm:w-auto"
             >
               <FaWhatsapp className="text-xl" />
-              Book via WhatsApp
+              {buttons.whatsapp}
             </Link>
 
             <Link
               to="/activities"
               className="px-6 py-2 rounded-lg border-2 border-white text-white font-semibold transition-all hover:scale-105 hover:bg-white hover:text-black w-full sm:w-auto text-center"
             >
-              Explore Activities →
+              {buttons.activities}
             </Link>
           </div>
 
           {/* Dots */}
           <div className="flex justify-center gap-3">
-            {aboutSlides.map((_, index) => (
+            {slides.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`transition-all duration-500 rounded-full ${
+                className={`transition-all cursor-pointer duration-500 rounded-full ${
                   currentIndex === index
                     ? "bg-[#00627B] w-8 h-3"
                     : "bg-white/40 w-3 h-3 hover:bg-[#00627B]"
